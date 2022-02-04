@@ -2539,3 +2539,13 @@ INSERT INTO public.symptPatho(idS, idP, aggr) VALUES
 (448, 113, false)
 ;
 
+-- CREATION DE LA TABLE pour login/mdp
+
+DROP TABLE IF EXISTS public.userTable;
+CREATE TABLE userTable (
+  "user" character varying(40) 
+	        DEFAULT NULL,
+  "password" character varying(40) 
+	        DEFAULT NULL,
+);
+INSERT INTO public.symptPatho(idS, idP, aggr) VALUES
