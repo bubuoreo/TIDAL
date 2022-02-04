@@ -8,25 +8,20 @@
 </head>
 <body>
     <div class="general">
-        <form class="form login" id="login_form" method="POST" action="../controller/login.php">
-            <div class="user">
-                <div class = "header">
-                    <p>Utilisateur:</p>
-                </div>
-                <div class="entry" >
-                    <input type="text" class="login_text" id="user">
-                </div>
+        <form class="form login" id="login_form" method="POST" action="../controller/login.php" autocomplete="off">
+
+            <div class="user_block">
+                <label for="input_user">Utilisateur:</label>
+                <input type="text" class="login_text" id="input_user" name="input_user">
             </div>
-            <div class="password">
-                <div class = "header">
-                    <p>Mot de passe:</p>
-                </div>
-                <div class="entry">
-                    <input type="text" class="login_text" id="password">
-                </div>
+
+            <div class="password_block">
+                <label for="input_password">Mot de passe:</label>
+                <input type="text" class="login_text" id="input_password" name="input_password">
             </div>
-            <div class="button">
-                <button class="button" id="login_button" type="submit" >Valider</button>
+
+            <div class="button_block">
+                <input type="submit" class="submit">
             </div>
         </form>
     </div>
