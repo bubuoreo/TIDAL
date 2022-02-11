@@ -2543,9 +2543,12 @@ INSERT INTO public.symptPatho(idS, idP, aggr) VALUES
 
 DROP TABLE IF EXISTS public.userTable;
 CREATE TABLE userTable (
+  number INTEGER NOT NULL,
   "user" character varying(40) 
 	        DEFAULT NULL,
   "password" character varying(40) 
 	        DEFAULT NULL,
 );
-INSERT INTO public.symptPatho(idS, idP, aggr) VALUES
+INSERT INTO public.userTable(number,"user","password") VALUES
+(1,"user","password")
+;
