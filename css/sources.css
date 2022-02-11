@@ -40,10 +40,11 @@ header{
     transform: translate(-50%, -50%);
   }
 
-footer{
+  footer{
     background-color: black;
-    position: sticky;
-    top: 0;
+    position: absolute;
+    bottom: 0;
+    /* top: 0; */
     display: flex;
     justify-content: space-between;
     align-items: center;
