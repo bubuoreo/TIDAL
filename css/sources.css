@@ -18,12 +18,37 @@ li, a,button {
 
 header{
     background-color: black;
+    /* position: sticky; */
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10%;
+    height: 2cm;
+}
+
+.contenant {
+    position: relative;
+    text-align: center;
+    color: black;
+  }
+  
+  .texte_centrer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+footer{
+    background-color: black;
     position: sticky;
     top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 10%;
+    height: 4cm;
 }
 
 body{
