@@ -63,6 +63,8 @@ nav{
 
 .logo{
     cursor: pointer;
+    max-width: 10%;
+    max-height: 10%;
 }
 .nav_links{
     list-style: none;
