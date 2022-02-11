@@ -1,25 +1,58 @@
 <?php
-
-
-function verifyUser($username,$password){
-    
-    $dbh = new PDO('sqlite:../acuBD-pgsql.sql'); // quand on le creer, on transmet une chaine de connection
-
-    $sql = 'SELECT * FROM public.userTable WHERE "user" = :$username'; // Commande sql stocké dans une chaine de charactere
-
+function sqlRequest($sql,$dbh){
     $dbh->beginTransaction();
-    echo 'ok boi';
+    
     try {
         $sth = $dbh->prepare($sql);
-        $sth->execute(array(':$username' => "vraie valeur"));
-        $data = $sth->fetchAll();
+        $sth->execute();
+        $data = $sth->fetch(PDO::FETCH_ASSOC);
         $dbh->commit();
-        var_dump($data);
     } 
     catch(PDOException $e) {
         $dbh->rollback();
     }
-    return NULL;
+
+    return $data;
 }
 
-verifyUser("user","password");
+function getUser($username){
+
+    $db_user = "pgtidal";
+    $db_pass = "tidal";
+    $host='localhost';
+    $db_name='acudb';
+
+    try{
+        $dbh = new PDO("pgsql:host=$host;dbname=$db_name",$db_user,$db_pass); // quand on le creer, on transmet une chaine de connection
+    }
+    catch(PDOException $e){
+        print "Erreur : " . $e->getMessage() . "<br/>";
+        die;
+    }
+
+    $sql = "SELECT * FROM public.\"userTable\" WHERE username='$username'"; // Commande sql stocké dans une chaine de charactere
+    
+    return sqlRequest($sql,$dbh);
+}
+
+function setUser($username, $pasword, $email){
+
+    $db_user = "pgtidal";
+    $db_pass = "tidal";
+    $host='localhost';
+    $db_name='acudb';
+
+    try{
+        $dbh = new PDO("pgsql:host=$host;dbname=$db_name",$db_user,$db_pass); // quand on le creer, on transmet une chaine de connection
+    }
+    catch(PDOException $e){
+        print "Erreur : " . $e->getMessage() . "<br/>";
+        die;
+    }
+
+    $sql = " INSERT INTO public.\"userTable\" (id, username, password, email) VALUES ( 2, '$username', '$pasword', '$email');"; // Commande sql stocké dans une chaine de charactere
+    
+    $data = sqlRequest($sql,$dbh);
+    return $data;
+    
+}
