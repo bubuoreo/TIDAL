@@ -36,19 +36,6 @@ nav{
     justify-content: flex-end;
 }
 
-/*
-table, th{
-    table-layout: fixed ;
-    width: 100%;
-    border: 1px solid black;
-}
-
-td{
-    width: 25%;
-    border: 1px solid black;
-}
- */
-
  .styled-table {
     border-collapse: collapse;
     margin: 0 auto;
@@ -183,4 +170,16 @@ td{
     display: flex;
     justify-content: center;
     
+}
+
+footer{
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    /* top: 0; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10%;
+    height: 4cm;
 }
