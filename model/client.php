@@ -1,7 +1,21 @@
 <?php
+function sqlRequest($sql,$dbh){
+    $dbh->beginTransaction();
+    
+    try {
+        $sth = $dbh->prepare($sql);
+        $sth->execute();
+        $data = $sth->fetch(PDO::FETCH_ASSOC);
+        $dbh->commit();
+    } 
+    catch(PDOException $e) {
+        $dbh->rollback();
+    }
 
+    return $data;
+}
 
-function verifyUser($username,$password){
+function getUser($username){
 
     $db_user = "pgtidal";
     $db_pass = "tidal";
@@ -15,25 +29,8 @@ function verifyUser($username,$password){
         print "Erreur : " . $e->getMessage() . "<br/>";
         die;
     }
+
+    $sql = "SELECT * FROM public.\"userTable\" WHERE username='$username'"; // Commande sql stocké dans une chaine de charactere
     
-
-    echo 'dbh ok';
-
-    $sql = 'SELECT * FROM public.userTable WHERE "user" = :$username'; // Commande sql stocké dans une chaine de charactere
-
-    $dbh->beginTransaction();
-    
-    try {
-        $sth = $dbh->prepare($sql);
-        $sth->execute(array(':$username' => "vraie"));
-        $data = $sth->fetchAll();
-        $dbh->commit();
-        var_dump($data);
-    } 
-    catch(PDOException $e) {
-        $dbh->rollback();
-    }
-    return NULL;
+    return sqlRequest($sql,$dbh);
 }
-
-verifyUser("user","password");
