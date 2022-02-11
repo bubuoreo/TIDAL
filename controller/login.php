@@ -14,8 +14,10 @@ if($data){
         echo '</br>';
         var_dump($_SESSION);
     }
-    else{
-        header('Location: login.html');
-        exit;
-    }
+}
+else{
+    echo "Retry boi";
+    header('Location: ../view/login.html');
+    //echo "<alert>retry boi</alert>";
+    exit;
 }
