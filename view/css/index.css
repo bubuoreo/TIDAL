@@ -10,10 +10,17 @@
 li, a,button {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 16pt;
     padding: 2px 16px;
     color: rgb(255, 255, 255);
     text-decoration: none;
+}
+
+/* pour la satisfaction du critère d'accessibilité AAA du site web */
+p {
+    font-size: 120%;
+    line-height: 1.5em;
+    margin: 1.5em 0;
 }
 
 header{
@@ -131,8 +138,6 @@ nav{
     color: rgb(163, 160, 1);
 }
 
-
-
 #auteur{
     display: flex;
     justify-content: center; 
@@ -150,7 +155,7 @@ nav{
 #texte {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 60pt;
     color: black;
     display: flex;
     justify-content: center;
