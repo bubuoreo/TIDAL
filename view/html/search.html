@@ -16,27 +16,19 @@
         <nav>
             <ul class="nav_links">
                 <li><a href="./sources.html">Sources</a></li>
-                <li><a href="./sources.html">Connexion</a></li>
+                <li><a href="./login.html">Connexion</a></li>
             </ul>
         </nav>
         <!--<a class="cta btn"  href="./connexion.html">Connexion</a>--><!--<img src="../images/connexion.png" alt="Connexion" width="30" height="30">-->
     </header>
+    
+    
     <div>
-        <p class="centré">
-            Saisissez ici l'objet de votre requête.
-        </p>
-    </div>
-
-    <div>
-        <p class="centré">Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Internet.</p>
-        <a href="./login.html">
-            <button name="Connexion" class="centré">Se connecter</button>
-        </a>
-        <a href="nom de la page des pathologies">
-            <p class="centré">
-                Cliquez ici pour continuer sans vous connecter.
-            </p>
-        </a>
+        <form class="form login" id="sb_form" method="POST" action="../../controller/search.php" autocomplete="off">
+            <label for="sb_text">Votre requete:</label>
+            <input type="text" class="input_text" id="sb_text" name="sb_text">
+            <button type="submit" class="submit">Valider</button>
+        </form>
     </div>
 
     <div>
