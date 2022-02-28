@@ -4,7 +4,7 @@ namespace Controller;
 
 
 use Model\PathosModel;
-require "./Model/pathosModel.php";
+require "./model/pathosModel.php";
 
 
 class Pathos
