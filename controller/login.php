@@ -6,7 +6,10 @@ use Controller\Route\Router;
 
 class Login 
 {
-
+    function displayHome()
+    {
+        echo "salut je suis la homepage";
+    }
     function display()
     {
         echo 'salut';

@@ -32,7 +32,7 @@ require_once("Controller/pathos.php");
 $router = new Router($_GET["url"]);
 
 $router->get("/posts/:id", "Controller\Login@test");
-// $router->get("/", "Controller\Login@display");
+$router->get("/", "Controller\Login@displayHome");
 $router->get("/login", "Controller\Login@display");
 $router->post("/login", "Controller\Login@connexion");
 $router->get("/policy", "Controller\Login@policy");
