@@ -12,8 +12,10 @@ class Login
     }
     function display()
     {
+        $login = False;
         require_once("smarty/libs/Smarty.class.php");
         $smarty = new \Smarty();
+        $smarty->assign('','');
         $smarty->display("view/template/login.tpl");
     }
     function connexion()
