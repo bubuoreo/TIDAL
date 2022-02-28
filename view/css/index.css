@@ -186,3 +186,6 @@ nav{
 .souligne:hover::before {
     transform: scaleX(1);
 }
+.continuer {
+    color: black;
+}
