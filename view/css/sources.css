@@ -92,14 +92,6 @@ nav{
     background-color: rgba(0,136,169,0.8);
 }
 
-#connexion {
-    color: rgb(0, 0, 0);
-}
-
-#continuer_sans_connexion {
-    color: rgb(0, 0, 0);
-}
-
 #contact {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
