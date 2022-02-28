@@ -6,11 +6,17 @@ use Controller\Route\Router;
 
 class Login 
 {
-
+    function displayHome()
+    {
+        echo "salut je suis la homepage";
+    }
     function display()
     {
-        echo 'salut';
-        // require("./../View/templates/TemplateLogin.php");
+        $login = False;
+        require_once("smarty/libs/Smarty.class.php");
+        $smarty = new \Smarty();
+        $smarty->assign('','');
+        $smarty->display("view/template/login.tpl");
     }
     function connexion()
     {
