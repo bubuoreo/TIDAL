@@ -12,7 +12,7 @@ li, a,button {
     font-weight: 500;
     font-size: 15px;
     padding: 2px 16px;
-    color: rgb(255, 255, 255);
+    color: rgb(128, 128, 128);
     text-decoration: none;
 }
 
@@ -93,24 +93,11 @@ nav{
 }
 
 #connexion {
-    box-sizing: border-box;
-    float: left;
-    background-color: #333;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    padding: 17.5px 10px;
-    text-decoration: none;
-    width: 15%;
-    height: 50px;
-    margin-bottom: 0%;
-    margin-top: 0%;
+    color: rgb(0, 0, 0);
 }
 
-#connexion:hover {
-    background-color: rgb(70, 70, 70);
-    display: block;
-    height:25%;
-
+#continuer_sans_connexion {
+    color: rgb(0, 0, 0);
 }
 
 #contact {
