@@ -1,7 +1,7 @@
 <?php
 
 namespace Model;
-require("./Model/model.php");
+require("./model/model.php");
 
 class PathosModel extends Model
 {
