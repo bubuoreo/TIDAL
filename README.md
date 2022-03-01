@@ -13,3 +13,15 @@ CREATE TABLE userTable (
 INSERT INTO public.userTable(number,"user","password") VALUES
 (1,"user","password")
 ;
+
+# Creation du fichier template_c pour faire marcher smarty
+
+1. Creer un dossier templates_c dans le dossier html
+2. Lui attribuer la permission à www-data
+```
+sudo chown -R www-data templates_c
+```
+3. Mettre la permission:
+```
+sudo chmod -R 770 templates_c/
+```

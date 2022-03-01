@@ -23,16 +23,18 @@
 // require("./View/templates/TemplateLogin.php");
 
 use Controller\Route\Router;
-require("Controller/Route/router.php");
+require("controller/Route/router.php");
 
 
-require_once("Controller/login.php");
-require_once("Controller/pathos.php");
+require_once("controller/login.php");
+require_once("controller/pathos.php");
 
 $router = new Router($_GET["url"]);
 
 $router->get("/posts/:id", "Controller\Login@test");
-// $router->get("/", "Controller\Login@display");
+$router->get("/", "Controller\Login@displayhome");
+$router->get("/", "Controller\Login@displayHome");
+$router->get("/", "Controller\Login@displayhome");
 $router->get("/login", "Controller\Login@display");
 $router->post("/login", "Controller\Login@connexion");
 $router->get("/policy", "Controller\Login@policy");
