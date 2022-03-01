@@ -29,7 +29,6 @@ class Login
      */
     function connexion()
     {
-        var_dump($_POST["input_user"]);
 
         require('model/clientModel.php');
         require_once("smarty/libs/Smarty.class.php"); //importing smarty library
@@ -42,7 +41,7 @@ class Login
 
         if (True) {// TODO: remplace when data is added to the db
             // TODO : For now the problem ofthe routes are not specifically addressed...
-            
+
             $smarty->assign('incorrect_login','True'); // No error messages will be displayed
             $smarty->display("view/template/index.tpl"); // displaying the tpl page
         }
