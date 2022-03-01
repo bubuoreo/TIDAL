@@ -37,12 +37,10 @@ class Login
 
     }
 
-    /* 
     function testSmarty()
     {
         
     }
-    */
 }
 
 // $info = $_POST;
