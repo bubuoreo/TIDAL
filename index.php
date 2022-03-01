@@ -33,6 +33,8 @@ $router = new Router($_GET["url"]);
 
 $router->get("/posts/:id", "Controller\Login@test");
 $router->get("/", "Controller\Login@displayhome");
+$router->get("/", "Controller\Login@displayHome");
+$router->get("/", "Controller\Login@displayhome");
 $router->get("/login", "Controller\Login@display");
 $router->post("/login", "Controller\Login@connexion");
 $router->get("/policy", "Controller\Login@policy");

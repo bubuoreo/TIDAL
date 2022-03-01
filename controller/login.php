@@ -9,6 +9,9 @@ class Login
     function displayHome()
     {
         echo "salut je suis la homepage";
+    function displayHome()
+    {
+        echo "salut je suis la homepage";
     }
     function display()
     {

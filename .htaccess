@@ -1,10 +1,6 @@
 
 # Modifier le fichier apache2.conf dans le dossier /etc/apache2
 # Venir modifier dans ce fichier: <Directory /ww/html> mettre   AllowOveride All 
-
-
-
-
 RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} !-f
