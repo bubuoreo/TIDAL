@@ -35,7 +35,7 @@ class Router
                 $route->execute();
             }
         }
-        return  header("HTTP/1.0 404 Not Found");
+        // return  header("HTTP/1.0 404 Not Found");
         // echo "URL invalide, redirection";
         // sleep(2);
         // $this->routes["default"]->execute();
