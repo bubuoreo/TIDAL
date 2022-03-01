@@ -25,3 +25,4 @@ sudo chown -R www-data templates_c
 ```
 sudo chmod -R 770 templates_c/
 ```
+4. Refaire la meme chose pour le dossier smarty

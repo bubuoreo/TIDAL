@@ -2,7 +2,6 @@
 
 namespace Controller;
 
-
 use Model\PathosModel;
 require "./model/pathosModel.php";
 

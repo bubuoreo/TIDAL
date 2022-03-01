@@ -1,7 +1,8 @@
 <?php
 
 namespace Model;
-require_once("./Model/model.php");
+require_once("model.php");
+
 class ClientModel extends Model
 {
     private static   $userNumber = 0;
