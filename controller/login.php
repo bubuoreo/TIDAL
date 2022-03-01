@@ -29,23 +29,31 @@ class Login
      */
     function connexion()
     {
-
         require('model/clientModel.php');
         require_once("smarty/libs/Smarty.class.php"); //importing smarty library
 
         $client = new clientModel();
-        //var_dump($client->setUser("root","toor","root@root.root"));
-        //$data = $client->getUser($_POST["input_user"]);
+        $data = $client->getUser($_POST["input_user"]);
+        $flag = True;
+        
+        var_dump($data);
 
         $smarty = new \Smarty(); // Creating smarty object
 
-        if (True) {// TODO: remplace when data is added to the db
+        // Verify if it is the good pswd
+        if ((sizeof($data) != 0)) {// TODO: remplace when data is added to the db
+            $db_pswd = substr($data[0]["password"],1,-1); // WARNING : the database gives information in curly Quotes
+            
+            //var_dump($db_pswd);
+            
             // TODO : For now the problem ofthe routes are not specifically addressed...
-
-            $smarty->assign('incorrect_login','True'); // No error messages will be displayed
-            $smarty->display("view/template/index.tpl"); // displaying the tpl page
+            if($db_pswd == $_POST["input_password"]){
+                $smarty->display("view/template/index.tpl");
+                $flag = False;
+            }
         }
-        else{
+       
+        if($flag){
             $smarty->assign('incorrect_login','True'); // No error messages will be displayed
             $smarty->display("view/template/login.tpl"); // displaying the tpl page
         }

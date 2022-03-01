@@ -68,7 +68,6 @@ class Model
             }
         }
 
-        
         return $data;
     }
     

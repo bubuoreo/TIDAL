@@ -16,13 +16,14 @@ class ClientModel extends Model
     }
 
     public function getUser($username){
-        $sql = "SELECT * FROM public.\"userTable\" WHERE username='$username'"; // Commande sql stocké dans une chaine de charactere
+        $sql = "SELECT * FROM public.\"userTable\" WHERE username='{{$username}}'"; // Commande sql stocké dans une chaine de charactere
         return $this->sqlRequest($sql);
     }
 
     public function setUser($username, $pasword, $email)
     {
-        $sql = " INSERT INTO public.\"userTable\" (id, username, password, email) VALUES ( \'".self::$userNumber ."\', '$username', '$pasword', '$email');"; // Commande sql stocké dans une chaine de charactere
+        $sql = "INSERT INTO public.\"userTable\" (username, password, email) VALUES ('{{$username}}', '{{$pasword}}', '{{$email}}');"; // Commande sql stocké dans une chaine de charactere
+        var_dump($sql);
         return $this->sqlRequest($sql);
     }
 }
