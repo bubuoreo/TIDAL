@@ -35,20 +35,17 @@ class Login
         $client = new clientModel();
         $data = $client->getUser($_POST["input_user"]);
         $flag = True;
-        
-        var_dump($data);
 
         $smarty = new \Smarty(); // Creating smarty object
 
         // Verify if it is the good pswd
         if ((sizeof($data) != 0)) {// TODO: remplace when data is added to the db
             $db_pswd = substr($data[0]["password"],1,-1); // WARNING : the database gives information in curly Quotes
-            
-            //var_dump($db_pswd);
-            
             // TODO : For now the problem ofthe routes are not specifically addressed...
             if($db_pswd == $_POST["input_password"]){
-                $smarty->display("view/template/index.tpl");
+                $router = new Router("/");
+                $router->get("/", "Controller\Login@display");
+                $router->run();
                 $flag = False;
             }
         }
