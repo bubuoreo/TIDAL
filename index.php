@@ -13,19 +13,13 @@
 // $smarty->cache_lifetime = 120;
 // $smarty->setTemplateDir("View/templates");
 // $smarty->setCompileDir("View/templates_c");
-
 // $smarty->assign('pathos', $pathologies);
-// $smarty->display("View/vue.tpl");  
-
-
-
-
+// $smarty->display("View/vue.tpl");
 // require("./View/templates/TemplateLogin.php");
 
 use Controller\Route\Router;
+
 require("controller/Route/router.php");
-
-
 require_once("controller/login.php");
 require_once("controller/pathos.php");
 
