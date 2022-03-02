@@ -16,6 +16,13 @@ li, a,button {
     text-decoration: none;
 }
 
+/* pour la satisfaction du critère d'accessibilité AAA du site web */
+p {
+    font-size: 120%;
+    line-height: 1.5em;
+    margin: 1.5em 0;
+}
+
 header{
     background-color: black;
     position: sticky;
