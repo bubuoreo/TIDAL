@@ -44,7 +44,7 @@ class Login
             // TODO : For now the problem ofthe routes are not specifically addressed...
             if($db_pswd == $_POST["input_password"]){
                 $router = new Router("/");
-                $router->get("/", "Controller\Login@display");
+                $router->newRouteGet("/", "Controller\Login@display");
                 $router->run();
                 $flag = False;
             }
@@ -65,7 +65,7 @@ class Login
     {
        
         $router = new Router("/");
-        $router->get("/", "Controller\Login@display");
+        $router->newRouteGet("/", "Controller\Login@display");
         $router->run();
 
     }

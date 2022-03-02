@@ -25,7 +25,7 @@ class Router
     /**
      * permet d'ajouter un nouvelles routes de methode GET
      */
-    public function get(string $path, string $action)
+    public function newRouteGet(string $path, string $action)
     {
         $this->routes["GET"][] = new Route($path, $action);
     }
@@ -33,7 +33,7 @@ class Router
     /**
      * permet d'ajouter une nouvelle route de methode POST
      */
-    public function post(string $path, string $action)
+    public function newRoutePost(string $path, string $action)
     {
         $this->routes["POST"][] = new Route($path, $action);
     }
