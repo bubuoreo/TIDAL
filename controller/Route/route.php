@@ -15,17 +15,22 @@ class Route
     public $matches;
 
     /**
-     * 
+     * Méthode construsant une route et la méthode et la méthode à réaliser
+     * @param path donne le chemin d'accès
+     * @param action donne le namespace avec la méthode à appeler
      */
     public function __construct($path, $action)
     {   
+        # enlève le caractère '/' au début et à la fon de la chaine de caractère
         $this->path = trim($path, '/');
-        $this->action = $action;
+        # stocke l'action voulue en paramètre
+        $this->action = $action; 
             
     }
 
     /**
-     * methode qui vérifie si l'url passer correspond au chemin existant
+     * Methode qui vérifie si l'url passer correspond au chemin existant
+     * @param url variable de type string qui renseigne l'url
      */
     public function matches(string $url)
     {   
@@ -49,6 +54,7 @@ class Route
      */
     public function execute()
     {
+        # sépare en gros le nom de la fonction avec le nom de la méthode à réaliser
         $params = explode('@', $this->action);
         $controller = new $params[0]();
         $method = $params[1];
