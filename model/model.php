@@ -16,8 +16,6 @@ class Model
     function initialisationDB()
     {
         try{
-           
-
             $dbh = new \PDO("pgsql:host=$this->host;dbname=$this->db_name",$this->db_user,$this->db_pass); // quand on le creer, on transmet une chaine de connection
             $this->dbh = $dbh;
         }
@@ -70,7 +68,6 @@ class Model
             }
         }
 
-        
         return $data;
     }
     
