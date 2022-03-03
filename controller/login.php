@@ -54,7 +54,7 @@ class Login
             // TODO : For now the problem ofthe routes are not specifically addressed...
             if(password_verify($_POST["input_password"],$db_pswd)){
                 $flag = False;
-                $router = new Router("/");
+                $router = new Router($_GET["url"]);
                 $router->get("/", "Controller\Login@display");
                 $router->run();
             }
@@ -81,7 +81,7 @@ class Login
         // Verify if it is the good pswd
         if ((sizeof($data) == 0)) {
             $client->setUser($_POST["input_user"],password_hash($_POST["input_password"],PASSWORD_DEFAULT),$_POST["input_email"]);
-            $router = new Router("/");
+            $router = new Router($_GET["url"]);
             $router->get("/", "Controller\Login@display");
             $router->run();
         }
@@ -99,7 +99,7 @@ class Login
     function policy()
     {
        
-        $router = new Router("/");
+        $router = new Router($_GET["url"]);
         $router->get("/", "Controller\Login@display");
         $router->run();
 
