@@ -31,6 +31,8 @@ $router->get("/", "Controller\Login@displayHome");
 $router->get("/", "Controller\Login@displayhome");
 $router->get("/login", "Controller\Login@display");
 $router->post("/login", "Controller\Login@connexion");
+$router->get("/create", "Controller\Login@displayNewAcc");
+$router->post("/create", "Controller\Login@connexionNewAcc");
 $router->get("/policy", "Controller\Login@policy");
 $router->post("/", "Controller\Login@connexion");
 
