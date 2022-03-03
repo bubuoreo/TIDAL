@@ -27,5 +27,5 @@ sudo chmod -R 770 templates_c/
 ```
 4. Refaire la meme chose pour le dossier smarty
 
-# Note avec la db
-Due a la manièere dont à été formaté la table **userTable**, les données sorties sont dans des curly brackets.
+# Note avec la db (Résolu!)
+Due a la manièere dont à été formaté la table **userTable**, les données sorties sont dans des curly brackets. **DB modifiée**.

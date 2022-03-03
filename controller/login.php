@@ -50,7 +50,7 @@ class Login
 
         // Verify if it is the good pswd
         if ((sizeof($data) != 0)) {// TODO: remplace when data is added to the db
-            $db_pswd = $data[0]["password"]; // WARNING : the database gives information in curly Quotes
+            $db_pswd = $data[0]["password"]; 
             // TODO : For now the problem ofthe routes are not specifically addressed...
             if(password_verify($_POST["input_password"],$db_pswd)){
                 $flag = False;
