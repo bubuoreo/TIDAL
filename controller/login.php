@@ -52,10 +52,9 @@ class Login
         if ((sizeof($data) != 0)) {// TODO: remplace when data is added to the db
             $db_pswd = $data[0]["password"]; 
             // TODO : For now the problem ofthe routes are not specifically addressed...
-            if(password_verify($_POST["input_password"],$db_pswd)){
-                $flag = False;
-                $router = new Router($_GET["url"]);
-                $router->get("/", "Controller\Login@display");
+            if($db_pswd == $_POST["input_password"]){
+                $router = new Router("/");
+                $router->newRouteGet("/", "Controller\Login@display");
                 $router->run();
             }
         }
@@ -99,8 +98,8 @@ class Login
     function policy()
     {
        
-        $router = new Router($_GET["url"]);
-        $router->get("/", "Controller\Login@display");
+        $router = new Router("/");
+        $router->newRouteGet("/", "Controller\Login@display");
         $router->run();
 
     }

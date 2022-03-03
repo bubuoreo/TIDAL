@@ -23,34 +23,35 @@ class Router
     }
 
     /**
-     * permet d'ajouter un nouvelles routes de methode GET
+     * Permet d'ajouter un nouvelles routes de methode GET
      */
-    public function get(string $path, string $action)
+    public function newRouteGet(string $path, string $action)
     {
         $this->routes["GET"][] = new Route($path, $action);
     }
 
     /**
-     * permet d'ajouter une nouvelle route de methode POST
+     * Permet d'ajouter une nouvelle route de methode POST
      */
-    public function post(string $path, string $action)
+    public function newRoutePost(string $path, string $action)
     {
         $this->routes["POST"][] = new Route($path, $action);
     }
 
 
     /**
-     * permet de run le router c'est a dire qui nous allons recupere l'url passer avec la methode
-     * et verifier si une route connue correspond pour pouvoir exetuter la methode correspondante
+     * Permet de run le router c'est à dire que nous allons récupéré l'url passé avec la methode
+     * et vérifier si une route connue correspond, pour pouvoir exécuter la methode correspondante.
      */
     public function run()
     {
+        # Parcours la variable dont la méthode de requête est celle spécifiée
         foreach($this->routes[$_SERVER['REQUEST_METHOD']] as $route)
         {
-
+            # test si la route est bien une route pouvant être réalisée
             if ($route->matches($this->url) == true)
             {
-                $route->execute();
+                $route->execute(); # l'exécute
             }
         }
         // return  header("HTTP/1.0 404 Not Found");

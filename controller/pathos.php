@@ -49,7 +49,9 @@ class Pathos extends Controller
 
     /**
      * fonction qui permet de recuperer un element en particulier dans une table
-     * 
+     * @param table table sql que l'on veut lire 
+     * @param column colonne  que l'on veut lire
+     * @param ligne ligne que l'on veut lire
      */
     function getElementTable($table, $column ,$ligne)
     {
@@ -118,8 +120,7 @@ class Pathos extends Controller
 
         }
 
-        // $this->renderSearch();
-        $this->renderTpl("view/template/recherche.tpl", ["title"=> "BEMS - Association d'acupuncteurs"]);
+        // $this->renderTpl("view/template/recherche.tpl", ["title"=> "BEMS - Association d'acupuncteurs"]);
 
 
     }
