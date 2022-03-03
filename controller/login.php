@@ -81,7 +81,7 @@ class Login
         if ((sizeof($data) == 0)) {
             $client->setUser($_POST["input_user"],password_hash($_POST["input_password"],PASSWORD_DEFAULT),$_POST["input_email"]);
             $router = new Router($_GET["url"]);
-            $router->get("/", "Controller\Login@display");
+            $router->newRouteGet("/", "Controller\Login@display");
             $router->run();
         }
         else{
