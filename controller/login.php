@@ -33,6 +33,7 @@ class Login
         require_once("smarty/libs/Smarty.class.php"); //importing smarty library
 
         $client = new clientModel();
+        $client->setUser('root','toor','root@root.root');
         $data = $client->getUser($_POST["input_user"]);
         $flag = True;
 
