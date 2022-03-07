@@ -11,6 +11,7 @@ class Login
     {
         echo "salut je suis la homepage";
     }
+    
     /**
      * First time on the login page
      */
