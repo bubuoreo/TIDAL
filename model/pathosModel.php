@@ -30,4 +30,24 @@ class PathosModel extends Model
         return $this->sqlRequest($sql, [":".$column => $ligne]);
     }
     
+    function getTableByKeyword($keyword)
+    {
+        $sql = "SELECT keywords.*, keysympt.ids, symptome.desc, patho.*, meridien.*
+                FROM keywords
+                JOIN keysympt
+                    ON keywords.idk = keysympt.idk
+                JOIN symptome
+                    ON keysympt.ids = symptome.ids
+                JOIN symptpatho
+                    ON symptome.ids = symptpatho.ids
+                JOIN patho
+                    ON symptpatho.idp = patho.idp
+                JOIN meridien
+                    ON patho.mer = meridien.code
+                WHERE keywords.name = :keyword";
+
+
+        return $this->sqlRequest($sql, [":keyword" => $keyword]);
+
+    }
 }

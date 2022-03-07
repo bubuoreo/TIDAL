@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 
-/* Configuration des éléments de base pour les affichages des éléments communs*/
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,21 +16,12 @@ li, a,button {
     text-decoration: none;
 }
 
-nav{
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
 /* pour la satisfaction du critère d'accessibilité AAA du site web */
 p {
     font-size: 120%;
     line-height: 1.5em;
     margin: 1.5em 0;
 }
-
-
-
 
 header{
     background-color: black;
@@ -43,13 +33,12 @@ header{
     height: 2cm;
 }
 
-
-/*Description CSS pour l'affichage de la photo avec le texte superposé*/
 .contenant {
     position: relative;
     text-align: center;
     color: black;
-} 
+  }
+  
 .texte_centrer {
     position: absolute;
     top: 50%;
@@ -57,11 +46,12 @@ header{
     transform: translate(-50%, -50%);
 }
 
-/*Description du footer*/
-footer {
+footer{
+    width: 100%;
     background-color: black;
-    position: relative;
+    position: absolute;
     bottom: 0;
+    /* top: 0; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -69,21 +59,21 @@ footer {
     height: 4cm;
 }
 
-.logo {
+body{
+    background-color: rgb(209, 208, 208);
+}
+
+nav{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo{
     cursor: pointer;
     max-width: 10%;
     max-height: 10%;
 }
-
-/*Description du body*/
-body {
-    background-color: rgb(209, 208, 208);
-}
-
-.centré {
-    text-align: center;
-}
-
 .nav_links{
     list-style: none;
 }

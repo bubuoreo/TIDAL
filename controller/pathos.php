@@ -27,7 +27,7 @@ class Pathos extends Controller
     /**
      * fonction qui verifie si la variable $pathoModel est initialisée
      */
-    private function checkIfSet()
+    private function checkIfSetPathoModel()
     {   
         if (!isset($this->pathoModel))
         {
@@ -60,67 +60,21 @@ class Pathos extends Controller
         // $column = $_GET["column"];
         // $ligne = $_GET["ligne"];
         
-        $this->checkIfSet();
+        $this->checkIfSetPathoModel();
         $data = $this->pathoModel->getElementTable($table, $column, $ligne);
         return $data ;
     }
 
     function searchByKeyword($key)
     {
-        $tableKey= [];
-        $tableKey["search"] = $key;
-        $datas = $this->getTable("keywords");
-
-        // recuperation de name et idk correspondant la la table Keywords
-        foreach( $datas as $data )
-        {
-            
-            if (strpos(strtolower($data["name"]), strtolower($key)) !== false)
-            {
-                $tableKey["idk"] = $data["idk"];
-                $tableKey["name"] = $data["name"];
-            }
-            
-        }
+        // $key = $_POST["sb_text"];
+        // die;
+        $this->checkIfSetPathoModel();
+        $datas = $this->pathoModel->getTableByKeyword($key);
+        // header('Content-Type: application/json');
         
-        // recuperation des Ids correspondant
-        $tableIds=[];
-        $tableSympt=[];
-        $tableIdp = [];
-        $dataIds = $this->getElementTable("keysympt", "idk", $tableKey["idk"]);
-        foreach($dataIds as $ids)
-        {
-            array_push($tableSympt, $this->getElementTable("symptome", "ids", $ids["ids"])[0]["desc"]);
-            // array_push($tableIdp, $this->getElementTable("symptpatho", "ids", $ids["ids"]));
-            $idp = $this->getElementTable("symptpatho", "ids", $ids["ids"]);
-            foreach($idp as $element)
-            {
-                // echo '<br>';
-                // var_dump($element);
-            }   
-            array_push($tableIds, $ids["ids"]);
-            // echo '<br>';
-            // var_dump($this->getElementTable("symptpatho", "ids", $ids["ids"]));
-
-        }
-        
-        $tableKey["ids"] = $tableIds;   
-        $tableKey["symptomes"] = $tableSympt;
-        $tableKey["idp"] = $tableIdp;
-        
-        // echo '<pre>';
-        // var_dump($tableIdp);
-        // echo "</pre>";
-
-
-        // recuperation des symptomes
-        foreach ($tableKey["ids"] as $ids)
-        {
-            
-
-        }
-
-        // $this->renderTpl("view/template/recherche.tpl", ["title"=> "BEMS - Association d'acupuncteurs"]);
+        empty($datas)? $this->renderTpl("view/template/search.tpl", ["data"=> [], "elementFind" => false]) :$this->renderTpl("view/template/search.tpl", ["data"=> $datas[0], "elementFind" => true]);
+        // header("Location: http://localhost:3080/test/view/template/search.tpl");
 
 
     }
