@@ -9,10 +9,10 @@
 </head>
 <body>
     <div class="general">
-        <form class="form login" id="login_form" method="POST" action="../../login" autocomplete="off">
-            {if $incorrect_login eq 'True'}
+        <form class="form login" id="login_form" method="POST" action="../../create" autocomplete="off">
+            {if $already_exists eq 'True'}
                 <div class="error_block">
-                    <p class="error_message">Wrong login credentials</p>
+                    <p class="error_message">This account already exists</p>
                 </div>
             {/if}
 
@@ -26,8 +26,9 @@
                 <input type="text" class="login_text" id="input_password" name="input_password">
             </div>
 
-            <div class="create_block">
-                <a href="create">Creer ton compte</a>
+            <div class="email_block">
+                <label for="input_email">Email:</label>
+                <input type="text" class="login_text" id="input_email" name="input_email">
             </div>
 
             <div class="button_block">
