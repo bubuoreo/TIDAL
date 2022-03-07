@@ -29,3 +29,11 @@ sudo chmod -R 770 templates_c/
 
 # Note avec la db
 Due a la manièere dont à été formaté la table **userTable**, les données sorties sont dans des curly brackets.
+
+
+## Webographie
+Liste des ressources web exploités pour le projet :
+- 
+- 
+
+## Dernière version
