@@ -29,3 +29,5 @@ sudo chmod -R 770 templates_c/
 
 # Note avec la db (Résolu!)
 Due a la manièere dont à été formaté la table **userTable**, les données sorties sont dans des curly brackets. **DB modifiée**.
+
+ Fatal error: Uncaught --> Smarty: Unable to load template 'file:../view/template/index.tpl' <-- thrown in /var/www/html/smarty/libs/sysplugins/smarty_internal_template.php on line 195
