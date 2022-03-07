@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css"/>
     <!-- <script src="../js/jquery.min.js"></script>
     <script src="/ui/js/bootstrap.min.js"></script> -->
-    <script src="https://kit.fontawesome.com/197d1cb87f.js"></script>
-    <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
+    {* <script src="https://kit.fontawesome.com/197d1cb87f.js"></script> *}
+    {* <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script> *}
     <title>BEMS - Association d'acupuncteurs</title>
 </head>
 

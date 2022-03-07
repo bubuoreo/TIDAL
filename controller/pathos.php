@@ -1,10 +1,8 @@
 <?php
 
-namespace Controller;
 
-use Model\PathosModel;
-require "./model/pathosModel.php";
-require "controller/controller.php";
+include_once "./model/pathosModel.php";
+include_once "./controller/controller.php";
 
 
 /**
@@ -42,7 +40,7 @@ class Pathos extends Controller
      */
     function getTable($table)
     {
-        $this->checkIfSet();
+        $this->checkIfSetPathoModel();
         $data = $this->pathoModel->getTable($table);
         return $data;
     }
@@ -68,11 +66,13 @@ class Pathos extends Controller
     function searchByKeyword($key)
     {
         // $key = $_POST["sb_text"];
-        // die;
+        
+       
         $this->checkIfSetPathoModel();
+        
         $datas = $this->pathoModel->getTableByKeyword($key);
         // header('Content-Type: application/json');
-        
+    
         empty($datas)? $this->renderTpl("view/template/search.tpl", ["data"=> [], "elementFind" => false]) :$this->renderTpl("view/template/search.tpl", ["data"=> $datas[0], "elementFind" => true]);
         // header("Location: http://localhost:3080/test/view/template/search.tpl");
 

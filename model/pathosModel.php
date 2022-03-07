@@ -1,6 +1,6 @@
 <?php
 
-namespace Model;
+
 require("./model/model.php");
 
 class PathosModel extends Model

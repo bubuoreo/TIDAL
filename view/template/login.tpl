@@ -13,7 +13,7 @@
             {if $incorrect_login eq 'True'}
                 <div class="error_block">
                     <p class="error_message">Wrong login credentials</p>
-                </div>
+                </div>  
             {/if}
 
             <div class="user_block">

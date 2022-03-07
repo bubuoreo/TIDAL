@@ -1,6 +1,6 @@
 <?php
 
-namespace Model;
+
 require_once("model.php");
 
 class ClientModel extends Model

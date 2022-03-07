@@ -1,6 +1,6 @@
 <?php
 
-use Controller\Route\Router;
+
 
 require_once("controller/Route/router.php");
 require_once("controller/login.php");
@@ -18,20 +18,20 @@ $router = new Router($_GET["url"]);
   * GET
   */
 
-$router->newRouteGet("/", "Controller\Login@displayhome");
-$router->newRouteGet("/login", "Controller\Login@display");
-$router->newRouteGet("/policy", "Controller\Login@policy");
-$router->newRouteGet("/create", "Controller\Login@displayNewAcc");
+$router->newRouteGet("/", "Login@displayhome");
+$router->newRouteGet("/login", "Login@display");
+$router->newRouteGet("/policy", "Login@policy");
+$router->newRouteGet("/create", "Login@displayNewAcc");
 
 
-$router->newRouteGet("/sympthome/:key", "Controller\Pathos@searchByKeyword");
-$router->newRouteGet("/meridien/:code", "Controller\Pathos@getMeridienByCode");
+$router->newRouteGet("/sympthome/:key", "Pathos@searchByKeyword");
+$router->newRouteGet("/meridien/:code", "Pathos@getMeridienByCode");
 
  /**
   * POST
   */
-$router->newRoutePost("/login", "Controller\Login@connexion");
-$router->newRoutePost("/create", "Controller\Login@connexionNewAcc");
+$router->newRoutePost("/login", "Login@connexion");
+$router->newRoutePost("/create", "Login@connexionNewAcc");
 
 
 

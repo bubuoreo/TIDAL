@@ -1,6 +1,6 @@
 <?php
 
-namespace Controller\Route;
+
 require("route.php");
 
 
