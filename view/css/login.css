@@ -25,7 +25,6 @@ p {
 
 header{
     background-color: black;
-    /* position: sticky; */
     top: 0;
     display: flex;
     justify-content: space-between;
@@ -38,7 +37,7 @@ header{
     position: relative;
     text-align: center;
     color: black;
-}
+  }
   
 .texte_centrer {
     position: absolute;
@@ -48,8 +47,9 @@ header{
 }
 
 footer{
+    width: 100%;
     background-color: black;
-    position: relative;
+    position: absolute;
     bottom: 0;
     /* top: 0; */
     display: flex;

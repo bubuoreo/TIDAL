@@ -66,15 +66,11 @@
         </p>
     </section>
     <div>
-        <p class="centré">
-            J'aimerais bien mettre sur le coté droit ou gauche du site, des news à la con sur les acupuncteurs avec des petites photos et tout<br>
-        </p>
+        <p class="centré">J'aimerais bien mettre sur le coté droit ou gauche du site, des news à la con sur les acupuncteurs avec des petites photos et tout<br></p>
     </div>
     <div>
         <center>
-            <p class="centré">
-                Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Web.<br>
-            </p>
+            <p class="centré">Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Web.<br></p>
             <a href="login.html">
                 <button name="Connexion" id="connexion">Se connecter</button>
             </a>
