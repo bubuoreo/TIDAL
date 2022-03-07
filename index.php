@@ -18,7 +18,7 @@ $router = new Router($_GET["url"]);
   * GET
   */
 
-$router->newRouteGet("/", "Login@displayhome");
+$router->newRouteGet("/", "Page@displayhome");
 $router->newRouteGet("/login", "Login@display");
 $router->newRouteGet("/policy", "Login@policy");
 $router->newRouteGet("/create", "Login@displayNewAcc");
