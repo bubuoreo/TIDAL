@@ -12,6 +12,7 @@ class Login
         // echo "salut je suis la homepage";
         $smarty->display("view/template/index.tpl")
     }
+    
     /**
      * First time on the login page
      */
