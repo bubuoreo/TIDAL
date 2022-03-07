@@ -27,7 +27,7 @@ class Pathos extends Controller
     /**
      * fonction qui verifie si la variable $pathoModel est initialisée
      */
-    private function checkIfSet()
+    private function checkIfSetPathoModel()
     {   
         if (!isset($this->pathoModel))
         {
@@ -60,7 +60,7 @@ class Pathos extends Controller
         // $column = $_GET["column"];
         // $ligne = $_GET["ligne"];
         
-        $this->checkIfSet();
+        $this->checkIfSetPathoModel();
         $data = $this->pathoModel->getElementTable($table, $column, $ligne);
         return $data ;
     }
@@ -69,10 +69,8 @@ class Pathos extends Controller
     {
         // $key = $_POST["sb_text"];
         // die;
-        $this->checkIfSet();
-        echo '<pre>';
+        $this->checkIfSetPathoModel();
         $datas = $this->pathoModel->getTableByKeyword($key);
-        echo "</pre>";
         // header('Content-Type: application/json');
         
         empty($datas)? $this->renderTpl("view/template/search.tpl", ["data"=> [], "elementFind" => false]) :$this->renderTpl("view/template/search.tpl", ["data"=> $datas[0], "elementFind" => true]);
