@@ -2,6 +2,7 @@
 Création site vitrine association acupuncteur
 
 # Mon petit morceau de code avorté
+```sql
 DROP TABLE IF EXISTS public.userTable;
 CREATE TABLE userTable (
   number INTEGER NOT NULL,
@@ -13,6 +14,7 @@ CREATE TABLE userTable (
 INSERT INTO public.userTable(number,"user","password") VALUES
 (1,"user","password")
 ;
+```
 
 # Creation du fichier template_c pour faire marcher smarty
 
