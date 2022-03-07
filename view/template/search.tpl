@@ -18,14 +18,14 @@
 
 <body>
     <header>
-        <a href="../view/html/index.html"><img class="logo" src="../view/images/logo.png" alt="BEMS"></a>
+        <a href="/"><img class="logo" src="../view/images/logo.png" alt="BEMS"></a>
         <nav>
             <ul class="nav_links">
-                <li><a href="../view/html/sources.html">Sources</a></li>
+                <li><a href="/source">Sources</a></li>
                 <!-- <li><a href="./login.html">Connexion</a></li> -->
             </ul>
         </nav>
-        <a class="cta btn" href="../view/html/login.html"><img src="../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
+        <a class="cta btn" href="/login"><img src="../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
     </header>
     
     
@@ -37,6 +37,7 @@
         </form>
     </div>
 
+    
     <div>
         <table class="styled-table">
             <thead>
@@ -60,6 +61,7 @@
             </tfoot>
           </table>
     </div>
+    
     <div class="fade-in container-fluid">
       <div class="animated fadeIn">
           <ul class="nav nav-tabs nav-justified" role="tablist">

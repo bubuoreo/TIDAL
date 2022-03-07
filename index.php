@@ -10,29 +10,30 @@ $router = new Router($_GET["url"]);
 
 
 /**
- * Listage des routes
- */
+* Listage des routes
+*/
 
 
- /**
-  * GET
-  */
+/**
+* GET
+*/
 
 $router->newRouteGet("/", "Controller\Login@displayhome");
-$router->newRouteGet("/login", "Controller\Login@display");
+$router->newRouteGet("/login", "Controller\Login@displayLogin");
 $router->newRouteGet("/policy", "Controller\Login@policy");
 $router->newRouteGet("/create", "Controller\Login@displayNewAcc");
+$router->newRouteGet("/search", "Controller\Login@displaySearch");
+$router->newRouteGet("/source", "Controller\Login@displaySource");
 
 
 $router->newRouteGet("/sympthome/:key", "Controller\Pathos@searchByKeyword");
 $router->newRouteGet("/meridien/:code", "Controller\Pathos@getMeridienByCode");
 
- /**
-  * POST
-  */
-$router->newRoutePost("/login", "Controller\Login@connexion");
+/**
+* POST
+*/
+$router->newRoutePost("/login", "Controller\Login@connexionLogin");
 $router->newRoutePost("/create", "Controller\Login@connexionNewAcc");
-
 
 
 $router->run();

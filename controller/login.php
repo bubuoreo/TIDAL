@@ -9,7 +9,6 @@ class Login
 {
     function displayHome()
     {
-        // echo "salut je suis la homepage";
         $smarty = new \Smarty(); // Creating smarty object
         $smarty->display("view/template/index.tpl");
     }
@@ -17,7 +16,7 @@ class Login
     /**
      * First time on the login page
      */
-    function display()
+    function displayLogin()
     {
         require_once("smarty/libs/Smarty.class.php"); //importing smarty library
 
@@ -35,11 +34,26 @@ class Login
         $smarty->assign('already_exists',false); // No error messages will be displayed
         $smarty->display("view/template/new_account.tpl"); // displaying the tpl page
     }
+    /**
+     * First time on the searchbar
+     */
+    function displaySearch()
+    {
+        require_once("smarty/libs/Smarty.class.php"); //importing smarty library
+        $smarty = new \Smarty(); // Creating smarty object
+        $smarty->display("view/template/search.tpl");
+    }
+    function displaySource()
+    {
+        require_once("smarty/libs/Smarty.class.php"); //importing smarty library
+        $smarty = new \Smarty(); // Creating smarty object
+        $smarty->display("view/template/source.tpl");
+    }
 
     /**
      * Verifies the credentials of the login
      */
-    function connexion()
+    function connexionLogin()
     {
         require('model/clientModel.php');
         require_once("smarty/libs/Smarty.class.php"); //importing smarty library
@@ -57,7 +71,7 @@ class Login
             if(password_verify($_POST["input_password"],$db_pswd)){
                 $flag=false;
                 $router = new Router("/");
-                $router->newRoutePost("/", "Controller\Login@displayHome");
+                $router->newRoutePost("/", "Controller\Login@displaySearch");
                 $router->run();
             }
         }

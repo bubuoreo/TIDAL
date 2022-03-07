@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <link rel="stylesheet" href="../../view/css/index.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,23 @@
 </head>
 <body>
     <header>
-        <a href="/Index@Display"><img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS"></a>
+        <a href="/"><img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS"></a>
         <nav>
             <ul class="nav_links">
-                <li><a href="../../view/html/sources.html">Sources</a></li>
+                <li><a href="/source">Sources</a></li>
             </ul>
         </nav>
-        <a class="cta btn"  href="../../view/html/login.html"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
+        <a class="cta btn"  href="/login"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
     </header>
     <div class="contenant">
         <img class="photo_accueil" src="../../view/images/acu_secu.jpg" alt="Image de fond du site de BEMS montrant une scéance d'acupuncture sur le dos" height="80%" width="100%">
         <div class="texte_centrer" style="font-family: Lucida Handwriting, cursive; font-size: 3cm;">BEMS<br>Brigade Erudie de Médecine et de Santé</div>
     </div>
     <section>
-        <center><h2>Accueil</h2></center>
+        <h2 class="centré">
+            Accueil
+        </h2>
+
         <p class="centré">
             Bonjour, nous vous souhaitons la bienvenue sur notre site collaboratif des acupuncteurs de la médecine chinoise.<br><br>
             Dans un monde où la planète Terre se meurt, où l'impact humanitaire de la civilisation exploite les
@@ -42,8 +46,12 @@
             purus nulla vitae leo. 
         </p>
     </section>
+
     <section>
-        <center><h2>Présentation</h2></center>
+        <h2 class="centré">
+            Présentation
+        </h2>
+
         <p class="centré">
             Présentation du propos du site web dans sa globalité. <br><br>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id nibh vel nulla efficitur laoreet
@@ -64,33 +72,46 @@
             sit amet luctus. 
         </p>
     </section>
+
     <div>
-        <p class="centré">J'aimerais bien mettre sur le coté droit ou gauche du site, des news à la con sur les acupuncteurs avec des petites photos et tout<br></p>
+        <p class="centré">
+            J'aimerais bien mettre sur le coté droit ou gauche du site, des news à la con sur les acupuncteurs avec des petites photos et tout<br>
+        </p>
     </div>
-    <div>
-        <center>
-            <p class="centré">Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Web.<br></p>
-            <a href="login.html">
-                <button name="Connexion" id="connexion">Se connecter</button>
+    <div class="centré">
+            <p class="centré">
+                Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Web.<br>
+            </p>
+
+            <a href="/login" class="centré">
+                <button name="Connexion" id="connexion">
+                    Se connecter
+                </button>
             </a>
+
             <br>
             <br>
-            <a class="souligne" id="continuer_sans_connexion" href="search.html">
+            <a class="souligne centré" id="continuer_sans_connexion" href="/search">
                     Cliquez ici pour continuer sans vous connecter.
             </a>
             <br>
             <br>
-        </center>
     </div>
+
     <footer>
-            <a href="../../view/html/index.html"><img class="logo" src="../../view/images/logo.png" alt="BEMS"></a>
+            <a href="../../view/html/index.html">
+                <img class="logo" src="../../view/images/logo.png" alt="BEMS">
+            </a>
+
             <nav>
                 <ul class="nav_links">
                     <li><a href="../../view/html/sources.html">Sources</a></li>
                     <li><a href="../../view/html/policy.html">Privacy policy</a></li>
                 </ul>
             </nav>
-            <a class="cta btn"  href="../../view/html/login.html"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
+            <a class="cta btn"  href="../../view/html/login.html">
+                <img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30">
+            </a>
     </footer>
 </body>
 </html>
