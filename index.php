@@ -21,8 +21,10 @@ $router = new Router($_GET["url"]);
 
 $router->newRouteGet("/", "Page@displayhome");
 $router->newRouteGet("/login", "Login@display");
-$router->newRouteGet("/policy", "Login@policy");
+$router->newRouteGet("/policy", "Page@displayPolicy");
 $router->newRouteGet("/create", "Login@displayNewAcc");
+$router->newRouteGet("/source", "Page@displaySources");
+
 
 
 $router->newRouteGet("/sympthome/:key", "Pathos@searchByKeyword");

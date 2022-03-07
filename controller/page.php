@@ -2,6 +2,7 @@
 
 include_once "./controller/controller.php";
 
+
 /**
  * Classe d'affichage de page sans besoin d'utilisation de dynamisme
  * Cette classe doit pouvoir afficher les pages index.html et policy.html
@@ -15,4 +16,9 @@ class Page extends Controller
         $this->renderTpl("view/template/index.tpl");
     }
 
+
+    function displaySources()
+    {
+        $this->renderTpl("../view/template/sources.tpl");
+    }
 }
