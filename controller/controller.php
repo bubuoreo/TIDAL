@@ -33,11 +33,10 @@ class Controller
             
             foreach ($params as $clef => $valeur)
             {
-                // echo $clef .':='. $valeur;
                 $this->smarty->assign($clef, $valeur);
             }
         }
-
+        // header("Location: http://localhost:3080/login");
         $this->smarty->display($path);
     }
 }

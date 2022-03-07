@@ -67,60 +67,16 @@ class Pathos extends Controller
 
     function searchByKeyword($key)
     {
-        $tableKey= [];
-        $tableKey["search"] = $key;
-        $datas = $this->getTable("keywords");
-
-        // recuperation de name et idk correspondant la la table Keywords
-        foreach( $datas as $data )
-        {
-            
-            if (strpos(strtolower($data["name"]), strtolower($key)) !== false)
-            {
-                $tableKey["idk"] = $data["idk"];
-                $tableKey["name"] = $data["name"];
-            }
-            
-        }
+        // $key = $_POST["sb_text"];
+        // die;
+        $this->checkIfSet();
+        echo '<pre>';
+        $datas = $this->pathoModel->getTableByKeyword($key);
+        echo "</pre>";
+        // header('Content-Type: application/json');
         
-        // recuperation des Ids correspondant
-        $tableIds=[];
-        $tableSympt=[];
-        $tableIdp = [];
-        $dataIds = $this->getElementTable("keysympt", "idk", $tableKey["idk"]);
-        foreach($dataIds as $ids)
-        {
-            array_push($tableSympt, $this->getElementTable("symptome", "ids", $ids["ids"])[0]["desc"]);
-            // array_push($tableIdp, $this->getElementTable("symptpatho", "ids", $ids["ids"]));
-            $idp = $this->getElementTable("symptpatho", "ids", $ids["ids"]);
-            foreach($idp as $element)
-            {
-                // echo '<br>';
-                // var_dump($element);
-            }   
-            array_push($tableIds, $ids["ids"]);
-            // echo '<br>';
-            // var_dump($this->getElementTable("symptpatho", "ids", $ids["ids"]));
-
-        }
-        
-        $tableKey["ids"] = $tableIds;   
-        $tableKey["symptomes"] = $tableSympt;
-        $tableKey["idp"] = $tableIdp;
-        
-        // echo '<pre>';
-        // var_dump($tableIdp);
-        // echo "</pre>";
-
-
-        // recuperation des symptomes
-        foreach ($tableKey["ids"] as $ids)
-        {
-            
-
-        }
-
-        // $this->renderTpl("view/template/recherche.tpl", ["title"=> "BEMS - Association d'acupuncteurs"]);
+        empty($datas)? $this->renderTpl("view/template/search.tpl", ["data"=> [], "elementFind" => false]) :$this->renderTpl("view/template/search.tpl", ["data"=> $datas[0], "elementFind" => true]);
+        // header("Location: http://localhost:3080/test/view/template/search.tpl");
 
 
     }
