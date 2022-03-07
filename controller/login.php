@@ -10,7 +10,8 @@ class Login
     function displayHome()
     {
         // echo "salut je suis la homepage";
-        $smarty->display("view/template/index.tpl")
+        $smarty = new \Smarty(); // Creating smarty object
+        $smarty->display("view/template/index.tpl");
     }
     
     /**
@@ -21,7 +22,7 @@ class Login
         require_once("smarty/libs/Smarty.class.php"); //importing smarty library
 
         $smarty = new \Smarty(); // Creating smarty object
-        $smarty->assign('incorrect_login','False'); // No error messages will be displayed
+        $smarty->assign('incorrect_login',false); // No error messages will be displayed
         $smarty->display("view/template/login.tpl"); // displaying the tpl page
     }
 
@@ -31,7 +32,7 @@ class Login
     function displayNewAcc(){
         require_once("smarty/libs/Smarty.class.php"); //importing smarty library
         $smarty = new \Smarty(); // Creating smarty object
-        $smarty->assign('already_exists','False'); // No error messages will be displayed
+        $smarty->assign('already_exists',false); // No error messages will be displayed
         $smarty->display("view/template/new_account.tpl"); // displaying the tpl page
     }
 
@@ -54,15 +55,15 @@ class Login
             $db_pswd = $data[0]["password"]; 
             // TODO : For now the problem ofthe routes are not specifically addressed...
             if(password_verify($_POST["input_password"],$db_pswd)){
-                $flag=False;
+                $flag=false;
                 $router = new Router("/");
-                $router->newRouteGet("/", "Controller\Login@display");
+                $router->newRoutePost("/", "Controller\Login@displayHome");
                 $router->run();
             }
         }
        
         if($flag){
-            $smarty->assign('incorrect_login','True'); // No error messages will be displayed
+            $smarty->assign('incorrect_login',true); // No error messages will be displayed
             $smarty->display("view/template/login.tpl"); // displaying the tpl page
         }
     }
@@ -83,11 +84,11 @@ class Login
         if ((sizeof($data) == 0)) {
             $client->setUser($_POST["input_user"],password_hash($_POST["input_password"],PASSWORD_DEFAULT),$_POST["input_email"]);
             $router = new Router("/");
-            $router->newRouteGet("/", "Controller\Login@display");
+            $router->newRoutePost("/", "Controller\Login@display");
             $router->run();
         }
         else{
-            $smarty->assign('already_exists','True'); // No error messages will be displayed
+            $smarty->assign('already_exists',true); // No error messages will be displayed
             $smarty->display("view/template/new_account.tpl"); // displaying the tpl page
         }
     }

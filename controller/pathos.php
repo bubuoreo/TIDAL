@@ -42,7 +42,7 @@ class Pathos extends Controller
      */
     function getTable($table)
     {
-        $this->checkIfSet();
+        $this->checkIfSetPathoModel();
         $data = $this->pathoModel->getTable($table);
         return $data;
     }
