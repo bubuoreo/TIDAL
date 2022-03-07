@@ -24,7 +24,7 @@ nav{
 }
 
 /* pour la satisfaction du critère d'accessibilité AAA du site web */
-p {
+p,a {
     font-size: 120%;
     line-height: 1.5em;
     margin: 1.5em 0;
@@ -34,7 +34,7 @@ p {
 
 
 header{
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     top: 0;
     display: flex;
     justify-content: space-between;
@@ -48,7 +48,7 @@ header{
 .contenant {
     position: relative;
     text-align: center;
-    color: black;
+    color: rgb(0, 0, 0);
 } 
 .texte_centrer {
     position: absolute;
@@ -59,14 +59,14 @@ header{
 
 /*Description du footer*/
 footer {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     position: relative;
     bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 10%;
-    height: 4cm;
+    height: 15%;
 }
 
 .logo {
@@ -122,7 +122,7 @@ body {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 15px;
-    color: black;
+    color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
 }
@@ -145,7 +145,7 @@ body {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 30px;
-    color: black;
+    color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
 }
@@ -154,7 +154,7 @@ body {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 60pt;
-    color: black;
+    color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     
@@ -165,7 +165,7 @@ body {
 }
   
 .souligne:hover {
-    color: #000;
+    color: rgb(0, 0, 0);
 }
   
 .souligne::before {
@@ -176,7 +176,7 @@ body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #000;
+    background-color: rgb(0, 0, 0);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -185,5 +185,5 @@ body {
     transform: scaleX(1);
 }
 .continuer {
-    color: black;
+    color: rgb(0, 0, 0);
 }

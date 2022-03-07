@@ -10,18 +10,23 @@
 </head>
 <body>
     <header>
-        <a href="../../view/html/index.html"><img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS"></a>
+        <a href="../../view/html/index.html">
+            <img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS">
+        </a>
+
         <nav>
             <ul class="nav_links">
                 <li><a href="../../view/html/sources.html">Sources</a></li>
             </ul>
         </nav>
-        <a class="cta btn"  href="../../view/html/login.html"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
+
+        <a class="cta btn"  href="../../view/html/login.html">
+            <img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30">
+        </a>
     </header>
 
     <div class="general">
         <form class="form login" id="login_form" method="POST" action="../../controller/login.php" autocomplete="off">
-            <checkif></checkif>
 
             <div class="user_block">
                 <label for="input_user">Utilisateur:</label>
@@ -36,11 +41,13 @@
             <div class="button_block">
                 <input type="submit" class="submit">
             </div>
+
             <div>
-                <a class="souligne" id="continuer_sans_connexion" href="search.html">
+                <a class="souligne centré" id="continuer_sans_connexion" href="register.html">
                     Vous n'avez pas encore de compte ? Créez en un...
                 </a>
             </div>
+            
         </form>
     </div>
 
