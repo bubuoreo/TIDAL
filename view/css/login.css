@@ -72,8 +72,8 @@ footer {
 
 .logo {
     cursor: pointer;
-    max-width: 10%;
-    max-height: 10%;
+    width: 10%;
+    height: 10%;
 }
 
 /*Description du body*/
@@ -110,12 +110,13 @@ body {
     background-color: rgba(0,136,169,0.8);
 }
 
-#connexion {
+#connexion, #création_compte {
     color: rgb(0, 0, 0);
 }
 
-#continuer_sans_connexion {
-    color: rgb(0, 0, 0);
+#création_compte {
+    align-items: center;
+    margin-left: 23%;
 }
 
 
@@ -185,15 +186,15 @@ body {
 .souligne:hover::before {
     transform: scaleX(1);
 }
-.continuer {
+.continuer{
     color: rgb(0, 0, 0);
 }
 
 .general{
     background-color: rgb(129, 162, 167);
-    padding: 5% 8% 5% 5%;
+    padding: 5%;
     border: 3px solid black;
-    margin: 10% 30% 40% 30%;
+    margin: 8% 30% 0% 30%;
 }
 
 .button_block{
@@ -201,4 +202,20 @@ body {
     padding-top: 5%;
     padding-bottom: 5%;
     align-self: center;
+}
+
+.user_block, .password_block{
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    padding: 0% 9%;
+}
+.login_text{
+    width: 73%;
+}
+.password_text{
+    width: 66%;
+}
+.submit{
+    font-size: 120%;
 }

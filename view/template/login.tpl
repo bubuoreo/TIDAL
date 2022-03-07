@@ -24,11 +24,11 @@
 
             <div class="password_block">
                 <label for="input_password">Mot de passe:</label>
-                <input type="text" class="login_text" id="input_password" name="input_password">
+                <input type="text" class="password_text" id="input_password" name="input_password">
             </div>
 
             <div class="create_block">
-                <a href="/create">Creer ton compte</a>
+                <a href="/create">Créer votre compte</a>
             </div>
 
             <div class="button_block">
