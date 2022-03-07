@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="../../view/html/index.html"><img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS"></a>
+        <a href="/Index@Display"><img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS"></a>
         <nav>
             <ul class="nav_links">
                 <li><a href="../../view/html/sources.html">Sources</a></li>
