@@ -5,6 +5,7 @@
 require_once("controller/Route/router.php");
 require_once("controller/login.php");
 require_once("controller/pathos.php");
+require_once("controller/page.php");
 
 $router = new Router($_GET["url"]);
 

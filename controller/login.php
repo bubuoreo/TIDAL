@@ -4,11 +4,7 @@ include_once "./controller/controller.php";
 
 class Login extends Controller
 {
-    function displayHome()
-    {
-        echo "salut je suis la homepage";
-        $this->renderTpl("../view/template/login.tpl");
-    }
+   
     /**
      * First time on the login page
      */
@@ -102,10 +98,6 @@ class Login extends Controller
 
     }
 
-    function testSmarty()
-    {
-        
-    }
 
 
 }

@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../view/css/index.css">
     <title>index</title>
 </head>
 <body>
     <header>
-        <a href="/Index@Display"><img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS"></a>
+        <a href="/"><img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS"></a>
         <nav>
             <ul class="nav_links">
                 <li><a href="../../view/html/sources.html">Sources</a></li>
