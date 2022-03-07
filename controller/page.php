@@ -1,6 +1,6 @@
 <?php
 
-
+include_once "./controller/controller.php";
 
 
 /**
@@ -9,4 +9,7 @@
  */
 class Page extends Controller
 {
+    function displaySources{
+        $this->renderTpl("../view/template/sources.tpl");
+    }
 }

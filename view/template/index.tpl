@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <link rel="stylesheet" href="../view/css/index.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,13 @@
 </head>
 <body>
     <header>
-        <a href="/Index@Display"><img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS"></a>
+        <a href="/"><img class="logo" src="../view/images/logo.png" alt="Le logo du BEMS"></a>
         <nav>
             <ul class="nav_links">
-                <li><a href="../../view/html/sources.html">Sources</a></li>
+                <li><a href="/source">Sources</a></li>
             </ul>
         </nav>
-        <a class="cta btn"  href="../../view/html/login.html"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
+        <a class="cta btn"  href="/login"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
     </header>
     <div class="contenant">
         <img class="photo_accueil" src="../../view/images/acu_secu.jpg" alt="Image de fond du site de BEMS montrant une scéance d'acupuncture sur le dos" height="80%" width="100%">
@@ -70,12 +71,12 @@
     <div>
         <center>
             <p class="centré">Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Web.<br></p>
-            <a href="login.html">
+            <a href="/">
                 <button name="Connexion" id="connexion">Se connecter</button>
             </a>
             <br>
             <br>
-            <a class="souligne" id="continuer_sans_connexion" href="search.html">
+            <a class="souligne" id="continuer_sans_connexion" href="/search">
                     Cliquez ici pour continuer sans vous connecter.
             </a>
             <br>
@@ -83,14 +84,14 @@
         </center>
     </div>
     <footer>
-            <a href="../../view/html/index.html"><img class="logo" src="../../view/images/logo.png" alt="BEMS"></a>
+            <a href="/"><img class="logo" src="../../view/images/logo.png" alt="BEMS"></a>
             <nav>
                 <ul class="nav_links">
-                    <li><a href="../../view/html/sources.html">Sources</a></li>
-                    <li><a href="../../view/html/policy.html">Privacy policy</a></li>
+                    <li><a href="/source">Sources</a></li>
+                    <li><a href="/policy">Privacy policy</a></li>
                 </ul>
             </nav>
-            <a class="cta btn"  href="../../view/html/login.html"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
+            <a class="cta btn"  href="/login"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
     </footer>
 </body>
 </html>
