@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="../view/css/search.css">
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../view/css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css"/>
+    <link rel="stylesheet" href="../view/css/search.css">
+    <script src="../view/js/search.js"></script>
     <!-- <script src="../js/jquery.min.js"></script>
     <script src="/ui/js/bootstrap.min.js"></script> -->
     {* <script src="https://kit.fontawesome.com/197d1cb87f.js"></script> *}
@@ -14,18 +16,18 @@
     <title>BEMS - Association d'acupuncteurs</title>
 </head>
 
-<script src="../view/js/search.js"></script>
+
 
 <body>
     <header>
-        <a href="../view/html/index.html"><img class="logo" src="../view/images/logo.png" alt="BEMS"></a>
+        <a href="/"><img class="logo" src="../view/images/logo.png" alt="BEMS"></a>
         <nav>
             <ul class="nav_links">
-                <li><a href="../view/html/sources.html">Sources</a></li>
+                <li><a href="/sources">Sources</a></li>
                 <!-- <li><a href="./login.html">Connexion</a></li> -->
             </ul>
         </nav>
-        <a class="cta btn" href="../view/html/login.html"><img src="../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
+        <a class="cta btn" href="/login"><img src="../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
     </header>
     
     
@@ -107,14 +109,14 @@
   {/if}
   
     <footer>
-        <a href="../view/html/index.html"><img class="logo" src="../view/images/logo.png" alt="BEMS"></a>
+        <a href="/"><img class="logo" src="../view/images/logo.png" alt="BEMS"></a>
         <nav>
             <ul class="nav_links">
-                <li><a href="../view/html/sources.html">Sources</a></li>
-                <li><a href="../view/html/policy.html">Privacy policy</a></li>
+                <li><a href="/sources">Sources</a></li>
+                <li><a href="/policy">Privacy policy</a></li>
             </ul>
         </nav>
-        <a class="cta btn" href="../view/html/login.html"><img src="../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
+        <a class="cta btn" href="/"><img src="../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
     </footer>
 </body>
 
