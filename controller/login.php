@@ -44,7 +44,6 @@ class Login
         $client = new clientModel();
         $data = $client->getUser($_POST["input_user"]);
         $flag = True;
-        var_dump($data[0]["password"]);
 
         $smarty = new \Smarty(); // Creating smarty object
 
@@ -52,7 +51,8 @@ class Login
         if ((sizeof($data) != 0)) {// TODO: remplace when data is added to the db
             $db_pswd = $data[0]["password"]; 
             // TODO : For now the problem ofthe routes are not specifically addressed...
-            if($db_pswd == $_POST["input_password"]){
+            if(password_verify($_POST["input_password"],$db_pswd)){
+                $flag=False;
                 $router = new Router("/");
                 $router->newRouteGet("/", "Controller\Login@display");
                 $router->run();
@@ -60,7 +60,7 @@ class Login
         }
        
         if($flag){
-            $smarty->assign('already_exists','True'); // No error messages will be displayed
+            $smarty->assign('incorrect_login','True'); // No error messages will be displayed
             $smarty->display("view/template/login.tpl"); // displaying the tpl page
         }
     }
@@ -80,12 +80,12 @@ class Login
         // Verify if it is the good pswd
         if ((sizeof($data) == 0)) {
             $client->setUser($_POST["input_user"],password_hash($_POST["input_password"],PASSWORD_DEFAULT),$_POST["input_email"]);
-            $router = new Router($_GET["url"]);
+            $router = new Router("/");
             $router->newRouteGet("/", "Controller\Login@display");
             $router->run();
         }
         else{
-            $smarty->assign('incorrect_login','True'); // No error messages will be displayed
+            $smarty->assign('already_exists','True'); // No error messages will be displayed
             $smarty->display("view/template/new_account.tpl"); // displaying the tpl page
         }
     }

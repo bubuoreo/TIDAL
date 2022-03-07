@@ -21,18 +21,17 @@ $router = new Router($_GET["url"]);
 $router->newRouteGet("/", "Controller\Login@displayhome");
 $router->newRouteGet("/login", "Controller\Login@display");
 $router->newRouteGet("/policy", "Controller\Login@policy");
+$router->newRouteGet("/create", "Controller\Login@displayNewAcc");
 
 
 $router->newRouteGet("/sympthome/:key", "Controller\Pathos@searchByKeyword");
-
-
-
 $router->newRouteGet("/meridien/:code", "Controller\Pathos@getMeridienByCode");
 
  /**
   * POST
   */
 $router->newRoutePost("/login", "Controller\Login@connexion");
+$router->newRoutePost("/create", "Controller\Login@connexionNewAcc");
 
 
 
