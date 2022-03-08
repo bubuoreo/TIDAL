@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel='stylesheet' href="../css/sources.css">
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel='stylesheet' href="../view/css/sources.css">
+    <title>Sources du BEMS</title>
 </head>
 
 <body>
 
     <header>
-        <a href="../html/index.html"><img class="logo" src="../images/logo.png" alt="BEMS"></a>
+        <a href="/"><img class="logo" src="../view/images/logo.png" alt="BEMS"></a>
         <nav>
             <ul class="nav_links">
-                <li><a href="../html/sources.html">Sources</a></li>
+                <li><a href="/sources">Sources</a></li>
             </ul>
         </nav>
-        <a class="cta btn"  href="../html/connexion.html"><img src="../images/connexion.png" alt="connexion" width="30" height="30"></a>
+        <a class="cta btn"  href="/login"><img src="../view/images/connexion.png" alt="connexion" width="30" height="30"></a>
     </header>
 
     <div>
@@ -42,5 +43,16 @@
             Nous pourrons aussi continuer 
         </pre>
     </div>
+
+    <footer>
+        <a href="/"><img class="logo" src="../view/images/logo.png" alt="BEMS"></a>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="/sources">Sources</a></li>
+                <li><a href="/policy">Privacy policy</a></li>
+            </ul>
+        </nav>
+        <a class="cta btn" href="/"><img src="../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
+    </footer>
 </body>
 </html>

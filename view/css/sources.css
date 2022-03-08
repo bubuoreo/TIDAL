@@ -38,25 +38,27 @@ header{
     position: relative;
     text-align: center;
     color: black;
-  }
+}
   
-  .texte_centrer {
+.texte_centrer {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+}
 
-  footer{
+footer{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 100%;
     background-color: black;
     position: relative;
     bottom: 0;
-    /* top: 0; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 10%;
-    height: 4cm;
+    height: 15%;
 }
 
 body{
