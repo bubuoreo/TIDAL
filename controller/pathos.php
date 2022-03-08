@@ -79,4 +79,44 @@ class Pathos extends Controller
 
     }
 
+    function search()
+    {
+        $this->checkIfSetPathoModel();
+        $datas = $this->pahtoModel->getTable("meridien");
+        
+        $meridien = [];
+        foreach ($datas as $data)
+        {
+            $meridien[$data['nom']] = $this->pathoModel->getTableByMeriden($data['nom']) ;
+        }
+        echo "<pre>";
+        var_dump($meridien);
+        echo "</pre>";
+
+    }
+
+    
+    function searchByPathoType($pathoType)
+    {
+        $this->checkIfSetPathoModel();
+        $datas = $this->pathoModel->getTableByPathoType($pathoType);
+        echo "<pre>";
+        var_dump($datas);
+        echo "</pre>";
+    }
 }
+
+// [
+//     ["meridien1"] => [
+//                 pathos1 => [sympthomes]
+//                 pathos2 => [sympthomes]
+//                 pathos3 => [sympthomes]
+//                 ]
+//     ["meridien2"] => [
+//                 pathos1 => [sympthomes]
+//                 pathos2 => [sympthomes]
+//                 pathos3 => [sympthomes]
+//                 ]
+
+// ]
+

@@ -19,6 +19,6 @@ class Page extends Controller
 
     function displaySources()
     {
-        $this->renderTpl("../view/template/sources.tpl");
+        $this->renderTpl("view/template/sources.tpl");
     }
 }

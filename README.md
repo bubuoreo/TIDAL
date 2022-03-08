@@ -19,7 +19,7 @@ INSERT INTO public.userTable(number,"user","password") VALUES
 1. Creer un dossier templates_c dans le dossier html
 2. Lui attribuer la permission à www-data
 ```
-sudo chown -R www-data templates_c
+sudo chown -R    templates_c
 ```
 3. Mettre la permission:
 ```

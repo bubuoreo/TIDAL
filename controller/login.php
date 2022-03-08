@@ -24,7 +24,7 @@ class Login extends Controller
         require_once("smarty/libs/Smarty.class.php"); //importing smarty library
         $smarty = new \Smarty(); // Creating smarty object
         $smarty->assign('already_exists','False'); // No error messages will be displayed
-        $smarty->display("../view/template/new_account.tpl"); // displaying the tpl page
+        $smarty->display("view/template/new_account.tpl"); // displaying the tpl page
     }
 
     /**

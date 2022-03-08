@@ -46,8 +46,17 @@
                 <th><input type="text" placeholder="Caractéristiques possibles" disabled></th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
+            <tbody><tr>
+            {if $elementFind}
+                {foreach from=$data item=val key=it}
+                <tr>
+                <td>{$val} </td> <td> {$it} </td>
+                </tr>
+            {/foreach}
+            {else}
+                <p>Erreur le mot rechercher ne correspond a aucun mot de notre base</p>
+            {/if}
+              
                 <td>Contenu interne 1</td>
                 <td>Contenu interne 2</td>
               </tr>
@@ -98,13 +107,7 @@
           </div>
       </div>
   </div>
-  {if $elementFind}
-    {foreach from=$data item=val key=it}
-      {$val} = {$it} <br>
-    {/foreach}
-  {else}
-    <p>Erreur le mot rechercher ne correspond a aucun mot de notre base</p>
-  {/if}
+ 
   
     <footer>
         <a href="../view/html/index.html"><img class="logo" src="../view/images/logo.png" alt="BEMS"></a>

@@ -19,16 +19,18 @@ $router = new Router($_GET["url"]);
   * GET
   */
 
-$router->newRouteGet("/", "Page@displayhome");
-$router->newRouteGet("/login", "Login@display");
+$router->newRouteGet("/", "Page@displayHome");
 $router->newRouteGet("/policy", "Page@displayPolicy");
+$router->newRouteGet("/sources", "Page@displaySources");
+
 $router->newRouteGet("/create", "Login@displayNewAcc");
-$router->newRouteGet("/source", "Page@displaySources");
+$router->newRouteGet("/login", "Login@display");
 
 
-
+$router->newRouteGet("/search", "Pathos@search");
 $router->newRouteGet("/sympthome/:key", "Pathos@searchByKeyword");
 $router->newRouteGet("/meridien/:code", "Pathos@getMeridienByCode");
+$router->newRouteGet("/pathos/:pathoType", "Pathos@searchByPathoType");
 
  /**
   * POST
