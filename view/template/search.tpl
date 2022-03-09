@@ -110,7 +110,37 @@
       </div>
   </div>
  
-  
+  <div>
+                    <H2>Pathologies de méridien </H2>
+                    <h3>méridien du poumon interne</h3>
+                    <ul>
+                        <li class="sympt">Sympt1</li>
+                        <li class="sympt">Sympt2</li>
+                        <li class="sympt">Sympt3</li>
+                        <li class="sympt">Sympt4</li>
+                        <!-- Liste déroulante si l'utilisateur veut -->
+                        <li class="sympt"><a href="">Voir plus ...</a></li>
+                    </ul>
+                    <h3>méridien du poumon externe</h3>
+                    <ul>
+                        <li class="sympt">Sympt1</li>
+                        <li class="sympt">Sympt2</li>
+                        <li class="sympt">Sympt3</li>
+                        <li class="sympt">Sympt4</li>
+                        <!-- Liste déroulante si l'utilisateur veut -->
+                        <li class="sympt"><a href="">Voir plus ...</a></li>
+                    </ul>
+                    <h3>méridien du gros intestin</h3>
+                    <ul>
+                        <li class="sympt">Sympt1</li>
+                        <li class="sympt">Sympt2</li>
+                        <li class="sympt">Sympt3</li>
+                        <li class="sympt">Sympt4</li>
+                        <!-- Liste déroulante si l'utilisateur veut -->
+                        <li class="sympt"><a href="">Voir plus ...</a></li>
+                    </ul>
+
+                </div>
     <footer>
         <a href="/"><img class="logo" src="../view/images/logo.png" alt="BEMS"></a>
         <nav>

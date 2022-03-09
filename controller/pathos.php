@@ -79,25 +79,45 @@ class Pathos extends Controller
 
     }
 
-    function search()
+    function searchAll()
     {
+    
         $this->checkIfSetPathoModel();
-        $datas = $this->pahtoModel->getTable("meridien");
+        $datas = $this->pathoModel->getPathosAll();
+        echo "<pre>";
+        var_dump($datas);
+        echo "</pre>";
+
+        $categoriePathos = [
+            "Pathologies de méridien" => "m%",
+            "Pathologies d’organe/viscère (tsang/fu)" => "tf",
+            "Pathologies des tendino-musculaires ( jing jin)" => "j",
+            "Pathologie des branches (voies luo)" => "l",
+            "Pathologies des merveilleux vaisseaux" => "mv"
+        ];
+
+        $fusion = []
         
-        $meridien = [];
         foreach ($datas as $data)
         {
-            $meridien[$data['nom']] = $this->pathoModel->getTableByMeriden($data['nom']) ;
+            foreach($categoriePathos as $patho)
+            {
+                if 
+            }
         }
-        echo "<pre>";
-        var_dump($meridien);
-        echo "</pre>";
 
     }
 
     
     function searchByPathoType($pathoType)
     {
+        $correspondance = [
+            "Pathologies de méridien" => "m%",
+            "Pathologies d’organe/viscère (tsang/fu)" => "tf",
+            "Pathologies des tendino-musculaires ( jing jin)" => "j",
+            "Pathologie des branches (voies luo)" => "l",
+            "Pathologies des merveilleux vaisseaux" => "mv"
+        ];
         $this->checkIfSetPathoModel();
         $datas = $this->pathoModel->getTableByPathoType($pathoType);
         echo "<pre>";
@@ -120,3 +140,16 @@ class Pathos extends Controller
 
 // ]
 
+[
+    "pathologie de meridien" => [
+                    "meridien du poumon interne" => [ "symptome1", "sympthom2", ...],
+                    "meridien du poumon externe" => [ "symptome1", "sympthom2", ...]
+                    ....
+                                ]
+    
+    "Pathologies d’organe/viscère (tsang/fu)" => [
+        "meridien du poumon interne" => [ "symptome1", "sympthom2", ...],
+        "meridien du poumon externe" => [ "symptome1", "sympthom2", ...]
+        ....
+                    ]
+]

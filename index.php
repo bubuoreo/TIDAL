@@ -27,7 +27,7 @@ $router->newRouteGet("/create", "Login@displayNewAcc");
 $router->newRouteGet("/login", "Login@display");
 
 
-$router->newRouteGet("/search", "Pathos@search");
+$router->newRouteGet("/search", "Pathos@searchAll");
 $router->newRouteGet("/sympthome/:key", "Pathos@searchByKeyword");
 $router->newRouteGet("/meridien/:code", "Pathos@getMeridienByCode");
 $router->newRouteGet("/pathos/:pathoType", "Pathos@searchByPathoType");

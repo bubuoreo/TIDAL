@@ -87,4 +87,20 @@ class PathosModel extends Model
 
         return $this->sqlRequest($sql, [":pathotype" => $type]);
     }
+
+    function getPathosAll()
+    {
+        $sql = "SELECT patho.mer, patho.type, patho.desc, symptome.desc AS descriptionSympt, meridien.nom
+        FROM patho
+        JOIN symptpatho 
+            ON patho.idp = symptpatho.idp
+        JOIN symptome
+            ON symptpatho.ids = symptome.ids
+        JOIN meridien 
+            ON meridien.code = patho.mer
+        ORDER BY patho.type";
+
+
+    return $this->sqlRequest($sql);
+    }
 }
