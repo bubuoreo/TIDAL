@@ -7,13 +7,46 @@
     font-family: "Montserrat", sans-serif;
 }
 
-li, a,button {
+li, a {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 15px;
     padding: 2px 16px;
     color: rgb(255, 255, 255);
     text-decoration: none;
+}
+
+/* CSS du bouton de validation de la requête */
+button{
+    padding: 0.3%;
+    border-radius: 0.3em;
+}
+
+.recherche{
+    margin: 2%;
+}
+
+.black-space{
+    background-color: rgb(0, 0, 0);
+    height: 2em;
+}
+
+.white-space{
+    height: 2em;
+}
+
+.white-space p{
+    background-color: rgb(209, 208, 208);
+    color: rgb(209, 208, 208);
+
+}
+
+
+select{
+    width: 30%;
+    margin-top: 1%;
+    margin-left: 2.5%;
+    margin-bottom: 2%;
 }
 
 /* pour la satisfaction du critère d'accessibilité AAA du site web */
@@ -23,18 +56,42 @@ p {
     margin: 1.5em 0;
 }
 
-div .sympt{
-    color: #000000;
-}
-
 header{
     background-color: black;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 10%;
+    height: 2cm;
+}
+
+.contenant {
+    position: relative;
+    text-align: center;
+    color: black;
+}
+  
+.texte_centrer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+footer{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10%;
+    height: 15%;
 }
 
 body{
@@ -45,47 +102,6 @@ nav{
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
-}
-
- .styled-table {
-    border-collapse: collapse;
-    margin: 0 auto;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    table-layout: fixed ;
-    width: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.styled-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-}
-
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
-
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-}
-
-.styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #009879;
 }
 
 .logo{
@@ -181,16 +197,4 @@ nav{
     display: flex;
     justify-content: center;
     
-}
-
-footer{
-    background-color: black;
-    position: relative;
-    bottom: 0;
-    /* top: 0; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 10%;
-    height: 4cm;
 }
