@@ -79,32 +79,68 @@ class Pathos extends Controller
 
     }
 
+    function filtreCoeur($value, $comparator)
+    {
+        return $value["mer"] == $comparator;  
+    }
+
     function searchAll()
     {
     
         $this->checkIfSetPathoModel();
-        $datas = $this->pathoModel->getPathosAll();
-        echo "<pre>";
-        var_dump($datas);
-        echo "</pre>";
-
-        $categoriePathos = [
-            "Pathologies de méridien" => "m%",
-            "Pathologies d’organe/viscère (tsang/fu)" => "tf",
-            "Pathologies des tendino-musculaires ( jing jin)" => "j",
-            "Pathologie des branches (voies luo)" => "l",
-            "Pathologies des merveilleux vaisseaux" => "mv"
-        ];
-
-        $fusion = []
+        $meridiens = $this->pathoModel->getTable("meridien"); // recuperation de la table des meridiens sera utile pour trier par meridien
         
-        foreach ($datas as $data)
+        
+        $categoriePathos = [
+            "Pathologies de meridien" => ["m%", "mv%"],
+            "Pathologies d’organe/viscère (tsang/fu)" => ["tf%"],
+            "Pathologies des tendino-musculaires ( jing jin)" => ["j%"],
+            "Pathologie des branches (voies luo)" => ["l%"],
+            "Pathologies des merveilleux vaisseaux" => ["mv%"]
+        ];
+        $correspondance = [
+            "Pathologies de meridien" => "meridien",
+            "Pathologies d’organe/viscère (tsang/fu)" => "tsangFu",
+            "Pathologies des tendino-musculaires ( jing jin)" => "jingJin",
+            "Pathologie des branches (voies luo)" => "voieLuo",
+            "Pathologies des merveilleux vaisseaux" => "merveilleuxVessaux"
+        ];
+        $datas=[];
+        foreach($categoriePathos as $categorie => $reg)
+        // iteration sur Categorie patho afin de recuper le nom de la catégorie ainsi que le type associer
         {
-            foreach($categoriePathos as $patho)
+            $datas[$correspondance[$categorie]] = $this->pathoModel->getPathosAll($reg) ; // requet sql pour recupérer les valeurs
+            $categorieMeridiens = [];
+                       
+            // echo "<pre>";
+            // var_dump('Je suis la'. $categorie);
+            // echo "</pre>";
+            // die;
+            foreach($meridiens as $meridien)
+            // iteration sur les meridien pour extrere la liste des des sympthomes pas meridiens
             {
-                if 
+                $comparator = $meridien["code"];
+                $categorieMeridiens[$meridien["nom"]] = array_filter($datas[$correspondance[$categorie]], function($value) use($comparator){return $value["mer"] == $comparator;});
             }
+            $datas[$correspondance[$categorie]] = array_filter($categorieMeridiens);
+            // echo "<pre>";
+            // var_dump($datas[$correspondance[$categorie]]);
+            // echo "</pre>";
+            // die;
+
+         
+    
         }
+        
+
+        
+        
+
+        // echo "<pre>";
+        // var_dump($_SERVER['DOCUMENT_ROOT']);
+        // echo "</pre>";
+        // die;
+        $this->renderTpl("view/template/search.tpl", ["datas" => $datas, "Categorie" => $categoriePathos]);
 
     }
 
@@ -140,16 +176,16 @@ class Pathos extends Controller
 
 // ]
 
-[
-    "pathologie de meridien" => [
-                    "meridien du poumon interne" => [ "symptome1", "sympthom2", ...],
-                    "meridien du poumon externe" => [ "symptome1", "sympthom2", ...]
-                    ....
-                                ]
+// [
+//     "pathologie de meridien" => [
+//                     "meridien du poumon interne" => [ "symptome1", "sympthom2", ...],
+//                     "meridien du poumon externe" => [ "symptome1", "sympthom2", ...]
+//                     ....
+//                                 ]
     
-    "Pathologies d’organe/viscère (tsang/fu)" => [
-        "meridien du poumon interne" => [ "symptome1", "sympthom2", ...],
-        "meridien du poumon externe" => [ "symptome1", "sympthom2", ...]
-        ....
-                    ]
-]
+//     "Pathologies d’organe/viscère (tsang/fu)" => [
+//         "meridien du poumon interne" => [ "symptome1", "sympthom2", ...],
+//         "meridien du poumon externe" => [ "symptome1", "sympthom2", ...]
+//         ....
+//                     ]
+// ]

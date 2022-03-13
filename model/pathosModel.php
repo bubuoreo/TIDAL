@@ -88,19 +88,44 @@ class PathosModel extends Model
         return $this->sqlRequest($sql, [":pathotype" => $type]);
     }
 
-    function getPathosAll()
+    /**
+     * @param pathoType array ["l"] soit ["m%", "mv"]
+     */
+    function getPathosAll($pathoType)
     {
-        $sql = "SELECT patho.mer, patho.type, patho.desc, symptome.desc AS descriptionSympt, meridien.nom
-        FROM patho
-        JOIN symptpatho 
-            ON patho.idp = symptpatho.idp
-        JOIN symptome
-            ON symptpatho.ids = symptome.ids
-        JOIN meridien 
-            ON meridien.code = patho.mer
-        ORDER BY patho.type";
+        
+        if ($pathoType[0] != "m%")
+        {
+            $sql = "SELECT patho.mer, patho.type, patho.desc, symptome.desc AS descriptionSympt, meridien.nom
+            FROM patho
+            JOIN symptpatho 
+                ON patho.idp = symptpatho.idp
+            JOIN symptome
+                ON symptpatho.ids = symptome.ids
+            JOIN meridien 
+                ON meridien.code = patho.mer
+                WHERE patho.type LIKE :typePatho
+            ORDER BY patho.mer";
 
+            $data = $this->sqlRequest($sql,[":typePatho" => $pathoType[0]]);
+        }
+        else
+        {
+            $sql = "SELECT patho.mer, patho.type, patho.desc, symptome.desc AS descriptionSympt, meridien.nom
+                FROM patho
+                JOIN symptpatho 
+                    ON patho.idp = symptpatho.idp
+                JOIN symptome
+                    ON symptpatho.ids = symptome.ids
+                JOIN meridien 
+                    ON meridien.code = patho.mer
+                WHERE patho.type LIKE :typePatho AND patho.type NOT LIKE :nonTypePatho
+                ORDER BY patho.mer";
 
-    return $this->sqlRequest($sql);
+                $data = $this->sqlRequest($sql , [":typePatho" => $pathoType[0], ":nonTypePatho" => $pathoType[1]]);
+        }
+
+        return $data;
     }
+
 }
