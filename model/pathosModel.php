@@ -1,6 +1,6 @@
 <?php
 
-namespace Model;
+
 require("./model/model.php");
 
 class PathosModel extends Model
@@ -50,4 +50,82 @@ class PathosModel extends Model
         return $this->sqlRequest($sql, [":keyword" => $keyword]);
 
     }
+
+    function getTableByMeriden($meridien)
+    {
+        $sql = "SELECT  symptome.desc, patho.desc, patho.type,patho.mer
+        FROM meridien
+        JOIN patho
+            ON patho.mer = meridien.code
+        JOIN symptpatho
+            ON symptpatho.idp = patho.idp
+        JOIN symptome
+            ON symptome.ids = symptpatho.ids
+		WHERE meridien.nom = :meridien";
+
+
+        return $this->sqlRequest($sql, [":meridien" => $meridien]);
+    }
+
+    function getTableByPathoType($type)
+    {
+        $sql = " SELECT 
+                patho.type AS \"Categorie Patho\" ,
+                meridien.nom AS \"meridien associer\",
+                patho.desc AS \"desc type\", 
+                symptome.desc AS \"desc sympt\"
+            FROM patho
+            JOIN meridien
+                ON patho.mer = meridien.code
+            JOIN symptpatho
+                ON patho.idp = symptpatho.idp
+            JOIN symptome
+                ON symptpatho.ids = symptome.ids
+            WHERE patho.type = :pathotype
+            ORDER BY meridien.nom";
+
+
+        return $this->sqlRequest($sql, [":pathotype" => $type]);
+    }
+
+    /**
+     * @param pathoType array ["l"] soit ["m%", "mv"]
+     */
+    function getPathosAll($pathoType)
+    {
+        
+        if ($pathoType[0] != "m%")
+        {
+            $sql = "SELECT patho.mer, patho.type, patho.desc, symptome.desc AS descriptionSympt, meridien.nom
+            FROM patho
+            JOIN symptpatho 
+                ON patho.idp = symptpatho.idp
+            JOIN symptome
+                ON symptpatho.ids = symptome.ids
+            JOIN meridien 
+                ON meridien.code = patho.mer
+                WHERE patho.type LIKE :typePatho
+            ORDER BY patho.mer";
+
+            $data = $this->sqlRequest($sql,[":typePatho" => $pathoType[0]]);
+        }
+        else
+        {
+            $sql = "SELECT patho.mer, patho.type, patho.desc, symptome.desc AS descriptionSympt, meridien.nom
+                FROM patho
+                JOIN symptpatho 
+                    ON patho.idp = symptpatho.idp
+                JOIN symptome
+                    ON symptpatho.ids = symptome.ids
+                JOIN meridien 
+                    ON meridien.code = patho.mer
+                WHERE patho.type LIKE :typePatho AND patho.type NOT LIKE :nonTypePatho
+                ORDER BY patho.mer";
+
+                $data = $this->sqlRequest($sql , [":typePatho" => $pathoType[0], ":nonTypePatho" => $pathoType[1]]);
+        }
+
+        return $data;
+    }
+
 }

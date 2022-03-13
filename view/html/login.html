@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="../css/login.css">
     <meta charset="UTF-8">
@@ -8,20 +9,26 @@
     <!-- <meta http-equiv="refresh" content="2;url=login.html"> -->
     <title>Login page</title>
 </head>
+
 <body>
     <header>
-        <a href="../../view/html/index.html"><img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS"></a>
+        <a href="../../view/html/index.html">
+            <img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS">
+        </a>
+
         <nav>
             <ul class="nav_links">
                 <li><a href="../../view/html/sources.html">Sources</a></li>
             </ul>
         </nav>
-        <a class="cta btn"  href="../../view/html/login.html"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
+
+        <a class="cta btn" href="../../view/html/login.html">
+            <img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30">
+        </a>
     </header>
 
     <div class="general">
         <form class="form login" id="login_form" method="POST" action="../../controller/login.php" autocomplete="off">
-            <checkif></checkif>
 
             <div class="user_block">
                 <label for="input_user">Utilisateur:</label>
@@ -30,29 +37,36 @@
 
             <div class="password_block">
                 <label for="input_password">Mot de passe:</label>
-                <input type="text" class="login_text" id="input_password" name="input_password">
+                <input type="text" class="password_text" id="input_password" name="input_password">
             </div>
 
             <div class="button_block">
                 <input type="submit" class="submit">
             </div>
+
             <div>
-                <a class="souligne" id="continuer_sans_connexion" href="search.html">
-                    Vous n'avez pas encore de compte ? Créez en un...
+                <a class="souligne centré" id="création_compte" href="register.html">
+                    Créer votre compte
                 </a>
             </div>
+
         </form>
     </div>
 
     <footer>
-        <a href="../../view/html/index.html"><img class="logo" src="../../view/images/logo.png" alt="BEMS"></a>
+        <a href="../../view/html/index.html">
+            <img class="logo" src="../../view/images/logo.png" alt="BEMS">
+        </a>
         <nav>
             <ul class="nav_links">
                 <li><a href="../../view/html/sources.html">Sources</a></li>
                 <li><a href="../../view/html/policy.html">Privacy policy</a></li>
             </ul>
         </nav>
-        <a class="cta btn"  href="../../view/html/login.html"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
-</footer>
+        <a class="cta btn" href="../../view/html/login.html">
+            <img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30">
+        </a>
+    </footer>
 </body>
+
 </html>

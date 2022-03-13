@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 
+/* Configuration des éléments de base pour les affichages des éléments communs*/
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,15 +17,24 @@ li, a,button {
     text-decoration: none;
 }
 
+nav{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
 /* pour la satisfaction du critère d'accessibilité AAA du site web */
-p {
+p,a {
     font-size: 120%;
     line-height: 1.5em;
     margin: 1.5em 0;
 }
 
+
+
+
 header{
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     top: 0;
     display: flex;
     justify-content: space-between;
@@ -33,12 +43,13 @@ header{
     height: 2cm;
 }
 
+
+/*Description CSS pour l'affichage de la photo avec le texte superposé*/
 .contenant {
     position: relative;
     text-align: center;
-    color: black;
-  }
-  
+    color: rgb(0, 0, 0);
+} 
 .texte_centrer {
     position: absolute;
     top: 50%;
@@ -46,34 +57,34 @@ header{
     transform: translate(-50%, -50%);
 }
 
-footer{
-    width: 100%;
-    background-color: black;
+/*Description du footer*/
+footer {
+    background-color: rgb(0, 0, 0);
     position: absolute;
+    width: 100%;
     bottom: 0;
-    /* top: 0; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 10%;
-    height: 4cm;
+    height: 15%;
 }
 
-body{
+.logo {
+    cursor: pointer;
+    width: 10%;
+    height: 10%;
+}
+
+/*Description du body*/
+body {
     background-color: rgb(209, 208, 208);
 }
 
-nav{
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end;
+.centré {
+    text-align: center;
 }
 
-.logo{
-    cursor: pointer;
-    max-width: 10%;
-    max-height: 10%;
-}
 .nav_links{
     list-style: none;
 }
@@ -99,12 +110,13 @@ nav{
     background-color: rgba(0,136,169,0.8);
 }
 
-#connexion {
+#connexion, #création_compte {
     color: rgb(0, 0, 0);
 }
 
-#continuer_sans_connexion {
-    color: rgb(0, 0, 0);
+#création_compte {
+    align-items: center;
+    margin-left: 23%;
 }
 
 
@@ -112,7 +124,7 @@ nav{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 15px;
-    color: black;
+    color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
 }
@@ -135,7 +147,7 @@ nav{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 30px;
-    color: black;
+    color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
 }
@@ -144,7 +156,7 @@ nav{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 60pt;
-    color: black;
+    color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     
@@ -155,7 +167,7 @@ nav{
 }
   
 .souligne:hover {
-    color: #000;
+    color: rgb(0, 0, 0);
 }
   
 .souligne::before {
@@ -166,7 +178,7 @@ nav{
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #000;
+    background-color: rgb(0, 0, 0);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -174,6 +186,36 @@ nav{
 .souligne:hover::before {
     transform: scaleX(1);
 }
-.continuer {
-    color: black;
+.continuer{
+    color: rgb(0, 0, 0);
+}
+
+.general{
+    background-color: rgb(129, 162, 167);
+    padding: 5%;
+    border: 3px solid black;
+    margin: 8% 30% 0% 30%;
+}
+
+.button_block{
+    padding-left: 35%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    align-self: center;
+}
+
+.user_block, .password_block{
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    padding: 0% 9%;
+}
+.login_text{
+    width: 73%;
+}
+.password_text{
+    width: 66%;
+}
+.submit{
+    font-size: 120%;
 }

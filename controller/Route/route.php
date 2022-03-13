@@ -1,6 +1,6 @@
 <?php
 
-namespace Controller\Route;
+
 
 /**
  * classe Route qui contient un objet de type route avec pour parametres:

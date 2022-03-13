@@ -1,9 +1,7 @@
 <?php
 
-namespace Controller;
 
-use EmptyIterator;
-use Smarty;
+
 
 require_once("smarty/libs/Smarty.class.php");
 

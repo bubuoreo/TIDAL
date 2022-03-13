@@ -1,6 +1,6 @@
 <?php
 
-namespace Controller;
+include_once "./controller/controller.php";
 
 
 /**
@@ -9,4 +9,16 @@ namespace Controller;
  */
 class Page extends Controller
 {
+    
+    function displayHome()
+    {
+        // echo "salut je suis la homepage";
+        $this->renderTpl("view/template/index.tpl");
+    }
+
+
+    function displaySources()
+    {
+        $this->renderTpl("view/template/sources.tpl");
+    }
 }

@@ -1,18 +1,10 @@
 <?php
 
-namespace Controller;
+include_once "./controller/controller.php";
 
-use Controller\Route\Router;
-use Model\ClientModel;
-
-class Login 
+class Login extends Controller
 {
-    function displayHome()
-    {
-        $smarty = new \Smarty(); // Creating smarty object
-        $smarty->display("view/template/index.tpl");
-    }
-    
+   
     /**
      * First time on the login page
      */
@@ -121,10 +113,6 @@ class Login
 
     }
 
-    function testSmarty()
-    {
-        
-    }
 
 
 }
