@@ -6,6 +6,14 @@ require_once("controller/Route/router.php");
 require_once("controller/login.php");
 require_once("controller/pathos.php");
 
+/**
+ * Creation d'une session utilisateur
+ */
+session_start();
+
+/**
+ * Création d'un routeur
+*/
 $router = new Router($_GET["url"]);
 
 
