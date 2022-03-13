@@ -79,24 +79,19 @@ class Pathos extends Controller
 
     }
 
-    function filtreCoeur($value, $comparator)
-    {
-        return $value["mer"] == $comparator;  
-    }
 
     function searchAll()
     {
-    
+        
         $this->checkIfSetPathoModel();
         $meridiens = $this->pathoModel->getTable("meridien"); // recuperation de la table des meridiens sera utile pour trier par meridien
         
-        
         $categoriePathos = [
-            "Pathologies de meridien" => ["m%", "mv%"],
-            "Pathologies d’organe/viscère (tsang/fu)" => ["tf%"],
-            "Pathologies des tendino-musculaires ( jing jin)" => ["j%"],
-            "Pathologie des branches (voies luo)" => ["l%"],
-            "Pathologies des merveilleux vaisseaux" => ["mv%"]
+            "Pathologies de meridien" => ["reg" =>["m%", "mv%"], "abrev" => "meridien"],
+            "Pathologies d’organe/viscère (tsang/fu)" => ["reg" =>["tf%"], "abrev" => "tsangFu"],
+            "Pathologies des tendino-musculaires ( jing jin)" => ["reg" =>["j%"], "abrev" => "jingJin"],
+            "Pathologie des branches (voies luo)" => ["reg" =>["l%"], "abrev" => "voieLuo"],
+            "Pathologies des merveilleux vaisseaux" => ["reg" =>["mv%"], "abrev" => "merveilleuxVessaux"]
         ];
         $correspondance = [
             "Pathologies de meridien" => "meridien",
@@ -106,10 +101,10 @@ class Pathos extends Controller
             "Pathologies des merveilleux vaisseaux" => "merveilleuxVessaux"
         ];
         $datas=[];
-        foreach($categoriePathos as $categorie => $reg)
+        foreach($categoriePathos as $categorie => $patho)
         // iteration sur Categorie patho afin de recuper le nom de la catégorie ainsi que le type associer
         {
-            $datas[$correspondance[$categorie]] = $this->pathoModel->getPathosAll($reg) ; // requet sql pour recupérer les valeurs
+            $datas[$categorie] = $this->pathoModel->getPathosAll($patho["reg"]) ; // requet sql pour recupérer les valeurs
             $categorieMeridiens = [];
                        
             // echo "<pre>";
@@ -120,11 +115,12 @@ class Pathos extends Controller
             // iteration sur les meridien pour extrere la liste des des sympthomes pas meridiens
             {
                 $comparator = $meridien["code"];
-                $categorieMeridiens[$meridien["nom"]] = array_filter($datas[$correspondance[$categorie]], function($value) use($comparator){return $value["mer"] == $comparator;});
+                $categorieMeridiens[$meridien["nom"]] = array_filter($datas[$categorie], function($value) use($comparator){return $value["mer"] == $comparator;});
+                
             }
-            $datas[$correspondance[$categorie]] = array_filter($categorieMeridiens);
+            $datas[$categorie] = array_filter($categorieMeridiens);
             // echo "<pre>";
-            // var_dump($datas[$correspondance[$categorie]]);
+            // var_dump($categorieMeridiens);
             // echo "</pre>";
             // die;
 
@@ -133,34 +129,31 @@ class Pathos extends Controller
         }
         
 
-        
-        
-
         // echo "<pre>";
-        // var_dump($_SERVER['DOCUMENT_ROOT']);
+        // var_dump($datas["Pathologies des merveilleux vaisseaux"]);
         // echo "</pre>";
         // die;
-        $this->renderTpl("view/template/search.tpl", ["datas" => $datas, "Categorie" => $categoriePathos]);
+        $this->renderTpl("view/template/search.tpl", ["listeMeridien" => $meridiens, "datas" => $datas, "Categorie" => $categoriePathos, ]);
 
     }
 
-    
-    function searchByPathoType($pathoType)
-    {
-        $correspondance = [
-            "Pathologies de méridien" => "m%",
-            "Pathologies d’organe/viscère (tsang/fu)" => "tf",
-            "Pathologies des tendino-musculaires ( jing jin)" => "j",
-            "Pathologie des branches (voies luo)" => "l",
-            "Pathologies des merveilleux vaisseaux" => "mv"
-        ];
-        $this->checkIfSetPathoModel();
-        $datas = $this->pathoModel->getTableByPathoType($pathoType);
-        echo "<pre>";
-        var_dump($datas);
-        echo "</pre>";
-    }
 }
+//     function searchByPathoType($pathoType)
+//     {
+//         $correspondance = [
+//             "Pathologies de méridien" => "m%",
+//             "Pathologies d’organe/viscère (tsang/fu)" => "tf",
+//             "Pathologies des tendino-musculaires ( jing jin)" => "j",
+//             "Pathologie des branches (voies luo)" => "l",
+//             "Pathologies des merveilleux vaisseaux" => "mv"
+//         ];
+//         $this->checkIfSetPathoModel();
+//         $datas = $this->pathoModel->getTableByPathoType($pathoType);
+//         echo "<pre>";
+//         var_dump($datas);
+//         echo "</pre>";
+//     }
+// }
 
 // [
 //     ["meridien1"] => [

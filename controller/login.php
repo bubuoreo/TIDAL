@@ -84,22 +84,7 @@ class Login extends Controller
         }
     }
 
-    function test(int $param)
-    {
-        echo "salut je suis un test avec param:". $param;
-    }
-
-    function policy()
-    {
-       
-        $router = new Router("/");
-        $router->newRouteGet("/", "Controller\Login@display");
-        $router->run();
-
-    }
-
-
-
+    
 }
     
 
