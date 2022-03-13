@@ -13,7 +13,7 @@
         <a href="/"><img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS"></a>
         <nav>
             <ul class="nav_links">
-                <li><a href="/source">Sources</a></li>
+                <li><a href="/sources">Sources</a></li>
             </ul>
         </nav>
         <a class="cta btn"  href="/login"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
@@ -60,7 +60,7 @@
             埃涅阿斯想要放下很多笑声。当它需要或变得成功时，我的儿子。它是免费的，但并非不合常规.
         </p>
     </section>
-    
+
     <div>
         <center>
             <p class="centré">Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Web.<br></p>
@@ -82,7 +82,7 @@
             <a href="/"><img class="logo" src="../../view/images/logo.png" alt="BEMS"></a>
             <nav>
                 <ul class="nav_links">
-                    <li><a href="/source">Sources</a></li>
+                    <li><a href="/sources">Sources</a></li>
                     <li><a href="/policy">Privacy policy</a></li>
                 </ul>
             </nav>
