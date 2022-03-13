@@ -140,7 +140,8 @@ class Pathos extends Controller
         // var_dump($_SERVER['DOCUMENT_ROOT']);
         // echo "</pre>";
         // die;
-        $this->renderTpl("view/template/search.tpl", ["datas" => $datas, "Categorie" => $categoriePathos]);
+
+        $this->renderTpl("view/template/search.tpl", ["datas" => $datas, "Categorie" => $categoriePathos, "logged_in" => $_SESSION["status"]]);
 
     }
 

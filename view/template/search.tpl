@@ -31,16 +31,18 @@
             <img src="../view/images/connexion.png" alt="Connexion" width="30" height="30">
         </a>
     </header>
-    
-    <div class="recherche">
-        <form class="form login" id="sb_form" method="POST" action="/sympthomes/" autocomplete="off">
-            <!-- Si l'utilisateur n'est pas connecté, un appuie sur le bouton 'Rchercher' redirige vers la page de connexion -->
-            <!-- Ou alors on fait disparaître ce champ pour les utilisateurs non connectés -->
-            <label for="sb_text">Recherche par mot clé : </label>
-            <input type="text" class="input_text" id="sb_text" name="sb_text">
-            <button type="submit" class="submit">Valider</button>
-        </form>
-    </div>
+
+    {if $logged_in neq 0}
+        <div class="recherche">
+            <form class="form login" id="sb_form" method="POST" action="/sympthomes/" autocomplete="off">
+                <!-- Si l'utilisateur n'est pas connecté, un appuie sur le bouton 'Rchercher' redirige vers la page de connexion -->
+                <!-- Ou alors on fait disparaître ce champ pour les utilisateurs non connectés -->
+                <label for="sb_text">Recherche par mot clé : </label>
+                <input type="text" class="input_text" id="sb_text" name="sb_text">
+                <button type="submit" class="submit">Valider</button>
+            </form>
+        </div>
+    {/if}
 
     <div class="black-space">
         <p>black-space</p>

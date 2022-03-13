@@ -10,6 +10,8 @@ require_once("controller/page.php");
  */
 session_start();
 
+$_SESSION["status"] = 0;
+
 /**
  * Création d'un routeur
 */
@@ -30,7 +32,7 @@ $router->newRouteGet("/policy", "Page@displayPolicy");
 $router->newRouteGet("/sources", "Page@displaySources");
 
 $router->newRouteGet("/create", "Login@displayNewAcc");
-$router->newRouteGet("/login", "Login@display");
+$router->newRouteGet("/login", "Login@displayLogin");
 
 
 $router->newRouteGet("/search", "Pathos@searchAll");
@@ -41,7 +43,7 @@ $router->newRouteGet("/pathos/:pathoType", "Pathos@searchByPathoType");
  /**
   * POST
   */
-$router->newRoutePost("/login", "Login@connexion");
+$router->newRoutePost("/login", "Login@connexionLogin");
 $router->newRoutePost("/create", "Login@connexionNewAcc");
 
 

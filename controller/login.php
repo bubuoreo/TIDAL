@@ -26,21 +26,6 @@ class Login extends Controller
         $smarty->assign('already_exists',false); // No error messages will be displayed
         $smarty->display("view/template/new_account.tpl"); // displaying the tpl page
     }
-    /**
-     * First time on the searchbar
-     */
-    function displaySearch()
-    {
-        require_once("smarty/libs/Smarty.class.php"); //importing smarty library
-        $smarty = new \Smarty(); // Creating smarty object
-        $smarty->display("view/template/search.tpl");
-    }
-    function displaySource()
-    {
-        require_once("smarty/libs/Smarty.class.php"); //importing smarty library
-        $smarty = new \Smarty(); // Creating smarty object
-        $smarty->display("view/template/source.tpl");
-    }
 
     /**
      * Verifies the credentials of the login
@@ -62,8 +47,15 @@ class Login extends Controller
             // TODO : For now the problem ofthe routes are not specifically addressed...
             if(password_verify($_POST["input_password"],$db_pswd)){
                 $flag=false;
+
+                if($_SESSION["status"]==0)
+                {
+                    $_SESSION["user"] = $_POST["input_user"]; // Adding the user to the session
+                    $_SESSION["status"] = 1;
+                }
+
                 $router = new Router("/");
-                $router->newRoutePost("/", "Controller\Login@displaySearch");
+                $router->newRoutePost("/search", "Pathos@searchAll");
                 $router->run();
             }
         }
@@ -98,21 +90,6 @@ class Login extends Controller
             $smarty->display("view/template/new_account.tpl"); // displaying the tpl page
         }
     }
-
-    function test(int $param)
-    {
-        echo "salut je suis un test avec param:". $param;
-    }
-
-    function policy()
-    {
-       
-        $router = new Router("/");
-        $router->newRouteGet("/", "Controller\Login@display");
-        $router->run();
-
-    }
-
 
 
 }
