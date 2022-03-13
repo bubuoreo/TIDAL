@@ -86,7 +86,6 @@ class Pathos extends Controller
 
     function searchAll()
     {
-    
         $this->checkIfSetPathoModel();
         $meridiens = $this->pathoModel->getTable("meridien"); // recuperation de la table des meridiens sera utile pour trier par meridien
         
@@ -129,12 +128,7 @@ class Pathos extends Controller
             // die;
 
          
-    
         }
-        
-
-        
-        
 
         // echo "<pre>";
         // var_dump($_SERVER['DOCUMENT_ROOT']);

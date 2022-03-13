@@ -27,7 +27,7 @@
                 <li><a href="/sources">Sources</a></li>
             </ul>
         </nav>
-        <a class="cta btn" href="/">
+        <a class="cta btn" href="/login">
             <img src="../view/images/connexion.png" alt="Connexion" width="30" height="30">
         </a>
     </header>
@@ -42,11 +42,13 @@
                 <button type="submit" class="submit">Valider</button>
             </form>
         </div>
+    {else}
+        <div class="black-space">
+            <p>Veuillez vous connecter pour avoir accès à la recherche par mot clé</p>
+        </div>
     {/if}
 
-    <div class="black-space">
-        <p>black-space</p>
-    </div>
+    
 
     <select name="Meridien" size="max">
         <option value="None" selected>Selectionner le méridien</option>

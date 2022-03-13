@@ -43,6 +43,7 @@ $router->newRouteGet("/pathos/:pathoType", "Pathos@searchByPathoType");
  /**
   * POST
   */
+$router->newRoutePost("/search", "Pathos@searchAll");
 $router->newRoutePost("/login", "Login@connexionLogin");
 $router->newRoutePost("/create", "Login@connexionNewAcc");
 

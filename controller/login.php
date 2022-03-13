@@ -34,6 +34,7 @@ class Login extends Controller
     {
         require('model/clientModel.php');
         require_once("smarty/libs/Smarty.class.php"); //importing smarty library
+        require_once("pathos.php");
 
         $client = new clientModel();
         $data = $client->getUser($_POST["input_user"]);
@@ -44,6 +45,7 @@ class Login extends Controller
         // Verify if it is the good pswd
         if ((sizeof($data) != 0)) {// TODO: remplace when data is added to the db
             $db_pswd = $data[0]["password"]; 
+
             // TODO : For now the problem ofthe routes are not specifically addressed...
             if(password_verify($_POST["input_password"],$db_pswd)){
                 $flag=false;
@@ -52,11 +54,13 @@ class Login extends Controller
                 {
                     $_SESSION["user"] = $_POST["input_user"]; // Adding the user to the session
                     $_SESSION["status"] = 1;
+                    
                 }
 
-                $router = new Router("/");
+                $router = new Router("/search");
                 $router->newRoutePost("/search", "Pathos@searchAll");
                 $router->run();
+
             }
         }
        
