@@ -19,69 +19,146 @@
 
 <body>
     <header>
-        <a href="/"><img class="logo" src="../view/images/logo.png" alt="BEMS"></a>
+        <a href="/">
+            <img class="logo" src="../view/images/logo.png" alt="BEMS">
+        </a>
         <nav>
             <ul class="nav_links">
                 <li><a href="/sources">Sources</a></li>
-                <!-- <li><a href="./login.html">Connexion</a></li> -->
             </ul>
         </nav>
-        <a class="cta btn" href="/login"><img src="../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
+        <a class="cta btn" href="/">
+            <img src="../view/images/connexion.png" alt="Connexion" width="30" height="30">
+        </a>
     </header>
     
-    
-    <div>
+    <div class="recherche">
         <form class="form login" id="sb_form" method="POST" action="/sympthomes/" autocomplete="off">
-            <label for="sb_text">Votre requete:</label>
+            <!-- Si l'utilisateur n'est pas connecté, un appuie sur le bouton 'Rchercher' redirige vers la page de connexion -->
+            <!-- Ou alors on fait disparaître ce champ pour les utilisateurs non connectés -->
+            <label for="sb_text">Recherche par mot clé : </label>
             <input type="text" class="input_text" id="sb_text" name="sb_text">
             <button type="submit" class="submit">Valider</button>
         </form>
     </div>
 
-    {* <div>
-        <table class="styled-table">
-            <thead>
-              <tr>
-                  <!-- lien vers un site qui explique comment faire un filtrage propre : https://www.jqueryscript.net/table/filter-each-column.html -->
-                <th><input type="text" placeholder="Catégorie de pathologie" disabled></th>
-                <th><input type="text" placeholder="Caractéristiques possibles" disabled></th>
-              </tr>
-            </thead>
-            <tbody> *}
+    <div class="black-space">
+        <p>black-space</p>
+    </div>
 
-            
+    <select name="Meridien" size="max">
+        <option value="None" selected>Selectionner le méridien</option>
+        <option value="Meridiens">Méridiens</option>
+        <option value="Tsang/Fu">Tsang/Fu</option>
+        <option value="Jing Jin">Jing Jin</option>
+        <option value="Voie Luo" disabled>Voie Luo</option>
+        <option value="Merveilleux Vaisseaux">Merveilleux Vaisseaux</option>
+    </select>
+
+    <select name="patho">
+        <option value="None" selected>Selectionner le type de pathologie</option>
+        <option value="">premier choix</option>
+        <option value="">deuxieme choix</option>
+        <option value="">troisième choix</option>
+        <option value="">quatrième choix</option>
+        <option value="">cinquième choix</option>
+    </select>
+
+    <select name="caract">
+        <option value="None" selected>Selectionner la/les caractéristique(s)</option>
+        <optgroup label="Toutes les caractéristiques" style="display: block;">
+            <option value="Chaud" style="display: block;">Chaud</option>
+            <option value="Froid" style="display: block;">Froid</option>
+            <option value="Plein" style="display: block;">Plein</option>
+            <option value="Vide" style="display: block;">Vide</option>
+            <option value="Grand plein" style="display: block;">Grand plein</option>
+            <option value="Grand vide" style="display: block;">Grand vide</option>
+            <option value="Externe" style="display: block;">Externe</option>
+            <option value="Interne" style="display: block;">Interne</option>
+            <option value="Plein et chaud" style="display: block;">Plein et chaud</option>
+            <option value="Inferieur plein et chaud" style="display: block;">Inférieur plein et chaud</option>
+            <option value="Moyen plein et chaud" style="display: block;">Moyen plein et chaud</option>
+            <option value="Superieur plein et chaud" style="display: block;">Supérieur plein et chaud</option>
+            <option value="Yang vide" style="display: block;">Yang vide</option>
+            <option value="Yin vide" style="display: block;">Yin vide</option>
+            <option value="Vide et froid" style="display: block;">Vide et froid</option>
+            <option value="Inferieur vide et froid" style="display: block;">Inférieur vide et froid</option>
+            <option value="Moyen vide et froid" style="display: block;">Moyen vide et froid</option>
+            <option value="Superieur vide et froid" style="display: block;">Supérieur vide et froid</option>
+        </optgroup>
+        <optgroup label="Meridiens" style="display: block;">
+            <option value="Meridien:Externe" style="display: block;">Externe</option>
+            <option value="Meridien:Interne" style="display: block;">Interne</option>
+        </optgroup>
+        <optgroup label="Tsang/Fu" style="display: block;">
+            <option value="Tsang/Fu:Chaud" style="display: block;">Chaud</option>
+            <option value="Tsang/Fu:Froid" style="display: block;">Froid</option>
+            <option value="Tsang/Fu:Plein" style="display: block;">Plein</option>
+            <option value="Tsang/Fu:Vide" style="display: block;">Vide</option>
+            <option value="Tsang/Fu:Plein et chaud" style="display: block;">Plein et chaud</option>
+            <option value="Tsang/Fu:Inferieur plein et chaud" style="display: block;">Inférieur plein et chaud</option>
+            <option value="Tsang/Fu:Moyen plein et chaud" style="display: block;">Moyen plein et chaud</option>
+            <option value="Tsang/Fu:Superieur plein et chaud" style="display: block;">Supérieur plein et chaud</option>
+            <option value="Tsang/Fu:Yang vide" style="display: block;">Yang vide</option>
+            <option value="Tsang/Fu:Yin vide" style="display: block;">Yin vide</option>
+            <option value="Tsang/Fu:Vide et froid" style="display: block;">Vide et froid</option>
+            <option value="Tsang/Fu:Inferieur vide et froid" style="display: block;">Inférieur vide et froid</option>
+            <option value="Tsang/Fu:Moyen vide et froid" style="display: block;">Moyen vide et froid</option>
+            <option value="Tsang/Fu:Superieur vide et froid" style="display: block;">Supérieur vide et froid</option>
+        </optgroup>
+        <optgroup label="Jing Jin" style="display: block;">
+            <option value="Jing Jin:None" style="display: block;">Aucunes caractéristiques</option>
+        </optgroup>
+        <optgroup label="Voie Luo" style="display: block;">
+            <option value="Voie Luo:Plein" style="display: block;">Plein</option>
+            <option value="Voie Luo:Vide" style="display: block;">Vide</option>
+            <option value="Voie Luo:Grand plein" style="display: block;">Grand plein</option>
+            <option value="Voie Luo:Grand vide" style="display: block;">Grand vide</option>
+        </optgroup>
+        <optgroup label="Merveilleux Vaisseaux" style="display: block;">
+            <option value="Merveilleux Vaisseaux:Anterieur" style="display: block;">Antérieur</option>
+            <option value="Merveilleux Vaisseaux:Posterieur" style="display: block;">Postérieur</option>
+            <option value="Merveilleux Vaisseaux:Inferieur" style="display: block;">Inférieur</option>
+        </optgroup>
+    </select>
+    <!-- lien vers un site qui explique comment faire un filtrage propre : https://www.jqueryscript.net/table/filter-each-column.html -->            
  
-  {* <div>
-                    <H2>Pathologies de méridien </H2>
-                    <h3>méridien du poumon interne</h3>
-                    <ul>
-                        <li class="sympt">Sympt1</li>
-                        <li class="sympt">Sympt2</li>
-                        <li class="sympt">Sympt3</li>
-                        <li class="sympt">Sympt4</li>
-                        <!-- Liste déroulante si l'utilisateur veut -->
-                        <li class="sympt"><a href="">Voir plus ...</a></li>
-                    </ul>
-                    <h3>méridien du poumon externe</h3>
-                    <ul>
-                        <li class="sympt">Sympt1</li>
-                        <li class="sympt">Sympt2</li>
-                        <li class="sympt">Sympt3</li>
-                        <li class="sympt">Sympt4</li>
-                        <!-- Liste déroulante si l'utilisateur veut -->
-                        <li class="sympt"><a href="">Voir plus ...</a></li>
-                    </ul>
-                    <h3>méridien du gros intestin</h3>
-                    <ul>
-                        <li class="sympt">Sympt1</li>
-                        <li class="sympt">Sympt2</li>
-                        <li class="sympt">Sympt3</li>
-                        <li class="sympt">Sympt4</li>
-                        <!-- Liste déroulante si l'utilisateur veut -->
-                        <li class="sympt"><a href="">Voir plus ...</a></li>
-                    </ul>
+    {*
+    <div>
+        <H2>Catégories de pathologies correspondant à vos critères <br> <br></H2>
 
-    </div>   *}
+        <h3>méridien du poumon interne</h3>
+        <ul>
+            <li class="sympt">Sympt1</li>
+            <li class="sympt">Sympt2</li>
+            <li class="sympt">Sympt3</li>
+            <li class="sympt">Sympt4</li>
+            <!-- Liste déroulante si l'utilisateur veut -->
+            <li class="sympt"><a href="" class="souligne">Voir plus ... <br><br></a></li>
+            <!-- faire apparaître un 'voir moins une fois cliqué sur le lien ci-dessus' -->
+        </ul>
+        <h3>méridien du poumon externe</h3>
+        <ul>
+            <li class="sympt">Sympt1</li>
+            <li class="sympt">Sympt2</li>
+            <li class="sympt">Sympt3</li>
+            <li class="sympt">Sympt4</li>
+            <!-- Liste déroulante si l'utilisateur veut -->
+            <li class="sympt"><a href="" class="souligne">Voir plus ... <br><br></a></li>
+            <!-- faire apparaître un 'voir moins une fois cliqué sur le lien ci-dessus' -->
+        </ul>
+        <h3>méridien du gros intestin</h3>
+        <ul>
+            <li class="sympt">Sympt1</li>
+            <li class="sympt">Sympt2</li>
+            <li class="sympt">Sympt3</li>
+            <li class="sympt">Sympt4</li>
+            <!-- Liste déroulante si l'utilisateur veut -->
+            <li class="sympt"><a href="" class="souligne">Voir plus ... <br><br></a></li>
+            <!-- fairea apparaître un 'voir moins une fois cliqué sur le lien ci-dessus' -->
+        </ul>
+    *}
+
     {foreach from=$Categorie key=Nom item=reg }
         <h2 class = {$Nom|replace:' ' : '_'}>{$Nom} </h2>
         <br>
@@ -96,15 +173,25 @@
        
     {/foreach}
 
+    <div class="white-space">
+        <p>
+            white-space
+        </p>
+    </div>
+
     <footer>
-        <a href="/"><img class="logo" src="../view/images/logo.png" alt="BEMS"></a>
+        <a href="/">
+            <img class="logo" src="../view/images/logo.png" alt="BEMS">
+        </a>
         <nav>
             <ul class="nav_links">
                 <li><a href="/sources">Sources</a></li>
                 <li><a href="/policy">Privacy policy</a></li>
             </ul>
         </nav>
-        <a class="cta btn" href="/"><img src="../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
+        <a class="cta btn" href="/">
+            <img src="../view/images/connexion.png" alt="Connexion" width="30" height="30">
+        </a>
     </footer>
 </body>
 
