@@ -37,14 +37,8 @@
 
             Notre vision du renouveau de la médecine est un élément essenciel dans la pratique de la médecine
             traditionnelle chinoise <br>
-            Nam eu ligula id magna aliquet ullamcorper. Aenean non quam neque. Pellentesque suscipit lorem eu 
-            massa placerat consequat et et est. Aenean sem metus, ullamcorper aliquam posuere id, porttitor eget 
-            velit. Donec nisi nulla, placerat quis aliquet sodales, lobortis quis lacus. Suspendisse efficitur, 
-            dui non congue ullamcorper, augue erat accumsan tellus, in laoreet felis odio ut leo. Aliquam 
-            fermentum felis sed turpis ullamcorper congue. Proin pellentesque at ligula sed eleifend. Nunc nisl 
-            ipsum, egestas id lorem in, suscipit bibendum nunc. Maecenas quis dolor sed eros accumsan ultrices 
-            in non nisl. Sed aliquam, augue eget mollis pellentesque, diam nisl placerat nisi, a vestibulum 
-            purus nulla vitae leo. 
+
+            对于足球熊来说，大香蕉。 埃涅阿斯也不是。 埃涅阿斯是个很害怕的人，要放一些熊在上面，渡轮需要选择。 直到没有，投资任何经济成员 结果是两极的，不是熊做的工作，是地球层的产物，狮子的仇恨就像猫一样。 一些温暖的猫，但丑陋的熊外汇
         </p>
     </section>
 
@@ -54,31 +48,19 @@
         </h2>
 
         <p class="centré">
-            Présentation du propos du site web dans sa globalité. <br><br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id nibh vel nulla efficitur laoreet
-            eget at libero. Donec faucibus convallis augue. Donec non dolor eget diam dapibus euismod aliquet in 
-            erat. Nunc nec vehicula turpis. Cras elementum eros tortor, ac rutrum dui tincidunt egestas. Nulla ac 
-            massa in ligula vulputate aliquet. In pretium magna ipsum. Morbi et molestie erat, sed egestas nisl. 
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis laoreet, 
-            sapien et imperdiet fringilla, nulla ante tempor dolor, vel porttitor augue erat ut enim. Proin sed urna 
-            eu mauris eleifend malesuada.
+            他至少需要一种自由。直到山谷的入口。不幸的是，没有痛苦需要发展
+            曾是。现在没有丑陋的车辆。明天元素将被折磨，大众的妆容将开始想要。没有交流电
+            体育场内大量的奥运香蕉。价格非常重要。这是一种疾病和烦恼，而是球员的诅咒。
+            兽人的入口在第一层哀怨的关照前铺了床；在家工作
+            智者和雀者，来不及痛，或渡车如是。但是没问题
+            欧盟 。
 
-            Mauris mollis iaculis urna, sed varius mauris varius non. Praesent cursus velit eget metus tempus, et 
-            feugiat mauris finibus. Aenean pharetra nisi id aliquet suscipit. Cras auctor porttitor massa et suscipit. 
-            Aenean mattis velit a risus iaculis posuere. Ut suscipit nec mi eu efficitur. Donec sed libero non ligula 
-            faucibus convallis. Integer viverra nisl euismod, congue lectus eget, tincidunt lectus. Nam auctor id orci 
-            sit amet mollis. Vestibulum consectetur, magna ut congue suscipit, justo nunc dictum ligula, vitae faucibus 
-            velit leo eget diam. Fusce sollicitudin eleifend gravida. Phasellus imperdiet pulvinar ipsum, ut mollis 
-            nibh. Suspendisse at erat venenatis, interdum tellus vestibulum, hendrerit erat. Cras sagittis gravida est 
-            sit amet luctus. 
+            瓮的软箭是时候去上课了，想期待恐惧
+            错过结局。埃涅阿斯明天作者乘坐渡轮和弥撒。
+            埃涅阿斯想要放下很多笑声。当它需要或变得成功时，我的儿子。它是免费的，但并非不合常规.
         </p>
     </section>
-
-    <div>
-        <p class="centré">
-            J'aimerais bien mettre sur le coté droit ou gauche du site, des news à la con sur les acupuncteurs avec des petites photos et tout<br>
-        </p>
-    </div>
+    
     <div>
         <center>
             <p class="centré">Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Web.<br></p>
