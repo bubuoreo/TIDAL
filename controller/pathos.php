@@ -63,9 +63,9 @@ class Pathos extends Controller
         return $data ;
     }
 
-    function searchByKeyword($key)
+    function searchByKeyword()
     {
-        // $key = $_POST["sb_text"];
+        $key = $_POST["recherche"];
         
        
         $this->checkIfSetPathoModel();
@@ -107,10 +107,7 @@ class Pathos extends Controller
             $datas[$categorie] = $this->pathoModel->getPathosAll($patho["reg"]) ; // requet sql pour recupérer les valeurs
             $categorieMeridiens = [];
                        
-            // echo "<pre>";
-            // var_dump('Je suis la'. $categorie);
-            // echo "</pre>";
-            // die;
+         
             foreach($meridiens as $meridien)
             // iteration sur les meridien pour extrere la liste des des sympthomes pas meridiens
             {
@@ -119,22 +116,9 @@ class Pathos extends Controller
                 
             }
             $datas[$categorie] = array_filter($categorieMeridiens);
-            // echo "<pre>";
-            // var_dump($categorieMeridiens);
-            // echo "</pre>";
-            // die;
-
-         
     
         }
-        
-
-        // echo "<pre>";
-        // var_dump($datas["Pathologies des merveilleux vaisseaux"]);
-        // echo "</pre>";
-        // die;
         $this->renderTpl("view/template/search.tpl", ["listeMeridien" => $meridiens, "datas" => $datas, "Categorie" => $categoriePathos, ]);
-
     }
 
 }
