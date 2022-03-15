@@ -1,30 +1,38 @@
 <?php
 
-
-
 require_once("controller/Route/router.php");
 require_once("controller/login.php");
 require_once("controller/pathos.php");
 require_once("controller/page.php");
 
+/**
+ * Creation d'une session utilisateur
+ */
+session_start();
+
+$_SESSION["status"] = 0;
+
+/**
+ * Création d'un routeur
+*/
 $router = new Router($_GET["url"]);
 
 
 /**
- * Listage des routes
- */
+* Listage des routes
+*/
 
 
- /**
-  * GET
-  */
+/**
+* GET
+*/
 
 $router->newRouteGet("/", "Page@displayHome");
 $router->newRouteGet("/policy", "Page@displayPolicy");
 $router->newRouteGet("/sources", "Page@displaySources");
 
 $router->newRouteGet("/create", "Login@displayNewAcc");
-$router->newRouteGet("/login", "Login@display");
+$router->newRouteGet("/login", "Login@displayLogin");
 
 
 $router->newRouteGet("/listeSympthome", "Pathos@searchAll");
@@ -34,7 +42,6 @@ $router->newRouteGet("/listeSympthome", "Pathos@searchAll");
  */
 $router->newRoutePost("/login", "Login@connexion");
 $router->newRoutePost("/create", "Login@connexionNewAcc");
-
 
 $router->newRoutePost("/search", "Pathos@searchByKeyword");
 

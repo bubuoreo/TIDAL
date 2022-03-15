@@ -149,4 +149,11 @@
 {* Attention probleme sur l'assignation des classes pour merveilleux Vaisseaux *}
 <script src="../view/js/listeSympthome.js"></script>
 
+{literal}
+    <script> 
+    $("#Top_page").click(function(){
+        $('html, body').animate({ scrollTop: 0 }, 1200);
+    })
+    </script>
+{/literal}
 </html>
