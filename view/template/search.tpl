@@ -6,12 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <link rel="stylesheet" href="../view/css/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css"/>
-    <link rel="stylesheet" href="../view/css/search.css">
-    {* <script src="/ui/js/bootstrap.min.js"></script> --> *}
-    {* <script src="https://kit.fontawesome.com/197d1cb87f.js"></script> *}
-    {* <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script> *}
+    <link rel="stylesheet" href="../view/css/listeSympthome.css">
     <title>BEMS - Association d'acupuncteurs</title>
 </head>
 
@@ -97,8 +92,6 @@
 </body>
 
 {* Attention probleme sur l'assignation des classes pour merveilleux Vaisseaux *}
-{* <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> *}
 <script src="../view/js/jquery.min.js"></script>
-{* <script src="../view/js/search.js"></script> *}
 
 </html>

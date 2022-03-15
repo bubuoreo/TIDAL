@@ -10,21 +10,16 @@ class Login extends Controller
      */
     function displayLogin()
     {
-        require_once("smarty/libs/Smarty.class.php"); //importing smarty library
-
-        $smarty = new \Smarty(); // Creating smarty object
-        $smarty->assign('incorrect_login',false); // No error messages will be displayed
-        $smarty->display("view/template/login.tpl"); // displaying the tpl page
+     
+        $this->renderTpl("view/template/login.tpl", ["incorrect_login" => false]);
     }
 
     /**
      * First time on the account creation page
      */
     function displayNewAcc(){
-        require_once("smarty/libs/Smarty.class.php"); //importing smarty library
-        $smarty = new \Smarty(); // Creating smarty object
-        $smarty->assign('already_exists',false); // No error messages will be displayed
-        $smarty->display("view/template/new_account.tpl"); // displaying the tpl page
+        $this->renderTpl("view/template/new_account.tpl", ["already_exists" => false]);
+
     }
 
     /**
@@ -40,7 +35,7 @@ class Login extends Controller
         $data = $client->getUser($_POST["input_user"]);
         $flag = True;
 
-        $smarty = new \Smarty(); // Creating smarty object
+ 
 
         // Verify if it is the good pswd
         if ((sizeof($data) != 0)) {// TODO: remplace when data is added to the db
@@ -57,16 +52,16 @@ class Login extends Controller
                     
                 }
 
-                $router = new Router("/search");
-                $router->newRoutePost("/search", "Pathos@searchAll");
+                $router = new Router("/listeSympthome");
+                $router->newRoutePost("/listeSympthome", "Pathos@searchAll");
                 $router->run();
 
             }
         }
        
         if($flag){
-            $smarty->assign('incorrect_login',true); // No error messages will be displayed
-            $smarty->display("view/template/login.tpl"); // displaying the tpl page
+            $this->renderTpl("view/template/login.tpl", ["incorrect_login" =>true]);
+            
         }
     }
 
@@ -90,8 +85,8 @@ class Login extends Controller
             $router->run();
         }
         else{
-            $smarty->assign('already_exists',true); // No error messages will be displayed
-            $smarty->display("view/template/new_account.tpl"); // displaying the tpl page
+            $this->renderTpl("view/template/new_account.tpl", ["already_exists" =>true]);
+
         }
     }
 

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta http-equiv="refresh" content="2;url=login.html"> -->
-    <link rel="stylesheet" href="../view/css/new_account.css">
+    <link rel="stylesheet" href="../view/css/login.css">
     <title>Login page</title>
 </head>
 <body>
@@ -20,8 +20,8 @@
         <a class="cta btn"  href="/login"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
     </header>
     <div class="general">
-        <form class="form login" id="login_form" method="POST" action="../../create" autocomplete="off">
-            {if $already_exists eq 'True'}
+        <form class="form login" id="login_form" method="POST" action="/create" autocomplete="off">
+            {if $already_exists}
                 <div class="error_block">
                     <p class="error_message">This account already exists</p>
                 </div>
@@ -53,11 +53,11 @@
         </a>
         <nav>
             <ul class="nav_links">
-                <li><a href="../../view/html/sources.html">Sources</a></li>
-                <li><a href="../../view/html/policy.html">Privacy policy</a></li>
+                <li><a href="/sources">Sources</a></li>
+                <li><a href="/policy">Privacy policy</a></li>
             </ul>
         </nav>
-        <a class="cta btn" href="../../view/html/login.html">
+        <a class="cta btn" href="/login">
             <img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30">
         </a>
     </footer>

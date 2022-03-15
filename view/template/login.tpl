@@ -38,7 +38,7 @@
             </div>
 
             <div>
-                <a class="souligne centré" id="création_compte" href="register.html">
+                <a class="souligne centré" id="création_compte" href="/create">
                     Créer votre compte
                 </a>
             </div>
@@ -63,4 +63,5 @@
 </body>
     
 </body>
+
 </html>

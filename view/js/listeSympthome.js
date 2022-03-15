@@ -118,6 +118,5 @@ $("#selectMeridien").change(function(){
  $("#selectCaract").change(function(){
     var select = $("#selectCaract option:selected").attr("value");
     gestionPathos("#selectCaract", select)
-    
-   
 })
+

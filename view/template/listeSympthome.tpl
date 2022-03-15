@@ -163,6 +163,7 @@
             <ul class="nav_links">
                 <li><a href="/sources">Sources</a></li>
                 <li><a href="/policy">Privacy policy</a></li>
+                <li><a id="Top_page" >TOP</a>
             </ul>
         </nav>
         <a class="cta btn" href="/">
@@ -175,4 +176,11 @@
 <script src="../view/js/jquery.min.js"></script>
 <script src="../view/js/listeSympthome.js"></script>
 
+{literal}
+    <script> 
+    $("#Top_page").click(function(){
+        $('html, body').animate({ scrollTop: 0 }, 1200);
+    })
+    </script>
+{/literal}
 </html>
