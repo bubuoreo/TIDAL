@@ -77,7 +77,7 @@
             </a>
             <br>
             <br>
-            <a class="souligne" id="continuer_sans_connexion" href="/search">
+            <a class="souligne" id="continuer_sans_connexion" href="/listeSympthome">
                     Cliquez ici pour continuer sans vous connecter.
             </a>
             <br>

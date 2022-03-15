@@ -53,30 +53,50 @@ class Pathos extends Controller
      */
     function getElementTable($table, $column ,$ligne)
     {
-        
-        // $table = $_GET["table"];
-        // $column = $_GET["column"];
-        // $ligne = $_GET["ligne"];
-        
+       
         $this->checkIfSetPathoModel();
         $data = $this->pathoModel->getElementTable($table, $column, $ligne);
         return $data ;
     }
-
+    
     function searchByKeyword()
     {
-        $key = $_POST["recherche"];
+        $keyword = $_POST["recherche"];
         
-       
         $this->checkIfSetPathoModel();
+        $meridiens = $this->pathoModel->getTable("meridien"); // recuperation de la table des meridiens sera utile pour trier par meridien
+
         
-        $datas = $this->pathoModel->getTableByKeyword($key);
-        // header('Content-Type: application/json');
-    
-        empty($datas)? $this->renderTpl("view/template/search.tpl", ["data"=> [], "elementFind" => false]) :$this->renderTpl("view/template/search.tpl", ["data"=> $datas[0], "elementFind" => true]);
-        // header("Location: http://localhost:3080/test/view/template/search.tpl");
+        $datas = $this->pathoModel->getTableByKeyword($keyword);
 
+        foreach($meridiens as $meridien)
+        {
+            // iteration sur les meridien pour extrere la liste des des sympthomes pas meridiens
+            {
+                $comparator = $meridien["code"];
+                $categorieMeridiens[$meridien["nom"]] = array_filter($datas, function($value) use($comparator){return $value["mer"] == $comparator;});
+                
+            }
+        }
+        $datas = array_filter($categorieMeridiens);
 
+        foreach($datas as $key => $data)
+        {   
+            $tab = ["description"=>[], "meridien" => []];
+            foreach($data as $value)
+            {
+            array_push($tab["description"], $value["description"]);
+            array_push($tab["meridien"], $value["meridien"]);
+            }
+            
+            $datas[$key ] = $tab;
+
+        }
+        
+        
+        empty($datas)? 
+            $this->renderTpl("view/template/search.tpl", ["datas"=> [], "elementFind" => false, "keyword" => $keyword]) : 
+            $this->renderTpl("view/template/search.tpl", ["datas"=> $datas, "elementFind" => true, "keyword" => $keyword]);
     }
 
 
@@ -118,7 +138,7 @@ class Pathos extends Controller
             $datas[$categorie] = array_filter($categorieMeridiens);
     
         }
-        $this->renderTpl("view/template/search.tpl", ["listeMeridien" => $meridiens, "datas" => $datas, "Categorie" => $categoriePathos, ]);
+        $this->renderTpl("view/template/listeSympthome.tpl", ["listeMeridien" => $meridiens, "datas" => $datas, "Categorie" => $categoriePathos, ]);
     }
 
 }
