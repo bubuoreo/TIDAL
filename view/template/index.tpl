@@ -33,13 +33,7 @@
     </section>
 
     <section>
-<<<<<<< HEAD
         <h2 class="centré">Présentation</h2>
-=======
-        <h2 class="centré">
-            Présentation
-        </h2>
->>>>>>> main
 
         <p class="centré">
             Face au monopole des multinationales qui brident nos libertés et nous assujettissent à un système de santé
@@ -62,7 +56,6 @@
     <div class="centré">
         <a href="/login" class="centré">
                 <button name="Connexion" id="connexion">Se connecter</button>
-<<<<<<< HEAD
         </a>
     </div>
     <div class="centré">
@@ -72,29 +65,5 @@
     </div>
 
     {include file="./footer.tpl" }
-=======
-            </a>
-
-            <br>
-            <br>
-            <a class="souligne" id="continuer_sans_connexion" href="/listeSympthome">
-                    Cliquez ici pour continuer sans vous connecter.
-            </a>
-            <br>
-            <br>
-        </center>
-    </div>
-
-    <footer>
-            <a href="/"><img class="logo" src="../../view/images/logo.png" alt="BEMS"></a>
-            <nav>
-                <ul class="nav_links">
-                    <li><a href="/sources">Sources</a></li>
-                    <li><a href="/policy">Privacy policy</a></li>
-                </ul>
-            </nav>
-            <a class="cta btn"  href="/login"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
-    </footer>
->>>>>>> main
 </body>
 </html>
