@@ -147,7 +147,6 @@
 </body>
 
 {* Attention probleme sur l'assignation des classes pour merveilleux Vaisseaux *}
-<script src="../view/js/jquery.min.js"></script>
 <script src="../view/js/listeSympthome.js"></script>
 
 </html>
