@@ -37,7 +37,7 @@
             <!-- Si l'utilisateur n'est pas connecté, un appuie sur le bouton 'Rchercher' redirige vers la page de connexion -->
             <!-- Ou alors on fait disparaître ce champ pour les utilisateurs non connectés -->
             <label for="sb_text">Recherche par mot clé : </label>
-            <input type="text" class="input_text" id="sb_text" name="sb_text">
+            <input type="text" class="input_text" id="recherche" name="recherche" placeholder="recherche">
             <button type="submit" class="submit">Valider</button>
         </form>
     </div>
@@ -141,7 +141,7 @@
         <br>
         {counter start=0 assign=compteur}
             {foreach from=$datas[$Nom] key=NomMeridien item=patho}
-                <h3 class = "{$Categoriepatho.abrev} {$patho[$compteur].mer}" >Meridien associé: {$NomMeridien} </h3>
+                <h3 class = "{$Categoriepatho.abrev} {$patho[$compteur].mer}" name="visible" >Meridien associé: {$NomMeridien} </h3>
                 <ul class = "{$Categoriepatho.abrev} {$patho[$compteur].mer}">
                     {foreach from=$patho  item=value name=bouclesympt}
                         <li class = "{$Categoriepatho.abrev} {$value.mer} {$value.type}"> {$value.descriptionsympt}</li>
@@ -152,6 +152,7 @@
             {/foreach}
     </div>
     {/foreach}
+    <p class="rechercheNull" style = "display: none;">Aucun élément ne correspond à votre recherche </p>
     </div>
     <div class="white-space">
         <p>
@@ -176,122 +177,8 @@
 </body>
 
 {* Attention probleme sur l'assignation des classes pour merveilleux Vaisseaux *}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-{literal}
-  <script type="text/javascript">
-
-    function hideLi($elementul)
-    {
-        $elementul.children().hide();
-        $elementul.children().slice(0,3).show();       
-        $elementul.children("li").last().show()
-    }
-    $(document).ready(function(){
-        var tabHeader = document.querySelectorAll("h2");
-        
-        tabHeader.forEach(function(element){
-            let name = element.className;
-            let $uls = $("ul."+name);
-            $uls.each(function(){
-                hideLi($(this))
-            })
-           
-            }) 
- 
-    });
-    
-    $("#listePathos button").click(function () { 
-        let $but = $(this);
-        if ($but.attr("class") == "Plus")
-        { 
-            $but.attr("class", 'Moins');
-            $but.parent().siblings("li").show();
-        }
-        else if ($but.attr("class") == "Moins")
-        {
-            $but.attr("class", 'Plus');
-            hideLi($($but.parent().parent("ul")));
-
-        }
-            
-    })
-
-    function hideShowElement($element, filtre, indice)
-    {
-        if( filtre == "all")
-        {
-            $element.show()
-        }
-        else if($element.attr("class").split(" ")[indice] != filtre )
-        {
-            $element.hide()
-        }
-        else
-        {
-            $element.show()
-        } 
-    } 
-
-
-    function gestionPathos(select, filtre)
-    {
-        switch(select)
-        {   
-            case "#selectPatho":
-                var $listeCategorie =$($("#listePathos").children())
-                $listeCategorie.each(function(index, element) { hideShowElement($(element), filtre, 0) })
-
-            break;
-            case '#selectMeridien':
-                var listeCategorieVisible = $($("#listePathos").children(":visible"));
-                listeCategorieVisible.children("h3").each(function(index, element) { hideShowElement($(element), filtre, 1) });
-                listeCategorieVisible.children("ul").each(function(index, element) { hideShowElement($(element), filtre, 1) });
-                
-            break;
-        
-            case "#selectCaract":
-                var listeCategorieVisible = $($("#listePathos").children(":visible"));
-                var listeMerVisible = $(listeCategorieVisible.children("ul:visible"));
-                listeMerVisible.children().each(function(index, element){hideShowElement($(element), filtre, 2)})
-              
-            break;
-        }
-    }
-    // application des filtres sur la page
-    $("#selectPatho").change(function(){
-        var select = $("#selectPatho option:selected").attr("value");
-
-        $('#selectCaract').find('optgroup').each(function(index,element){
-            if($(element).attr("class") != select )
-            {
-                $(element).hide()
-            }
-            else
-            {
-                $(element).show()
-            } 
-        });
-
-        gestionPathos('#selectPatho', select);
-       
-    })
-
-    $("#selectMeridien").change(function(){
-        var select = $("#selectMeridien option:selected").attr("value");
-        gestionPathos("#selectMeridien", select)   
-    })
-
-     $("#selectCaract").change(function(){
-        var select = $("#selectCaract option:selected").attr("value");
-        gestionPathos("#selectCaract", select)
-        
-       
-    })
-
-</script>
-{/literal}
-
-
+{* <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> *}
+<script src="../view/js/jquery.min.js"></script>
+<script src="../view/js/search.js"></script>
 
 </html>
