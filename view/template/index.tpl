@@ -61,7 +61,7 @@
     <div>
         <center>
             <p class="centré">Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Web.<br></p>
-            <a href="/">
+            <a href="/login">
                 <button name="Connexion" id="connexion">Se connecter</button>
             </a>
             <br>
