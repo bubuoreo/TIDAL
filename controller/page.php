@@ -21,4 +21,8 @@ class Page extends Controller
     {
         $this->renderTpl("view/template/sources.tpl");
     }
+    function displayPolicy()
+    {
+        $this->renderTpl("view/template/policy.tpl");
+    }
 }

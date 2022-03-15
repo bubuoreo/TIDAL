@@ -35,18 +35,15 @@ $router->newRouteGet("/create", "Login@displayNewAcc");
 $router->newRouteGet("/login", "Login@displayLogin");
 
 
-$router->newRouteGet("/search", "Pathos@searchAll");
-$router->newRouteGet("/sympthome/:key", "Pathos@searchByKeyword");
-$router->newRouteGet("/meridien/:code", "Pathos@getMeridienByCode");
-$router->newRouteGet("/pathos/:pathoType", "Pathos@searchByPathoType");
+$router->newRouteGet("/listeSympthome", "Pathos@searchAll");
 
- /**
-  * POST
-  */
-$router->newRoutePost("/search", "Pathos@searchAll");
-$router->newRoutePost("/login", "Login@connexionLogin");
+/**
+ * POST
+ */
+$router->newRoutePost("/login", "Login@connexion");
 $router->newRoutePost("/create", "Login@connexionNewAcc");
 
+$router->newRoutePost("/search", "Pathos@searchByKeyword");
 
 $router->run();
 
