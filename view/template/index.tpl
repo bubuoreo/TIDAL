@@ -13,7 +13,7 @@
         <a href="/"><img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS"></a>
         <nav>
             <ul class="nav_links">
-                <li><a href="/source">Sources</a></li>
+                <li><a href="/sources">Sources</a></li>
             </ul>
         </nav>
         <a class="cta btn"  href="/login"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
