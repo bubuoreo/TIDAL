@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    
+    <link rel="stylesheet" href="../view/css/listeSympthome.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <link rel="stylesheet" href="../view/css/listeSympthome.css">
-    <title>BEMS - Association d'acupuncteurs</title>
+    <title>BEMS - Association d'acupuncteurs - Recherche</title>
 </head>
-
-
 
 <body>
     {include file="./header.tpl"}
@@ -25,20 +25,13 @@
         </form>
     </div>
 
-    <div class="black-space">
-        <p>black-space</p>
-    </div>
+    <div class="black-space"></div>
 
     <select id="selectPatho" name="patho">
         <option value="all" selected>Selectionner le type de pathologie</option>
          {foreach from=$Categorie key=Nom item=catPatho }
             <option value = {$catPatho.abrev} class = {$catPatho.abrev}>{$Nom} </option>
         {/foreach}
-        {* <option value="">premier choix</option>
-        <option value="">deuxieme choix</option>
-        <option value="">troisième choix</option>
-        <option value="">quatrième choix</option>
-        <option value="">cinquième choix</option> *}
     </select>
 
     <select id="selectMeridien" name="Meridien" size="max">
@@ -47,11 +40,6 @@
         <p>{$meridien}</p>
             <option value = {$meridien.code} class = {$meridien.nom|replace:' ' : '_'}>{$meridien.nom} </option>
         {/foreach}
-        {* <option value="Meridiens">Méridiens</option>
-        <option value="Tsang/Fu">Tsang/Fu</option>
-        <option value="Jing Jin">Jing Jin</option>
-        <option value="Voie Luo" disabled>Voie Luo</option>
-        <option value="Merveilleux Vaisseaux">Merveilleux Vaisseaux</option> *}
     </select>
 
     <select id='selectCaract' name="caract">
@@ -114,7 +102,6 @@
             <option value="mvi" style="display: block;">Inférieur</option>
         </optgroup>
     </select>
-    <!-- lien vers un site qui explique comment faire un filtrage propre : https://www.jqueryscript.net/table/filter-each-column.html -->            
  
    <div id="listePathos">
     {foreach from=$Categorie key=Nom item=Categoriepatho  }
