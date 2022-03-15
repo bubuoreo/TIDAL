@@ -27,21 +27,13 @@
         <p class="centré">
             Bonjour, nous vous souhaitons la bienvenue sur notre site collaboratif des acupuncteurs de la médecine chinoise.<br><br>
             Dans un monde où la planète Terre se meurt, où l'impact humanitaire de la civilisation exploite les
-            ressources de ce monde dans un consumérisme effeiné. En étant conscient de ces problèmes existanciels,
-            nous proposons une approche nouvelle de la médecine de l'esprit, de la médecine des chacras.
+            ressources de ce monde dans un consumérisme efféné. En étant conscient de ces problèmes existantiels,
+            nous proposons une approche nouvelle de la médecine de l'esprit, de la médecine des chakras.
             En utilisant tous notre savoir en le corps et les méridiens, nous guérissons les maux de quelque type
             que ce soit.<br>
 
-            Notre vision du renouveau de la médecine est un élément essenciel dans la pratique de la médecine
+            Notre vision du renouveau de la médecine est un élément essentiel dans la pratique de la médecine
             traditionnelle chinoise <br>
-            Nam eu ligula id magna aliquet ullamcorper. Aenean non quam neque. Pellentesque suscipit lorem eu 
-            massa placerat consequat et et est. Aenean sem metus, ullamcorper aliquam posuere id, porttitor eget 
-            velit. Donec nisi nulla, placerat quis aliquet sodales, lobortis quis lacus. Suspendisse efficitur, 
-            dui non congue ullamcorper, augue erat accumsan tellus, in laoreet felis odio ut leo. Aliquam 
-            fermentum felis sed turpis ullamcorper congue. Proin pellentesque at ligula sed eleifend. Nunc nisl 
-            ipsum, egestas id lorem in, suscipit bibendum nunc. Maecenas quis dolor sed eros accumsan ultrices 
-            in non nisl. Sed aliquam, augue eget mollis pellentesque, diam nisl placerat nisi, a vestibulum 
-            purus nulla vitae leo. 
         </p>
     </section>
     <section>
@@ -66,9 +58,6 @@
             sit amet luctus. 
         </p>
     </section>
-    <div>
-        <p class="centré">J'aimerais bien mettre sur le coté droit ou gauche du site, des news à la con sur les acupuncteurs avec des petites photos et tout<br></p>
-    </div>
     <div>
         <center>
             <p class="centré">Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Web.<br></p>
