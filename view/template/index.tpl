@@ -9,13 +9,14 @@
     <title>BEMS - Association d'acupuncteurs</title>
 </head>
 <body>
-    <header>
+    {* <header>
         <a href="/">
             <img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS">
         </a>
         <a class="btn decale" href="/search"><img src="../../view/images/picto_loupe.png" alt="Recherche" width="30" height="30"></a>
         <a class="btn" href="/login"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
-    </header>
+    </header> *}
+    {include file="./header.tpl"}
     <div class="contenant">
         <img class="photo_accueil" src="../../view/images/acu_secu.jpg" alt="Image de fond du site de BEMS montrant une scéance d'acupuncture sur le dos" height="80%" width="100%">
         <div class="texte_centrer">BEMS<br>Brigade Erudite de Médecine et de Santé</div>
@@ -65,7 +66,8 @@
         <br>
         <br>
     </div>
-    <footer>
+    {include file="./footer.tpl" }
+    {* <footer>
         <a href="/">
             <img class="logo" src="../../view/images/logo.png" alt="BEMS">
         </a>
@@ -76,6 +78,6 @@
                 <li><a href="/policy">Privacy policy</a></li>
             </ul>
         </nav>
-    </footer>
+    </footer> *}
 </body>
 </html>

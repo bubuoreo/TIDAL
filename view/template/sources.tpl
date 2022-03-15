@@ -11,17 +11,8 @@
 
 <body>
 
-    <header>
-        <a href="/"><img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS"></a>
-        <nav>
-            <ul class="nav_links">
-                <li><a href="/sources">Sources</a></li>
-            </ul>
-        </nav>
-        <a class="cta btn"  href="/listeSympthome"><img src="../../view/images/picto_loupe.png" alt="Recherche" width="30" height="30"></a>
-        <a class="cta btn"  href="/login"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
-    </header>
 
+    {include file="./header.tpl"}
     <div>
         <pre>
             page de sources avec la webographie et les sources
@@ -60,16 +51,7 @@
             
         </pre>
     </div>
-
-    <footer>
-        <a href="/"><img class="logo" src="../view/images/logo.png" alt="BEMS"></a>
-        <nav>
-            <ul class="nav_links">
-                <li><a href="/sources">Sources</a></li>
-                <li><a href="/policy">Privacy policy</a></li>
-            </ul>
-        </nav>
-        <a class="cta btn" href="/"><img src="../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
-    </footer>
+{include file="./footer.tpl"}
+  
 </body>
 </html>
