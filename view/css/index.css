@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 
-li, a, button {
-    font-family: "Montserrat", sans-serif;
+body a, body button {
     font-weight: 500;
     /* font-size: 16pt; */
     padding: 2px 16px;
@@ -9,18 +8,18 @@ li, a, button {
     text-decoration: none;
 }
 
-button{
+body button{
     font-size: 16px;
 }
 
-nav{
+body nav{
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
 }
 
 /* pour la satisfaction du critère d'accessibilité AAA du site web */
-p, a {
+body p, body a {
     font-size: 120%;
     line-height: 1.5em;
     margin: 1.5em 0;
@@ -29,28 +28,18 @@ p, a {
 
 
 /*Description CSS pour l'affichage de la photo avec le texte superposé*/
-.contenant {
+body .contenant {
     position: relative;
     text-align: center;
     color: rgb(0, 0, 0);
 } 
-.texte_centrer {
+body .texte_centrer {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3cm;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-/*Description du footer*/
-footer {
-    background-color: rgb(0, 0, 0);
-    position: relative;
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 10%;
-    height: 15%;
 }
 
 /*Description du body*/
@@ -58,20 +47,20 @@ body {
     background-color: rgb(209, 208, 208);
 }
 
-.centré {
+body .centré {
     text-align: center;
 }
 
-#connexion {
+body #connexion, body #continuer_sans_connexion  {
     color: rgb(0, 0, 0);
+    margin-bottom: 4vh;
 }
 
-#continuer_sans_connexion {
-    color: rgb(0, 0, 0);
+body .white-space{
+    height: 2vh;
 }
 
-
-#contact {
+body #contact {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 15px;
@@ -80,21 +69,21 @@ body {
     justify-content: center;
 }
 
-.contact{
+body .contact{
     display: flex;
     justify-content: center;
 }
 
-.contact a:hover {
+body .contact a:hover {
     color: rgb(163, 160, 1);
 }
 
-#auteur{
+body #auteur{
     display: flex;
     justify-content: center; 
 }
 
-#titre {
+body #titre {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 30px;
@@ -103,7 +92,7 @@ body {
     justify-content: center;
 }
 
-#texte {
+body #texte {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 60pt;
@@ -112,16 +101,16 @@ body {
     justify-content: center;
     
 }
-.souligne {
+body .souligne {
     position: relative;
     text-decoration: none;
 }
   
-.souligne:hover, .continuer{
+body .souligne:hover, .continuer{
     color: rgb(0, 0, 0);
 }
   
-.souligne::before {
+body .souligne::before {
     content: "";
     position: absolute;
     display: block;
@@ -134,6 +123,6 @@ body {
     transition: transform 0.3s ease;
 }
   
-.souligne:hover::before {
+body .souligne:hover::before {
     transform: scaleX(1);
 }

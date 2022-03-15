@@ -18,7 +18,7 @@
     </header>
     <div class="contenant">
         <img class="photo_accueil" src="../../view/images/acu_secu.jpg" alt="Image de fond du site de BEMS montrant une scéance d'acupuncture sur le dos" height="80%" width="100%">
-        <div class="texte_centrer" style="font-family: Lucida Handwriting, cursive; font-size: 3cm;">BEMS<br>Brigade Erudite de Médecine et de Santé</div>
+        <div class="texte_centrer">BEMS<br>Brigade Erudite de Médecine et de Santé</div>
     </div>
     <section>
         <h2 class="centré">Accueil</h2>
