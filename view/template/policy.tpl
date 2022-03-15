@@ -10,6 +10,7 @@
     <script src="../js/policy.js"></script>
 </head>
 <body>
+    {include file="./header.tpl"}
     <center>
         <h1>POLITIQUE DE CONFIDENTIALITÉ ET DE PROTECTION DES DONNÉES PERSONNELLES</h1>
         <h2>Date d'effet : août 2021</h2>
@@ -314,16 +315,7 @@
             </pre>
         </section>
     </div>
-    <footer>
-        <a href="./index.html"><img class="logo" src="../images/logo.png" alt="BEMS"></a>
-        <nav>
-            <ul class="nav_links">
-                <li><a href="./sources.html">Sources</a></li>
-                <li><a href="./policy.html">Privacy policy</a></li>
-                <li><a href="./login.html">Se connecter</a></li>
-            </ul>
-        </nav>
-    </footer>
+    {include file="./footer.tpl"}
 
 </body>
 </html>
