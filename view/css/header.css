@@ -16,19 +16,11 @@ header{
     height: 2cm;
 }
 
-header a{
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    padding: 2px 16px;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-
 header a.decale{
     margin-left: 55%;
 }
 
-header .logo {
+header .logo{
     cursor: pointer;
     max-width: 10%;
     max-height: 10%;

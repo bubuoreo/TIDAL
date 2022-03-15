@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 
-body a, body button {
+body #connexion, body #continuer_sans_connexion,
+body .souligne:hover, body .continuer{
+    color : rgb(0, 0, 0);
+}
+
+/*Description du body*/
+body{
+    background-color: rgb(209, 208, 208);
+}
+
+body a, body button{
     font-weight: 500;
-    /* font-size: 16pt; */
     padding: 2px 16px;
-    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
@@ -19,40 +27,34 @@ body nav{
 }
 
 /* pour la satisfaction du critère d'accessibilité AAA du site web */
-body p, body a {
+body p, body a{
     font-size: 120%;
     line-height: 1.5em;
     margin: 1.5em 0;
 }
 
-
-
-/*Description CSS pour l'affichage de la photo avec le texte superposé*/
-body .contenant {
+/*
+Description CSS pour l'affichage de la photo 
+avec le texte superposé
+*/
+body .contenant{
     position: relative;
     text-align: center;
-    color: rgb(0, 0, 0);
-} 
-body .texte_centrer {
+}
+body .texte_centrer{
     font-family: "Montserrat", sans-serif;
-    font-size: 3cm;
+    font-size: 6vw;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-/*Description du body*/
-body {
-    background-color: rgb(209, 208, 208);
-}
-
-body .centré {
+body .centré{
     text-align: center;
 }
 
-body #connexion, body #continuer_sans_connexion  {
-    color: rgb(0, 0, 0);
+body #connexion, body #continuer_sans_connexion{
     margin-bottom: 4vh;
 }
 
@@ -60,11 +62,10 @@ body .white-space{
     height: 2vh;
 }
 
-body #contact {
+body #contact{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 15px;
-    color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
 }
@@ -74,43 +75,19 @@ body .contact{
     justify-content: center;
 }
 
-body .contact a:hover {
+body .contact a:hover{
     color: rgb(163, 160, 1);
 }
 
-body #auteur{
-    display: flex;
-    justify-content: center; 
-}
-
-body #titre {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 30px;
-    color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
-}
-
-body #texte {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 60pt;
-    color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
-    
-}
-body .souligne {
+/* 
+Description du comportement des éléments
+soullignées en noir dynamiquement
+*/
+body .souligne{
     position: relative;
     text-decoration: none;
 }
-  
-body .souligne:hover, .continuer{
-    color: rgb(0, 0, 0);
-}
-  
-body .souligne::before {
+body .souligne::before{
     content: "";
     position: absolute;
     display: block;
@@ -122,7 +99,6 @@ body .souligne::before {
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
-  
-body .souligne:hover::before {
+body .souligne:hover::before{
     transform: scaleX(1);
 }

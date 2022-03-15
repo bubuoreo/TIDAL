@@ -3,18 +3,18 @@
 <html lang="fr">
 <head>
     <link rel="stylesheet" href="../css/sources.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politique de confidentialité - BEMS Acupuncture Coopérative</title>
+    <title>BEMS - Acupuncture Coopérative - Politique de confidentialité</title>
     <link rel="stylesheet" href="../css/policy.css">
     <script src="../js/policy.js"></script>
 </head>
 <body>
     {include file="./header.tpl"}
-    <center>
-        <h1>POLITIQUE DE CONFIDENTIALITÉ ET DE PROTECTION DES DONNÉES PERSONNELLES</h1>
-        <h2>Date d'effet : août 2021</h2>
-    </center>
+    <h1 class="centré">POLITIQUE DE CONFIDENTIALITÉ ET DE PROTECTION DES DONNÉES PERSONNELLES</h1>
+    <h2 class="centré">Date d'effet : août 2021</h2>
     <div>
         <section>
             <h3>1. Déclaration générale</h3>

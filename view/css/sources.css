@@ -165,3 +165,10 @@ nav{
     justify-content: center;
     
 }
+/* Element spécial pour le CSS de la page policy */
+pre#Condit a{
+    color: rgb(24, 92, 156);
+}
+.centré{
+    text-align: center;
+}
