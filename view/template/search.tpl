@@ -25,7 +25,7 @@
                 <li><a href="/sources">Sources</a></li>
             </ul>
         </nav>
-        <a class="cta btn"  href="/search"><img src="../../view/images/picto_loupe.png" alt="Recherche" width="30" height="30"></a>
+        <a class="cta btn"  href="/listeSympthome"><img src="../../view/images/picto_loupe.png" alt="Recherche" width="30" height="30"></a>
         <a class="cta btn"  href="/login"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
     </header>
     
