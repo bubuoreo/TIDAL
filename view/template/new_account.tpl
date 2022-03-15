@@ -9,6 +9,16 @@
     <title>Login page</title>
 </head>
 <body>
+    <header>
+        <a href="/"><img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS"></a>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="/sources">Sources</a></li>
+            </ul>
+        </nav>
+        <a class="cta btn"  href="/search"><img src="../../view/images/picto_loupe.png" alt="Recherche" width="30" height="30"></a>
+        <a class="cta btn"  href="/login"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
+    </header>
     <div class="general">
         <form class="form login" id="login_form" method="POST" action="../../create" autocomplete="off">
             {if $already_exists eq 'True'}
@@ -37,6 +47,19 @@
             </div>
         </form>
     </div>
-    
+    <footer>
+        <a href="../../view/html/index.html">
+            <img class="logo" src="../../view/images/logo.png" alt="BEMS">
+        </a>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="../../view/html/sources.html">Sources</a></li>
+                <li><a href="../../view/html/policy.html">Privacy policy</a></li>
+            </ul>
+        </nav>
+        <a class="cta btn" href="../../view/html/login.html">
+            <img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30">
+        </a>
+    </footer>
 </body>
 </html>
