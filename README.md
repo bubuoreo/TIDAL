@@ -38,6 +38,17 @@ sudo chmod -R 770 templates_c/
 - Affichage patho depuis le choix des critères
 - Améliorations CSS
 
+## Privilèges utilisateurs dans $_SESSION["status"]
+|numéro|        état             |
+|------|-------------------------|
+|   0  | utilisateur non connecté|
+|   1  | utilisateur identifié   |
+|   2  | admin(non utilisé)      |
+
+## Comptes de tests
+|  user |  mdp |
+|-------|------|
+| admin | pswd |
 ## Webographie
 
 - https://developer.mozilla.org
