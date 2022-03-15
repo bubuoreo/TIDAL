@@ -1,0 +1,68 @@
+/* Configuration des éléments de base pour les affichages des éléments communs*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+header{
+    background-color: rgb(0, 0, 0);
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10%;
+    height: 2cm;
+}
+
+header a{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    padding: 2px 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+header a.decale{
+    margin-left: 55%;
+}
+
+header .logo {
+    cursor: pointer;
+    max-width: 10%;
+    max-height: 10%;
+}
+
+header nav{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header .nav_links{
+    list-style: none;
+}
+
+header .nav_links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+header .nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+header .nav_links li a:hover{
+    color: turquoise;
+}
+
+header .btn {
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+header .btn:hover{
+    background-color: rgba(0,136,169,0.8);
+}

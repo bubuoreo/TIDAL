@@ -10,21 +10,18 @@
 </head>
 <body>
     <header>
-        <a href="/"><img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS"></a>
-        <nav>
-            <ul class="nav_links">
-                <li><a href="/sources">Sources</a></li>
-            </ul>
-        </nav>
-        <a class="cta btn"  href="/search"><img src="../../view/images/picto_loupe.png" alt="Recherche" width="30" height="30"></a>
-        <a class="cta btn"  href="/login"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
+        <a href="/">
+            <img class="logo" src="../../view/images/logo.png" alt="Le logo du BEMS">
+        </a>
+        <a class="btn decale" href="/search"><img src="../../view/images/picto_loupe.png" alt="Recherche" width="30" height="30"></a>
+        <a class="btn" href="/login"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
     </header>
     <div class="contenant">
         <img class="photo_accueil" src="../../view/images/acu_secu.jpg" alt="Image de fond du site de BEMS montrant une scéance d'acupuncture sur le dos" height="80%" width="100%">
         <div class="texte_centrer" style="font-family: Lucida Handwriting, cursive; font-size: 3cm;">BEMS<br>Brigade Erudite de Médecine et de Santé</div>
     </div>
     <section>
-        <center><h2>Accueil</h2></center>
+        <h2 class="centré">Accueil</h2>
         <p class="centré">
             Bonjour, nous vous souhaitons la bienvenue sur notre site collaboratif des acupuncteurs de la médecine chinoise.<br><br>
             Dans un monde où la planète Terre se meurt, où l'impact humanitaire de la civilisation exploite les
@@ -38,7 +35,7 @@
         </p>
     </section>
     <section>
-        <center><h2>Présentation</h2></center>
+        <h2 class="centré">Présentation</h2>
         <p class="centré">
             Présentation du propos du site web dans sa globalité. <br><br>
             Face au monopole des multinationales qui brident nos libertés et nous assujettissent à un système de santé
@@ -55,30 +52,30 @@
             peau et de votre âme
         </p>
     </section>
-    <div>
-        <center>
-            <p class="centré">Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Web.<br></p>
-            <a href="/login">
-                <button name="Connexion" id="connexion">Se connecter</button>
-            </a>
-            <br>
-            <br>
-            <a class="souligne" id="continuer_sans_connexion" href="/listeSympthome">
-                    Cliquez ici pour continuer sans vous connecter.
-            </a>
-            <br>
-            <br>
-        </center>
+    <div class="centré">
+        <p class="centré">Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Web.<br></p>
+        <a href="/login">
+            <button name="Connexion" id="connexion">Se connecter</button>
+        </a>
+        <br>
+        <br>
+        <a class="souligne" id="continuer_sans_connexion" href="/listeSympthome">
+                Cliquez ici pour continuer sans vous connecter.
+        </a>
+        <br>
+        <br>
     </div>
     <footer>
-            <a href="/"><img class="logo" src="../../view/images/logo.png" alt="BEMS"></a>
-            <nav>
-                <ul class="nav_links">
-                    <li><a href="/source">Sources</a></li>
-                    <li><a href="/policy">Privacy policy</a></li>
-                </ul>
-            </nav>
-            <a class="cta btn"  href="/login"><img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30"></a>
+        <a href="/">
+            <img class="logo" src="../../view/images/logo.png" alt="BEMS">
+        </a>
+
+        <nav>
+            <ul class="nav_links">
+                <li><a href="/sources">Sources</a></li>
+                <li><a href="/policy">Privacy policy</a></li>
+            </ul>
+        </nav>
     </footer>
 </body>
 </html>

@@ -1,25 +1,25 @@
-# TIDAL
-Création site vitrine association acupuncteur
+# Projet fil-rouge TIDAL
 
-# Mon petit morceau de code avorté
-DROP TABLE IF EXISTS public.userTable;
-CREATE TABLE userTable (
-  number INTEGER NOT NULL,
-  "user" character varying(40) 
-	        DEFAULT NULL,
-  "password" character varying(40) 
-	        DEFAULT NULL,
-);
-INSERT INTO public.userTable(number,"user","password") VALUES
-(1,"user","password")
-;
+## Introduction  
+L'objectif du projet fil rouge est de pouvoir réaliser un site web avec un hébergement sur un serveur au sein de la machine afin de se familiariser avec des outils et des langages de programmation comme PHP et Smarty par exemple.  
+Afin de mettre en pratique les connaissances, nous proposons la réalisation d'un site internet avec quelques pages ainsi qu'une base de données sur une association d'acupuncture.
 
-# Creation du fichier template_c pour faire marcher smarty
+
+## Equipe
+L'équipe responsable de ce projet est l'équipe numéro 10 constitué de :  
+- Alexandre BURLOT
+- Maxime CURRAL
+- Romain GALMIER
+- Romain GAUD
+- Fares ZAGHOUANE
+
+
+## Creation du fichier template_c pour faire marcher smarty
 
 1. Creer un dossier templates_c dans le dossier html
 2. Lui attribuer la permission à www-data
 ```
-sudo chown -R    templates_c
+sudo chown -R www-data templates_c
 ```
 3. Mettre la permission:
 ```
@@ -27,19 +27,19 @@ sudo chmod -R 770 templates_c/
 ```
 4. Refaire la meme chose pour le dossier smarty
 
-# Note avec la db (Résolu!)
-Due a la manièere dont à été formaté la table **userTable**, les données sorties sont dans des curly brackets. **DB modifiée**.
 
- Fatal error: Uncaught --> Smarty: Unable to load template 'file:../view/template/index.tpl' <-- thrown in /var/www/html/smarty/libs/sysplugins/smarty_internal_template.php on line 195
+## Travail accompli depuis l'évaluation en scéance
 
-# Webographie
+- Réalisation des sessions utilisateurs
+- Routes en PHP
+- Appels depuis la base de données
+- Recherche par mot clé
+- Conditions de tri
+- Affichage patho depuis le choix des critères
+- Améliorations CSS
+
+## Webographie
 
 - https://developer.mozilla.org
 - https://www.smarty.net/
-- 
-
-# Changement depuis l'évaluation en scéance
-
-- 
-- 
 - 

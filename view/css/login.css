@@ -11,7 +11,7 @@
 li, a,button {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 16pt;
+    /* font-size: 16pt; */
     padding: 2px 16px;
     color: rgb(255, 255, 255);
     text-decoration: none;
@@ -24,7 +24,7 @@ nav{
 }
 
 /* pour la satisfaction du critère d'accessibilité AAA du site web */
-p,a {
+p, a {
     font-size: 120%;
     line-height: 1.5em;
     margin: 1.5em 0;

@@ -1,0 +1,59 @@
+/*Description du footer*/
+footer {
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10%;
+    height: 13vh;
+}
+
+footer a{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 120%;
+    padding: 2px 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+footer .logo {
+    cursor: pointer;
+    max-width: 10%;
+    max-height: 10%;
+}
+
+footer nav{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+footer .nav_links{
+    list-style: none;
+}
+
+footer .nav_links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+footer .nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+footer .nav_links li a:hover{
+    color: turquoise;
+}
+
+footer .btn {
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+footer .btn:hover{
+    background-color: rgba(0,136,169,0.8);
+}
