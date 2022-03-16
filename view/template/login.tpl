@@ -40,7 +40,7 @@
     </div>
 
     {include file="./footer.tpl"}
-</body>
+    <link rel="stylesheet" href="../view/css/login.css">
     
 </body>
 

@@ -61,7 +61,7 @@
                 Cliquez ici pour continuer sans vous connecter.
         </a>
     </div>
-
+    <div class="white-space"></div>
     {include file="./footer.tpl" }
 </body>
 </html>

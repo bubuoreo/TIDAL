@@ -16,7 +16,7 @@
     <div>
         <section>
             <h3>1. Déclaration générale</h3>
-            <pre id="Condit">
+            <p id="Condit">
                 Nous prenons votre vie privée très au sérieux et nous nous engageons à la protéger. Nous
                 considérons que vous devez pouvoir facilement savoir quelles sont les données à caractère
                 personnel que nous recueillons et utilisons, et comprendre vos droits en lien avec celles-ci.
@@ -29,11 +29,11 @@
                 Vous pouvez imprimer le texte intégral de notre Politique de confidentialité en <a href="#" OnClick="javascript:window.print()">cliquant ici</a>.
                 N’hésitez pas à nous contacter si vous avez des questions ou des remarques sur notre
                 Politique de confidentialité (voir la rubrique « Comment nous contacter » ci-dessous).
-            </pre>
+            </p>
         </section>
         <section>
             <h3>2. Qui sommes-nous ?</h3>
-            <pre id="Condit">
+            <p id="Condit">
                 Les termes « BEMS Acupuncture Coopérative », « nous », « notre » et « nos » désignent la
                 Fondation d’entreprise BEMS en tant que responsable du traitement de vos données à
                 caractère personnel, sauf indication contraire dans notre Politique de confidentialité.
@@ -48,12 +48,12 @@
                 de la présente Politique de confidentialité, toute référence au « groupe BEMS » désignera les sociétés
                 contrôlées directement ou indirectement par BEMS Acupuncture Coopérative.
                 Vous trouverez nos coordonnées dans la rubrique « Comment nous contacter » ci-dessous.
-            </pre>
+            </p>
         </section>
         <section>
             <h3>3. Quelles sont les données à caractère personnel que nous recueillons et comment sont-
                 elles recueillies ?</h3>
-            <pre id="Condit">
+            <p id="Condit">
                 Les données à caractère personnel sont des informations relatives à une personne physique
                 identifiée ou identifiable. Elles incluent par exemple le nom, l’adresse et le genre d’une
                 personne.
@@ -61,10 +61,10 @@
                 exemple lorsque vous candidatez à l’un de nos programmes) ou indirectement (par exemple
                 à partir de vos appareils électroniques qui interagissent avec notre site Internet (voir notre
                 « Politique des Cookies » ci-dessous).
-            </pre>
+            </p>
             <section>
                 <h4>3.1 Données que vous nous fournissez directement</h4>
-                <pre id="Condit">
+                <p id="Condit">
                     Vous pouvez nous fournir des données :
                     - lorsque vous candidatez à l’un de nos programmes ;
                     - lorsque vous vous abonnez à notre lettre d’information via notre site internet ;
@@ -98,11 +98,11 @@
                     requête, et de ne pas nous communiquer de données sensibles relatives à la race, à l’origine
                     ethnique, aux opinions politiques, aux croyances religieuses ou philosophiques, et des
                     données concernant la santé, la vie sexuelle ou l’orientation sexuelle.
-                </pre>
+                </p>
             </section>
             <section>
                 <h4>3.2 Données recueillies indirectement</h4>
-                <pre class="Condit">
+                <p class="Condit">
                     Nous pouvons recueillir des données lorsque vous utilisez notre site, notamment votre
                     adresse IP ou d’autres données de navigation (y compris le navigateur, le système
                     d’exploitation, le modèle de l’appareil), par le biais de cookies ou de technologies similaires
@@ -124,22 +124,22 @@
                     confidentialité. La personne doit également donner les consentements énoncés dans notre
                     Politique de confidentialité en ce qui concerne la manière dont nous traitons ses données à
                     caractère personnel.
-                </pre>
+                </p>
             </section>
             <section>
                 <h4>3.3 Age minimum</h4>
-                <pre class="Condit">
+                <p class="Condit">
                     Nous vous rappelons que nous ne recueillons pas, directement ou indirectement, de
                     données à caractère personnel de personnes âgées de moins de 16 ans, sans préjudice de
                     toute loi locale fixant un âge minimum différent. Nous vous demandons donc de ne pas nous
                     fournir de données à caractère personnel de personnes ne remplissant pas ce critère.
-                </pre>
+                </p>
             </section>
         </section>
         <section>
             <h3>4. Pourquoi recueillons-nous vos données à caractère personnel et comment les utilisons-
                 nous ?</h3>
-            <pre class="Condit">
+            <p class="Condit">
                 Nous recueillons et utilisons vos données à caractère personnel en nous fondant sur une ou
                 plusieurs des bases juridiques suivantes :
                 - nous avons obtenu votre consentement préalable (par exemple lorsque vous vous
@@ -163,11 +163,11 @@
                 - surveiller et améliorer nos Plateformes numériques ;
                 - effectuer des analyses statistiques ;
                 - fournir des informations aux organismes de réglementation lorsque la loi l’exige.
-            </pre>
+            </p>
         </section>
         <section>
             <h3>5. Combien de temps conservons-nous vos données à caractère personnel ?</h3>
-            <pre class="Condit">
+            <p class="Condit">
                 Vos données à caractère personnel sont traitées pendant la période nécessaire pour les
                 finalités pour lesquelles elles ont été recueillies, pour se conformer aux obligations légales et
                 réglementaires et pour la durée de toute période nécessaire à l’établissement, l’exercice ou
@@ -189,11 +189,11 @@
                 légales de conservation ;
                 - En ce qui concerne les cookies utilisés: ils sont stockés jusqu’à treize mois à partir du
                 moment où ils ont été installés sur votre appareil.
-            </pre>
+            </p>
         </section>
         <section>
             <h3>6. Comment divulguons-nous et transférons-nous vos données à caractère personnel ?</h3>
-            <pre class="Condit">
+            <p class="Condit">
                 Pour obtenir une description des mesures de protection appropriées, vous pouvez nous
                 envoyer votre demande en utilisant les données de la rubrique « Comment nous
                 contacter ? » ci-dessous.
@@ -203,11 +203,11 @@
                 - Nous pouvons également divulguer ou traiter vos données à caractère personnel
                 conformément à la loi applicable pour défendre nos intérêts légitimes (par exemple
                 dans le cadre d’une procédure civile ou pénale).
-            </pre>
+            </p>
         </section>
         <section>
             <h3>7. Comment protégeons-nous vos données à caractère personnel ?</h3>
-            <pre class="Condit">
+            <p class="Condit">
                 Toutes vos données à caractère personnel sont strictement confidentielles et ne seront
                 accessibles qu’en cas de nécessité, uniquement par le personnel de BEMS Acupuncture 
                 Coopérative, et le cas échéant par le personnel dument autorisé des sociétés
@@ -235,11 +235,11 @@
                 dommage ou de destruction non autorisés de vos données, sauf dans la mesure où la loi
                 nous oblige à endosser une telle responsabilité. Une fois que nous aurons reçu vos données
                 à caractère personnel, nous appliquerons les mesures de sécurité susmentionnées.
-            </pre>
+            </p>
         </section>
         <section>
             <h3>8. Quels sont vos droits sur vos données à caractère personnel ?</h3>
-            <pre class="Condit">
+            <p class="Condit">
                 Conformément au droit applicable à la protection des données, vous pouvez à tout moment
                 demander l’accès, la rectification, l’effacement et la portabilité de vos données à caractère
                 personnel, ou en restreindre le traitement ou vous y opposer. Un résumé de ces droits est
@@ -281,11 +281,11 @@
                 informations (copie d’une carte d’identité, passeport ou autre pièce d’identité légalement
                 reconnue) à des fins d’identification pour traiter votre demande et vous protéger contre les
                 demandes frauduleuses émanant de tiers.
-            </pre>
+            </p>
         </section>
         <section>
             <h3>9. Comment nous contacter ?</h3>
-            <pre class="Condit">
+            <p class="Condit">
                 Pour toute question relative à vos données, pour révoquer votre consentement, pour poser
                 des questions d’ordre général ou pour porter réclamation, veuillez communiquer avec nos
                 équipes :
@@ -298,11 +298,11 @@
                 Si vous avez des questions ou des préoccupations concernant notre Politique de
                 confidentialité ou le traitement des données, vous pouvez contacter le délégué à la
                 protection des données du groupe à l’adresse suivante : privacy@bems.com.
-            </pre>
+            </p>
         </section>
         <section>
             <h3>10. Modifications de notre Politique de confidentialité</h3>
-            <pre class="Contdit">
+            <p class="Contdit">
                 Notre politique de confidentialité reflète nos pratiques actuelles et peut être modifiée et
                 mise à jour de temps à autre. Lorsque nous publions des changements à notre Politique de
                 confidentialité, nous modifions la « Date d’effet » précisée en haut de ce document pour
@@ -310,7 +310,7 @@
                 Si nous modifions notre Politique de confidentialité d’une manière substantielle, nous vous
                 en informerons par le biais d’un avis de modification au début de celle-ci et sur la page
                 d’accueil du site Web « www.BEMS.com ».
-            </pre>
+            </p>
         </section>
     </div>
     {include file="./footer.tpl"}
