@@ -52,8 +52,7 @@ class Login extends Controller
                 if($_SESSION["status"]==0)
                 {
                     $_SESSION["username"] = $username; // Adding the user to the session
-                    $_SESSION["status"] = 1;
-                    
+                    $_SESSION["status"] = 1;    
                 }
 
                 $router = new Router("/listeSympthome");
@@ -124,7 +123,9 @@ class Login extends Controller
         {
             $client->modifiPassword($user, password_hash($newpassword,PASSWORD_DEFAULT));
 
-            $this->renderTpl("view/template/login.tpl", ["incorrect_login" => false, "password_modifier" => true]);  
+            $this->renderTpl("view/template/login.tpl", [
+                "incorrect_login" => false, 
+                "password_modifier" => true]);  
         }
     }
 }
