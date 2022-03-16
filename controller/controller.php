@@ -38,4 +38,26 @@ class Controller
         // header("Location: http://localhost:3080/login");
         $this->smarty->display($path);
     }
+
+    function checkSession()
+    {
+        if (isset($_SESSION["status"]))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    function islogged()
+    {
+        if ($this->checkSession())
+        {
+            if ($_SESSION["status"] == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
 }

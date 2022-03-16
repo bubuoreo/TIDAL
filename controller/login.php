@@ -10,16 +10,22 @@ class Login extends Controller
      */
     function displayLogin()
     {
-     
-        $this->renderTpl("view/template/login.tpl", ["incorrect_login" => false]);
+        $connecter = $this->islogged();
+
+        $this->renderTpl("view/template/login.tpl", [
+            "incorrect_login" => false,
+            "connect" => $connecter]);
     }
 
     /**
      * First time on the account creation page
      */
     function displayNewAcc(){
-        $this->renderTpl("view/template/new_account.tpl", ["already_exists" => false]);
+        $connecter = $this->islogged();
 
+        $this->renderTpl("view/template/new_account.tpl", [
+            "already_exists" => false,
+            "connect" => $connecter]);
     }
 
     /**
@@ -28,7 +34,7 @@ class Login extends Controller
     function connexionLogin()
     {
         require('model/clientModel.php');
-        require_once("smarty/libs/Smarty.class.php"); //importing smarty library
+        
         require_once("pathos.php");
 
         $client = new clientModel();
@@ -47,7 +53,7 @@ class Login extends Controller
 
                 if($_SESSION["status"]==0)
                 {
-                    $_SESSION["user"] = $_POST["input_user"]; // Adding the user to the session
+                    $_SESSION["username"] = $_POST["input_user"]; // Adding the user to the session
                     $_SESSION["status"] = 1;
                     
                 }
@@ -60,8 +66,7 @@ class Login extends Controller
         }
        
         if($flag){
-            $this->renderTpl("view/template/login.tpl", ["incorrect_login" =>true]);
-            
+            $this->renderTpl("view/template/login.tpl", ["incorrect_login" =>true]);  
         }
     }
 

@@ -13,17 +13,20 @@
 <body>
     {include file="./header.tpl"}
     
-    <div class="recherche">
-        <form class="form login" id="sb_form" method="POST" action="/search" autocomplete="off">
-            <!-- Si l'utilisateur n'est pas connecté, un appuie sur le bouton 'Rchercher' redirige vers la page de connexion -->
-            <!-- Ou alors on fait disparaître ce champ pour les utilisateurs non connectés -->
-            <label for="sb_text">Recherche par mot clé : </label>
-            <input type="text" class="input_text" id="recherche" name="recherche" placeholder="recherche">
-            <button type="submit" class="submit">Valider</button>
-        </form>
-    </div>
+    {if $connect}
+        <div class="recherche">
+            <form class="form login" id="sb_form" method="POST" action="/search" autocomplete="off">
+                <!-- Si l'utilisateur n'est pas connecté, un appuie sur le bouton 'Rchercher' redirige vers la page de connexion -->
+                <!-- Ou alors on fait disparaître ce champ pour les utilisateurs non connectés -->
+                <label for="sb_text">Recherche par mot clé : </label>
+                <input type="text" class="input_text" id="recherche" name="recherche" placeholder="recherche">
+                <button type="submit" class="submit">Valider</button>
+            </form>
+        </div>
+        <div class="black-space"></div>
+    {/if}
 
-    <div class="black-space"></div>
+    
 
     <select id="selectPatho" name="patho">
         <option value="all" selected>Selectionner le type de pathologie</option>

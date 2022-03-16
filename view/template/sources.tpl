@@ -10,14 +10,8 @@
 
 <body>
 
-
     {include file="./header.tpl"}
-    <div>
-        <pre>
-            page de sources avec la webographie et les sources
-            mettre qui nous sommes
-        </pre>
-    </div>
+
     <div>
         <p>Nous allons maintenant présenter les membres fondateurs de la Brigade Erudite de Médecine et de Santé</p>
         <pre>
@@ -50,6 +44,7 @@
             
         </pre>
     </div>
+    
 {include file="./footer.tpl"}
   
 </body>

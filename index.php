@@ -8,9 +8,17 @@ require_once("controller/page.php");
 /**
  * Creation d'une session utilisateur
  */
-session_start();
+if (!session_id())
+{
+    session_start();
+    session_regenerate_id();
+    $_SESSION["status"] = 0;
+    // echo "<pre>";
+    // var_dump($_SESSION["status"]);
+    // echo "</pre>";
 
-$_SESSION["status"] = 0;
+}
+
 
 /**
  * Création d'un routeur

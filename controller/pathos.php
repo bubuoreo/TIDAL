@@ -102,6 +102,7 @@ class Pathos extends Controller
 
     function searchAll()
     {
+        $connecter = $this->islogged();
         $this->checkIfSetPathoModel();
         $meridiens = $this->pathoModel->getTable("meridien"); // recuperation de la table des meridiens sera utile pour trier par meridien
         
@@ -137,7 +138,12 @@ class Pathos extends Controller
             $datas[$categorie] = array_filter($categorieMeridiens);
     
         }
-        $this->renderTpl("view/template/listeSympthome.tpl", ["listeMeridien" => $meridiens, "datas" => $datas, "Categorie" => $categoriePathos, ]);
+        
+        $this->renderTpl("view/template/listeSympthome.tpl", [
+            "connect" => $connecter,
+            "listeMeridien" => $meridiens, 
+            "datas" => $datas, 
+            "Categorie" => $categoriePathos ]);
     }
 
 }
