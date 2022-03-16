@@ -53,7 +53,6 @@ class Login extends Controller
                 {
                     $_SESSION["username"] = $username; // Adding the user to the session
                     $_SESSION["status"] = 1;    
-
                 }
 
                 $router = new Router("/listeSympthome");

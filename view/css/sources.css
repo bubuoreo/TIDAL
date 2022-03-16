@@ -166,7 +166,10 @@ nav{
     
 }
 /* Element spécial pour le CSS de la page policy */
-pre#Condit a{
+p#Condit{
+    max-width: 100vw;
+}
+p#Condit a{
     color: rgb(24, 92, 156);
 }
 .centré{
