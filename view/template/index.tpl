@@ -2,8 +2,6 @@
 <html lang="fr">
 <head>
     <link rel="stylesheet" href="../view/css/index.css">
-    <link rel="stylesheet" href="../view/css/header.css">
-    <link rel="stylesheet" href="../view/css/footer.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

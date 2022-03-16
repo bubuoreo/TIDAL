@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="../view/css/header.css">
-    <link rel="stylesheet" href="../view/css/footer.css">
+    {* <link rel="stylesheet" href="../view/css/header.css"> *}
+    {* <link rel="stylesheet" href="../view/css/footer.css"> *}
     <link rel="stylesheet" href="../view/css/login.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
