@@ -61,13 +61,14 @@ class Pathos extends Controller
     
     function searchByKeyword()
     {
-        $keyword = $_POST["recherche"];
+        $connecter = $this->islogged();
+        $keyword = htmlspecialchars( $_POST["recherche"] ) ;
         
         $this->checkIfSetPathoModel();
         $meridiens = $this->pathoModel->getTable("meridien"); // recuperation de la table des meridiens sera utile pour trier par meridien
 
         
-        $datas = $this->pathoModel->getTableByKeyword($keyword);
+        $datas = $this->pathoModel->getTableByKeyword(strtolower($keyword));
 
         foreach($meridiens as $meridien)
         {
@@ -95,8 +96,8 @@ class Pathos extends Controller
         
         
         empty($datas)? 
-            $this->renderTpl("view/template/search.tpl", ["datas"=> [], "elementFind" => false, "keyword" => $keyword]) : 
-            $this->renderTpl("view/template/search.tpl", ["datas"=> $datas, "elementFind" => true, "keyword" => $keyword]);
+            $this->renderTpl("view/template/search.tpl", ["datas"=> [], "elementFind" => false, "keyword" => $keyword, "isconnect" => $connecter]) : 
+            $this->renderTpl("view/template/search.tpl", ["datas"=> $datas, "elementFind" => true, "keyword" => $keyword, "isconnect" => $connecter]);
     }
 
 
