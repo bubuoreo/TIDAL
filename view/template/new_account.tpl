@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    {* <link rel="stylesheet" href="../view/css/header.css"> *}
-    {* <link rel="stylesheet" href="../view/css/footer.css"> *}
-    <link rel="stylesheet" href="../view/css/login.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,24 +38,9 @@
             </div>
         </form>
     </div>
-<<<<<<< HEAD
     
     {include file="./footer.tpl"}
-=======
-    <footer>
-        <a href="../../view/html/index.html">
-            <img class="logo" src="../../view/images/logo.png" alt="BEMS">
-        </a>
-        <nav>
-            <ul class="nav_links">
-                <li><a href="/sources">Sources</a></li>
-                <li><a href="/policy">Privacy policy</a></li>
-            </ul>
-        </nav>
-        <a class="cta btn" href="/login">
-            <img src="../../view/images/connexion.png" alt="Connexion" width="30" height="30">
-        </a>
-    </footer>
->>>>>>> main
+    <link rel="stylesheet" href="../view/css/login.css">
+
 </body>
 </html>
