@@ -19,9 +19,10 @@ class Login extends Controller
 
         $this->renderTpl("view/template/login.tpl", [
             "incorrect_login" => false,
-            "connect" => $connecter,
+            "isconnect" => $connecter,
             "user" => $user, 
-            "password_modifier" => false ]);
+            "password_modifier" => false,
+            "wrongUsername" => false ]);
     }
 
     
@@ -38,25 +39,24 @@ class Login extends Controller
         $data = $client->getUser($username);
         $flag = True;
 
- 
-
+       
         // Verify if it is the good pswd
         if ((sizeof($data) != 0)) {// TODO: remplace when data is added to the db
             $db_pswd = $data[0]["password"]; 
             $password = htmlspecialchars($_POST["input_password"]);
             
+
             // TODO : For now the problem ofthe routes are not specifically addressed...
             if(password_verify($password, $db_pswd)){
                 $flag=false;
                 
-                if($_SESSION["status"]==0)
-                {
-                    $_SESSION["username"] = $username; // Adding the user to the session
-                    $_SESSION["status"] = 1;    
-                }
-
+                $this->startSession();
+                $_SESSION["status"] = 1;  
+                $_SESSION["user"]  = $username; 
+                
+                $_SERVER['REQUEST_METHOD'] = "GET";
                 $router = new Router("/listeSympthome");
-                $router->newRoutePost("/listeSympthome", "Pathos@searchAll");
+                $router->newRouteGet("/listeSympthome", "Pathos@searchAll");
                 $router->run();
 
             }
@@ -66,7 +66,8 @@ class Login extends Controller
             $this->renderTpl("view/template/login.tpl", [
                 "incorrect_login" =>true, 
                 "password_modifier" => false,
-                "connect" => false]);  
+                "isconnect" => false, 
+                "wrongUsername" => false]);  
             }
     }
 
@@ -80,7 +81,7 @@ class Login extends Controller
 
         $this->renderTpl("view/template/new_account.tpl", [
             "already_exists" => false,
-            "connect" => $connecter]);
+            "isconnect" => $connecter]);
     }
 
 
@@ -96,13 +97,18 @@ class Login extends Controller
         $email = htmlspecialchars($_POST["input_email"]);
 
         $client = new clientModel();
-        $data = $client->getUser($username);
+        $data = $client->getUser($username); // veriy if the username is not already in use
 
         // Verify if it is the good pswd
-        if ((sizeof($data) == 0)) {
+        if (empty($data)) {
             $client->setUser($username, password_hash($password,PASSWORD_DEFAULT), $email);
-            $router = new Router("/");
-            $router->newRoutePost("/", "Controller\Login@display");
+            session_start();
+            $_SESSION["username"] = $username; // Adding the user to the session
+            $_SESSION["status"] = 1;    
+
+            $_SERVER['REQUEST_METHOD'] = "GET";
+            $router = new Router("/login");
+            $router->newRouteGet("/login", "Login@displayLogin");
             $router->run();
         }
         else{
@@ -125,9 +131,29 @@ class Login extends Controller
             $client->modifiPassword($user, password_hash($newpassword,PASSWORD_DEFAULT));
 
             $this->renderTpl("view/template/login.tpl", [
-                "incorrect_login" => false, 
-                "password_modifier" => true]);  
+                "incorrect_login" =>false, 
+                "password_modifier" => true,
+                "isconnect" => false,
+                "wrongUsername" => false]);  
         }
+        else
+        {
+            $this->renderTpl("view/template/login.tpl", [
+                "incorrect_login" =>false, 
+                "password_modifier" => false,
+                "isconnect" => false,
+                "wrongUsername" => true]);  
+            
+        }
+    }
+
+    function logout()
+    {
+        $this->exitSession();
+        $_SERVER['REQUEST_METHOD'] = "GET";
+        $router = new Router("/");
+        $router->newRouteGet("/", "Page@displayHome");
+        $router->run();
     }
 }
     

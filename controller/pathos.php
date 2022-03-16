@@ -103,6 +103,7 @@ class Pathos extends Controller
     function searchAll()
     {
         $connecter = $this->islogged();
+
         $this->checkIfSetPathoModel();
         $meridiens = $this->pathoModel->getTable("meridien"); // recuperation de la table des meridiens sera utile pour trier par meridien
         
@@ -113,13 +114,7 @@ class Pathos extends Controller
             "Pathologie des branches (voies luo)" => ["reg" =>["l%"], "abrev" => "voieLuo"],
             "Pathologies des merveilleux vaisseaux" => ["reg" =>["mv%"], "abrev" => "merveilleuxVessaux"]
         ];
-        $correspondance = [
-            "Pathologies de meridien" => "meridien",
-            "Pathologies d’organe/viscère (tsang/fu)" => "tsangFu",
-            "Pathologies des tendino-musculaires ( jing jin)" => "jingJin",
-            "Pathologie des branches (voies luo)" => "voieLuo",
-            "Pathologies des merveilleux vaisseaux" => "merveilleuxVessaux"
-        ];
+        
         $datas=[];
         foreach($categoriePathos as $categorie => $patho)
         // iteration sur Categorie patho afin de recuper le nom de la catégorie ainsi que le type associer
@@ -140,7 +135,7 @@ class Pathos extends Controller
         }
         
         $this->renderTpl("view/template/listeSympthome.tpl", [
-            "connect" => $connecter,
+            "isconnect" => $connecter,
             "listeMeridien" => $meridiens, 
             "datas" => $datas, 
             "Categorie" => $categoriePathos ]);

@@ -13,7 +13,7 @@
 <body>
     {include file="./header.tpl"}
     
-    {if $connect}
+    {if $isconnect}
         <div class="recherche">
             <form class="form login" id="sb_form" method="POST" action="/search" autocomplete="off">
                 <!-- Si l'utilisateur n'est pas connecté, un appuie sur le bouton 'Rchercher' redirige vers la page de connexion -->
@@ -137,11 +137,4 @@
 {* Attention probleme sur l'assignation des classes pour merveilleux Vaisseaux *}
 <script src="../view/js/listeSympthome.js"></script>
 
-{literal}
-    <script> 
-    $("#Top_page").click(function(){
-        $('html, body').animate({ scrollTop: 0 }, 1200);
-    })
-    </script>
-{/literal}
 </html>

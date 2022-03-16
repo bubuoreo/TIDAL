@@ -11,12 +11,13 @@
     {include file="./header.tpl"}
 
     <div class="general">
-        <form class="form login" id="login_form" method="POST" action="/create" autocomplete="off">
             {if $already_exists}
                 <div class="error_block">
                     <p class="error_message">This account already exists</p>
                 </div>
             {/if}
+        <form class="form login" id="login_form" method="POST" action="/create" autocomplete="off">
+            
 
             <div class="user_block">
                 <label for="input_user">Utilisateur:</label>
