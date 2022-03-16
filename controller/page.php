@@ -12,8 +12,8 @@ class Page extends Controller
     
     function displayHome()
     {
-        // echo "salut je suis la homepage";
-        $this->renderTpl("view/template/index.tpl");
+        $connecter = $this->islogged();
+        $this->renderTpl("view/template/index.tpl", ["connect" => $connecter]);
     }
 
 

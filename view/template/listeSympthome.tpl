@@ -115,7 +115,7 @@
                 <h3 class = "{$Categoriepatho.abrev} {$patho[$compteur].mer}" name="visible" >Meridien associé: {$NomMeridien} </h3>
                 <ul class = "{$Categoriepatho.abrev} {$patho[$compteur].mer}">
                     {foreach from=$patho  item=value name=bouclesympt}
-                        <li class = "{$Categoriepatho.abrev} {$value.mer} {$value.type}"> {$value.descriptionsympt}</li>
+                        <li class = "{$Categoriepatho.abrev} {$value.mer} {$value.type} sympt"> {$value.descriptionsympt}</li>
                         {counter}
                     {/foreach}  
                     <li class="{$Categoriepatho.abrev} {$patho[$compteur - 1].mer} VoirPlus"><button class = "Plus">...</button></li>

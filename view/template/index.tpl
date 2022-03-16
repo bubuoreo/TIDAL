@@ -48,9 +48,11 @@
             peau et de votre âme
         </p>
     </section>
-    <div class="centré">
-        <p>Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Web.<br></p>
-    </div>
+    {if $connect == false}
+        <div class="centré">
+            <p>Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Web.<br></p>
+        </div>
+    
     <div class="centré">
         <a href="/login" class="centré">
                 <button name="Connexion" id="connexion">Se connecter</button>
@@ -61,6 +63,13 @@
                 Cliquez ici pour continuer sans vous connecter.
         </a>
     </div>
+    {else}
+        <div class="centré">
+        <a class="souligne centré" id="continuer_sans_connexion" href="/listeSympthome">
+                Cliquez ici pour continuer .
+        </a>
+    </div>
+    {/if}
 
     {include file="./footer.tpl" }
 </body>

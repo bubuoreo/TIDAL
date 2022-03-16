@@ -13,10 +13,6 @@ if (!session_id())
     session_start();
     session_regenerate_id();
     $_SESSION["status"] = 0;
-    // echo "<pre>";
-    // var_dump($_SESSION["status"]);
-    // echo "</pre>";
-
 }
 
 
@@ -48,8 +44,9 @@ $router->newRouteGet("/listeSympthome", "Pathos@searchAll");
 /**
  * POST
  */
-$router->newRoutePost("/login", "Login@connexion");
+$router->newRoutePost("/login", "Login@connexionLogin");
 $router->newRoutePost("/create", "Login@connexionNewAcc");
+$router->newRoutePost("/modificationMotDePass", "Login@modificationMdp");
 
 $router->newRoutePost("/search", "Pathos@searchByKeyword");
 
