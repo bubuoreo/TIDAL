@@ -11,84 +11,97 @@
 </head>
 <body>
     {include file="./header.tpl"}
-{if $connect == false}
-    <div class="general">
-        <form class="form login" id="login_form" method="POST" action="/login" autocomplete="off">
 
-            <div class="user_block">
-                <label for="input_user">Utilisateur:</label>
-                <input type="text" class="login_text" id="input_user" name="input_user">
+    {if $isconnect == false}
+        {if $incorrect_login }
+                <div class="error_block">
+                    <p class="error_message">Wrong login credentials</p>
+                    <p class="error_message">Le nom d'utilisateur ou le mot de passe ne correspondent pas </p>
+                </div>  
+            {/if}
+        <div class="general">
+            <form class="form login" id="login_form" method="POST" action="/login" autocomplete="off">
+
+                <div class="user_block">
+                    <label for="input_user">Utilisateur:</label>
+                    <input type="text" class="login_text" id="input_user" name="input_user">
+                </div>
+
+                <div class="password_block">
+                    <label for="input_password">Mot de passe:</label>
+                    <input type="password" class="password_text" id="input_password" name="input_password">
+                </div>
+
+                <div class="button_block">
+                    <input type="submit" class="submit">
+                </div>
+
+            </form>
+            <button id="BtnModal">Mot de passe oublié</button>
+
+            
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                </div>
+                <div>
+                    <form class="form mdpforgot" id="modiMdp_form" method="POST" action="/modificationMotDePasse" autocomplete="off">
+
+                        <div class="user_block">
+                            <label for="input_user_modif">Nom d'utilisateur:</label>
+                            <input type="text" class="login_text" id="input_user_modif" name="input_user_modif">
+                        </div>
+
+                        <div class="password_block">
+                            <label for="input_password_modif">Nouveau mot de passe:</label>
+                            <input type="password" class="password_text" id="input_password_modif" name="input_password_modif">
+                        </div>
+
+                        <div class="password_block">
+                            <label for="input_password_confirme">confirmer le mot de passe:</label>
+                            <input type="password" class="password_text" id="input_password_confirm" name="input_password_confirme">
+                        </div>
+
+                        <div class="button_block">
+                            <input  id="modifier_mdp" type="submit" class="submit">
+                        </div>
+                    </form>
+                    {if $wrongUsername}
+                    
+                        <div>
+                            <p id="wrongUsername"> Impossible de modifier le mot de passe, aucun compte utilisateur ne correspond</p>
+                        </div>
+                    {/if}
+                </div>
+
             </div>
-
-            <div class="password_block">
-                <label for="input_password">Mot de passe:</label>
-                <input type="password" class="password_text" id="input_password" name="input_password">
-            </div>
-
-            <div class="button_block">
-                <input type="submit" class="submit">
-            </div>
-
-        </form>
-        <button id="BtnModal">Mot de passe oublié</button>
-
-        
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close">&times;</span>
-            </div>
+            
             <div>
-                <form class="form mdpforgot" id="modiMdp_form" method="POST" action="/modificationMotDePass" autocomplete="off">
-
-                    <div class="user_block">
-                        <label for="input_user_modif">Nom d'utilisateur:</label>
-                        <input type="text" class="login_text" id="input_user_modif" name="input_user_modif">
-                    </div>
-
-                    <div class="password_block">
-                        <label for="input_password_modif">Nouveau mot de passe:</label>
-                        <input type="password" class="password_text" id="input_password_modif" name="input_password_modif">
-                    </div>
-
-                    <div class="password_block">
-                        <label for="input_password_confirme">confirmer le mot de passe:</label>
-                        <input type="password" class="password_text" id="input_password_confirm" name="input_password_confirme">
-                    </div>
-
-                    <div class="button_block">
-                        <input  id="modifier_mdp" type="submit" class="submit">
-                    </div>
-
-                </form>
+                    <a class="souligne centré" id="création_compte" href="/create">
+                        Créer votre compte
+                    </a>
             </div>
-
+            {if $password_modifier}
+                <div> 
+                <p> Votre mot de passe à bien été modifié</p>   
+                </div>
+            {/if}
         </div>
-        <div>
-                <a class="souligne centré" id="création_compte" href="/create">
-                    Créer votre compte
-                </a>
+    {else}
+        <div class="general">
+            <h2> Bonjour {$user}</h2>
+            <p> Vous etes déjà connecté(e)</p>
         </div>
-        {if $password_modifier}
-            <div> 
-             <p> Votre mot de passe à bien été modifié</p>   
-            </div>
-        {/if}
-    </div>
-{else}
-    <div class="general">
-        <h2> Bonjour {$user}</h2>
-        <p> Vous etes déjà connecté(e)</p>
-    </div>
-{/if}
+    {/if}
 
 
     {include file="./footer.tpl"}
 
     <link rel="stylesheet" href="../view/css/login.css">
-
+    <script src="../view/js/login.js"></script>
 {literal}
     
     <style>
@@ -149,27 +162,37 @@
 
 <script>
     $(document).ready(function(){
-        $("#myModal").hide()
-         $("#modifier_mdp").prop("disabled",true);
+        
+        $("#modifier_mdp").prop("disabled",true);
+      
+        if ($("#wrongUsername").lenght)
+        {
+            $("#myModal").show();
+        } else
+        {
+            $("#myModal").hide();
+        }
     })
 
     $("#BtnModal").click(function(){
-        $("#myModal").css("display","block" )
+        $("#myModal").css("display","block" );
     })
+
     $(".close").click(function(){
-        $("#myModal").hide()
+        $("#myModal").hide();
     })
 
     $("#input_password_confirm").change(function(){
-        var confirme_pass = $(this).val()
-        var new_pass = $("#input_password_modif").val()
+        var confirme_pass = $(this).val();
+        var new_pass = $("#input_password_modif").val();
         if(confirme_pass == new_pass)
         {
             $("#modifier_mdp").prop("disabled",false);
         }
     })
-</script>
-{/literal}
+    
+</script> *}
+
 </body>
 
 </html>

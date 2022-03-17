@@ -8,13 +8,8 @@ require_once("controller/page.php");
 /**
  * Creation d'une session utilisateur
  */
-if (!session_id())
-{
-    session_start();
-    session_regenerate_id();
-    $_SESSION["status"] = 0;
-}
 
+session_start();
 
 /**
  * Création d'un routeur
@@ -37,6 +32,8 @@ $router->newRouteGet("/sources", "Page@displaySources");
 
 $router->newRouteGet("/create", "Login@displayNewAcc");
 $router->newRouteGet("/login", "Login@displayLogin");
+$router->newRouteGet("/logout", "Login@logout");
+$router->newRouteGet("/userList", "Login@userList");
 
 
 $router->newRouteGet("/listeSympthome", "Pathos@searchAll");
@@ -44,9 +41,9 @@ $router->newRouteGet("/listeSympthome", "Pathos@searchAll");
 /**
  * POST
  */
-$router->newRoutePost("/login", "Login@connexion");
+$router->newRoutePost("/login", "Login@connexionLogin");
 $router->newRoutePost("/create", "Login@connexionNewAcc");
-$router->newRoutePost("/modificationMotDePass", "Login@modificationMdp");
+$router->newRoutePost("/modificationMotDePasse", "Login@modificationMdp");
 
 $router->newRoutePost("/search", "Pathos@searchByKeyword");
 

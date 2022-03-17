@@ -38,27 +38,48 @@ class Controller
         // header("Location: http://localhost:3080/login");
         $this->smarty->display($path);
     }
-
+    
     function checkSession()
     {
-        if (isset($_SESSION["status"]))
+        // session_start();
+        if(!isset($_SESSION["status"]))
         {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
+
+
+    function startSession()
+    {
+        if (!$this->checkSession())
+        {
+            session_set_cookie_params(['samesite' => "Strict"]);
+            session_start();
+            session_regenerate_id();
+            $_SESSION["status"] = 0;
+        }
+    }
+    
 
     function islogged()
     {
         if ($this->checkSession())
         {
-            if ($_SESSION["status"] == 1)
+            if ($_SESSION["status"] >= 1)
             {
                 return true;
             }
             return false;
         }
         return false;
+    }
+
+    function exitSession()
+    {
+        session_unset();
+        session_destroy();
+        $this->startSession();
     }
     
 }

@@ -12,17 +12,21 @@ class Page extends Controller
     
     function displayHome()
     {
+        $this->startSession();
+        
         $connecter = $this->islogged();
-        $this->renderTpl("view/template/index.tpl", ["connect" => $connecter]);
+        $this->renderTpl("view/template/index.tpl", ["isconnect" => $connecter]);
     }
 
 
     function displaySources()
     {
-        $this->renderTpl("view/template/sources.tpl");
+        $connecter = $this->islogged();
+        $this->renderTpl("view/template/sources.tpl", ["isconnect" => $connecter]);
     }
     function displayPolicy()
     {
-        $this->renderTpl("view/template/policy.tpl");
+        $connecter = $this->islogged();
+        $this->renderTpl("view/template/policy.tpl", ["isconnect" => $connecter]);
     }
 }

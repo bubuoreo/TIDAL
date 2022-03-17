@@ -13,7 +13,7 @@
 <body>
     {include file="./header.tpl"}
     
-    {if $connect}
+    {if $isconnect}
         <div class="recherche">
             <form class="form login" id="sb_form" method="POST" action="/search" autocomplete="off">
                 <!-- Si l'utilisateur n'est pas connecté, un appuie sur le bouton 'Rchercher' redirige vers la page de connexion -->
@@ -110,15 +110,15 @@
         
         <h2 class = {$Categoriepatho.abrev}>{$Nom} </h2>
         <br>
-        {counter start=0 assign=compteur}
+       
             {foreach from=$datas[$Nom] key=NomMeridien item=patho}
-                <h3 class = "{$Categoriepatho.abrev} {$patho[$compteur].mer}" name="visible" >Meridien associé: {$NomMeridien} </h3>
-                <ul class = "{$Categoriepatho.abrev} {$patho[$compteur].mer}">
+                <h3 class = "{$Categoriepatho.abrev} {$patho[0].mer}" name="visible" >Meridien associé: {$NomMeridien} </h3>
+                <ul class = "{$Categoriepatho.abrev} {$patho[0].mer}">
                     {foreach from=$patho  item=value name=bouclesympt}
                         <li class = "{$Categoriepatho.abrev} {$value.mer} {$value.type} sympt"> {$value.descriptionsympt}</li>
-                        {counter}
+                        
                     {/foreach}  
-                    <li class="{$Categoriepatho.abrev} {$patho[$compteur - 1].mer} VoirPlus"><button class = "Plus">...</button></li>
+                    <li class="{$Categoriepatho.abrev} {$patho[0].mer} VoirPlus"><button class = "Plus">...</button></li>
                 </ul>     
             {/foreach}
     </div>
@@ -134,14 +134,7 @@
     {include file="./footer.tpl"}
 </body>
 
-{* Attention probleme sur l'assignation des classes pour merveilleux Vaisseaux *}
+
 <script src="../view/js/listeSympthome.js"></script>
 
-{literal}
-    <script> 
-    $("#Top_page").click(function(){
-        $('html, body').animate({ scrollTop: 0 }, 1200);
-    })
-    </script>
-{/literal}
 </html>

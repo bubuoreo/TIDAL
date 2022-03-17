@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="../view/css/listSympthome.css">
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,6 +71,6 @@
 </body>
 
 {* Attention probleme sur l'assignation des classes pour merveilleux Vaisseaux *}
-<script src="../view/js/jquery.min.js"></script>
+
 
 </html>

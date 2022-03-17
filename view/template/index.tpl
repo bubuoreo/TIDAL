@@ -48,27 +48,27 @@
             peau et de votre âme
         </p>
     </section>
-    {if $connect == false}
+    {if $isconnect == false}
         <div class="centré">
-            <p>Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Web.<br></p>
+                <p>Connectez-vous pour pouvoir profiter de tous les avantages que propose notre site Web.<br></p>
         </div>
-    
-    <div class="centré">
-        <a href="/login" class="centré">
-                <button name="Connexion" id="connexion">Se connecter</button>
-        </a>
-    </div>
-    <div class="centré">
-        <a class="souligne centré" id="continuer_sans_connexion" href="/listeSympthome">
-                Cliquez ici pour continuer sans vous connecter.
-        </a>
-    </div>
+        
+        <div class="centré">
+            <a href="/login" class="centré">
+                    <button name="Connexion" id="connexion">Se connecter</button>
+            </a>
+        </div>
+        <div class="centré">
+            <a class="souligne centré" id="continuer_sans_connexion" href="/listeSympthome">
+                    Cliquez ici pour continuer sans vous connecter.
+            </a>
+        </div>
     {else}
         <div class="centré">
         <a class="souligne centré" id="continuer_sans_connexion" href="/listeSympthome">
                 Cliquez ici pour continuer .
         </a>
-    </div>
+        </div>
     {/if}
 
     {include file="./footer.tpl" }
