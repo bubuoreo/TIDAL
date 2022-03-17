@@ -22,13 +22,7 @@ function gestionLi()
 };
 // action que l'on effectue au chargement de la page pour cacher les li en trop pour ne pas surcharcher la page
 $(document).ready(function(){
-    // var tabHeader = document.querySelectorAll("h2");
-    // tabHeader.forEach(function(element){
-    //     let name = element.className;
-    //     let $uls = $("ul."+name);
-    //     $uls.each(function(){
-    //         hideLi($(this))
-    //     })
+  
        gestionLi();
     
     $("#selectPatho option[value='all']").prop('selected', true);

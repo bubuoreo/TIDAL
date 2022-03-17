@@ -51,7 +51,7 @@ class Login extends Controller
                 $flag=false;
                 
                 $this->startSession();
-                if ($username = "root")
+                if ($username == "root")
                 {
                     $_SESSION["status"] = 2;  
                 }
@@ -119,7 +119,7 @@ class Login extends Controller
             $router->run();
         }
         else{
-            $this->renderTpl("view/template/new_account.tpl", ["already_exists" =>true]);
+            $this->renderTpl("view/template/new_account.tpl", ["already_exists" =>true, "isconnect" => false]);
 
         }
     }
