@@ -60,7 +60,7 @@ class Router
         }
         else
         {
-            
+            // redirection vers la home page 
             $this->routes["default"]->execute();
             echo "<script> 
                     alert('Vous n\'avez pas les droit d\'accès. Vous avez été rediriré');  
@@ -69,6 +69,9 @@ class Router
             
     }
 
+    /**
+     * verifie les droits d'acces de l'utilisateur
+     */
     private function middleware()
     {
         if($this->url == "userList")

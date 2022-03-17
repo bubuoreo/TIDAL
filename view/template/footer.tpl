@@ -1,3 +1,5 @@
+{* footer que l'on met sur toutes les pages *}
+
 <head>
     <link rel="stylesheet" href="../view/css/footer.css">
 </head>

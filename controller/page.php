@@ -10,6 +10,9 @@ include_once "./controller/controller.php";
 class Page extends Controller
 {
     
+    /**
+     * affichage de la page principale
+     */
     function displayHome()
     {
         $this->startSession();
@@ -18,12 +21,18 @@ class Page extends Controller
         $this->renderTpl("view/template/index.tpl", ["isconnect" => $connecter]);
     }
 
-
+    /**
+     * affichage de la page des sources
+     */
     function displaySources()
     {
         $connecter = $this->islogged();
         $this->renderTpl("view/template/sources.tpl", ["isconnect" => $connecter]);
     }
+
+    /**
+     * affichage de la page de la policy
+     */
     function displayPolicy()
     {
         $connecter = $this->islogged();

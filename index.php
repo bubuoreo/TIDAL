@@ -6,13 +6,13 @@ require_once("controller/pathos.php");
 require_once("controller/page.php");
 
 /**
- * Creation d'une session utilisateur
+ * Creation/chargement d'une session 
  */
 
 session_start();
 
 /**
- * Création d'un routeur
+ * instentiation d'un routeur
 */
 $router = new Router($_GET["url"]);
 

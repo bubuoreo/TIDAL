@@ -59,6 +59,10 @@ class Pathos extends Controller
         return $data ;
     }
     
+
+    /**
+     * fonction de recherche de pathos et sympthomes en entrant un mot cle
+     */
     function searchByKeyword()
     {
         $connecter = $this->islogged();
@@ -100,7 +104,10 @@ class Pathos extends Controller
             $this->renderTpl("view/template/search.tpl", ["datas"=> $datas, "elementFind" => true, "keyword" => $keyword, "isconnect" => $connecter]);
     }
 
-
+    /**
+     * recuperation et mise en formes des données pour l'affichage de la 
+     * liste de tous les sympthomes et les pathologies qui correspondent
+     */
     function searchAll()
     {
         $connecter = $this->islogged();
@@ -144,37 +151,8 @@ class Pathos extends Controller
     }
 
 }
-//     function searchByPathoType($pathoType)
-//     {
-//         $correspondance = [
-//             "Pathologies de méridien" => "m%",
-//             "Pathologies d’organe/viscère (tsang/fu)" => "tf",
-//             "Pathologies des tendino-musculaires ( jing jin)" => "j",
-//             "Pathologie des branches (voies luo)" => "l",
-//             "Pathologies des merveilleux vaisseaux" => "mv"
-//         ];
-//         $this->checkIfSetPathoModel();
-//         $datas = $this->pathoModel->getTableByPathoType($pathoType);
-//         echo "<pre>";
-//         var_dump($datas);
-//         echo "</pre>";
-//     }
-// }
 
-// [
-//     ["meridien1"] => [
-//                 pathos1 => [sympthomes]
-//                 pathos2 => [sympthomes]
-//                 pathos3 => [sympthomes]
-//                 ]
-//     ["meridien2"] => [
-//                 pathos1 => [sympthomes]
-//                 pathos2 => [sympthomes]
-//                 pathos3 => [sympthomes]
-//                 ]
-
-// ]
-
+//  structure du tableau data en sortie de la fonction pour passage a smarty
 // [
 //     "pathologie de meridien" => [
 //                     "meridien du poumon interne" => [ "symptome1", "sympthom2", ...],

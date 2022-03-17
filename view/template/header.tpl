@@ -1,3 +1,5 @@
+{* header que l'on met sur toutes les pages *}
+
 <head>
     <link rel="stylesheet" href="../view/css/header.css">
 </head>

@@ -2,13 +2,16 @@
 
 
 require("./model/model.php");
-
+/**
+ * classe de gestion des requetes pour les pathologies
+ */
 class PathosModel extends Model
 {
     
     /**
      * Permet de recupere toutes les valeurs d'une table
-     * @param table: nom de la table que l'on souhaite récuperer. 
+     * @param table: nom de la table que l'on souhaite récuperer.
+     * @return data reponse de la requete 
      */
     function getTable($table)
     {
@@ -30,6 +33,10 @@ class PathosModel extends Model
         return $this->sqlRequest($sql, [":".$column => $ligne]);
     }
     
+    /**
+     * prepatation de la requete afin d'obtenir toutes les informations liées a keyword
+     * @param keyword mot clé fourni par l'utilisateur pour faire une recherche
+     */
     function getTableByKeyword($keyword)
     {
         $sql = "SELECT keywords.name, symptome.desc AS description, patho.mer, patho.type,meridien.nom, patho.desc AS meridien 
@@ -52,6 +59,10 @@ class PathosModel extends Model
 
     }
 
+    /**
+     * recuperation des informations liées a un meridiens en particulier
+     * @param meridien meridien d'on l'on souhaite les infos
+     */
     function getTableByMeriden($meridien)
     {
         $sql = "SELECT  symptome.desc, patho.desc, patho.type,patho.mer
@@ -68,28 +79,9 @@ class PathosModel extends Model
         return $this->sqlRequest($sql, [":meridien" => $meridien]);
     }
 
-    function getTableByPathoType($type)
-    {
-        $sql = " SELECT 
-                patho.type AS \"Categorie Patho\" ,
-                meridien.nom AS \"meridien associer\",
-                patho.desc AS \"desc type\", 
-                symptome.desc AS \"desc sympt\"
-            FROM patho
-            JOIN meridien
-                ON patho.mer = meridien.code
-            JOIN symptpatho
-                ON patho.idp = symptpatho.idp
-            JOIN symptome
-                ON symptpatho.ids = symptome.ids
-            WHERE patho.type = :pathotype
-            ORDER BY meridien.nom";
-
-
-        return $this->sqlRequest($sql, [":pathotype" => $type]);
-    }
-
+    
     /**
+     * recuperation de toutes les tables en utilisant le pathosType
      * @param pathoType array ["l"] soit ["m%", "mv"]
      */
     function getPathosAll($pathoType)

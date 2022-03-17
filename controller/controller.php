@@ -39,6 +39,9 @@ class Controller
         $this->smarty->display($path);
     }
     
+    /**
+     * verifie si une session est en cour
+     */
     function checkSession()
     {
         // session_start();
@@ -49,7 +52,9 @@ class Controller
         return true;
     }
 
-
+    /**
+     * demarre une nouvelle session si aucune n'existe deja
+     */
     function startSession()
     {
         if (!$this->checkSession())
@@ -61,7 +66,9 @@ class Controller
         }
     }
     
-
+    /**
+     * verifie si l'utilisateur est connecté au site
+     */
     function islogged()
     {
         if ($this->checkSession())
@@ -75,6 +82,9 @@ class Controller
         return false;
     }
 
+    /**
+     * ferme une session lorque l'utilisateur demande a se deconnecté
+     */
     function exitSession()
     {
         session_unset();

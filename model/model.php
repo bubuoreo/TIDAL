@@ -1,9 +1,15 @@
 <?php
 
 
-
+/**
+ * Super classe qui gere la connection ainsi que 
+ * l'execution des requetes SQL qui on été préparé par les autres models
+ */
 class Model
 {       
+    /**
+     * parametres de connection
+     */
     protected $db_user = "pgtidal";
     protected $db_pass = "tidal";
     protected $host='localhost';
@@ -11,7 +17,9 @@ class Model
     
     protected $dbh;
 
-
+    /**
+     * initialisation de la connection a la DB
+     */
     function initialisationDB()
     {
         try{
@@ -25,7 +33,9 @@ class Model
         
     }
 
-
+    /**
+     * verification si la connection a été établie grace a l'objet dbh
+     */
     private function checkInitialisationDB()
     {
         if ($this->dbh == null)
@@ -34,6 +44,13 @@ class Model
         }
     }
 
+    /**
+     * fonction qui execute les requetes 
+     * @param sql requete prepare
+     * @param arguments arguments qui l'on peut founir pour les ajouter a la requete
+     * 
+     * @return data données recus du server SQL
+     */
     function sqlRequest($sql, $arguments = []){
         
       

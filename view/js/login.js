@@ -1,3 +1,5 @@
+
+// gestion des acction sur la modale
 $(document).ready(function(){
         
     $("#modifier_mdp").prop("disabled",true);
@@ -21,6 +23,7 @@ $(".close").click(function(){
 })
 
 
+// authorisation a envoyer la modification uniquement les 2 mdp sont identiques
 $("#input_password_confirm").change(function(){
     var confirme_pass = $(this).val();
     var new_pass = $("#input_password_modif").val();

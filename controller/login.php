@@ -124,6 +124,9 @@ class Login extends Controller
         }
     }
 
+    /**
+     * permet a l'utilisateur de modifier son mot de passe s'il l'a oublier
+     */
     function modificationMdp()
     {
         require_once('model/clientModel.php');
@@ -154,6 +157,9 @@ class Login extends Controller
         }
     }
 
+    /**
+     * permet de se deconnecter 
+     */
     function logout()
     {
         $this->exitSession();
@@ -163,6 +169,9 @@ class Login extends Controller
         $router->run();
     }
 
+    /**
+     * fonction reserver au root permet d'afficher tous les utiliateurs du site
+     */
     function userList()
     {
         require('model/clientModel.php');
