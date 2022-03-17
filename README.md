@@ -39,11 +39,11 @@ sudo chmod -R 770 templates_c/
 - Améliorations CSS
 
 ## Privilèges utilisateurs dans $_SESSION["status"]
-|numéro|        état                |
-|------|----------------------------|
-|   0  | utilisateur non connecté   |
-|   1  | utilisateur identifié      |
-|   2  | admin  (root; root)        |
+|numéro|        état                        |
+|------|------------------------------------|   
+|   0  | utilisateur non connecté           |
+|   1  | utilisateur identifié (test; test) |
+|   2  | admin  (root; root)                |
 
 ## Comptes de tests
 |  user |  mdp |

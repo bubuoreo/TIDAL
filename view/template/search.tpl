@@ -48,7 +48,7 @@
                     <th>
                         <ul>
                             {foreach from=$description item=valeur }
-                                <li>  {$valeur}</li>
+                                <li class = "sympt">  {$valeur}</li>
                             {/foreach}
                         </ul>
                     </th>
