@@ -70,7 +70,6 @@
         </a>
         </div>
     {/if}
-    <div class="white-space"></div>
 
     {include file="./footer.tpl" }
 </body>
