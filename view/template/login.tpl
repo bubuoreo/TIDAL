@@ -120,6 +120,13 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     }
 
+    #BtnModal{
+        color: #000;
+        align-items: center;
+        margin-left: 8.5vw;
+        margin-bottom: 2vh;
+    }
+
     /* Modal Content */
     .modal-content {
     background-color: #fefefe;
@@ -127,6 +134,7 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    height: 60%;
     }
 
     /* The Close Button */
@@ -136,6 +144,14 @@
     font-size: 28px;
     font-weight: bold;
     }
+    #modiMdp_form{
+        transform: translate(5vw, -40vh);
+    }
+
+    #modifier_mdp{
+        margin-left: 30vw;
+    }
+   
 
     .close:hover,
     .close:focus {
@@ -145,38 +161,6 @@
     }
 </style>
 {/literal}
-{* <script>
-    $(document).ready(function(){
-        
-        $("#modifier_mdp").prop("disabled",true);
-      
-        if ($("#wrongUsername").lenght)
-        {
-            $("#myModal").show();
-        } else
-        {
-            $("#myModal").hide();
-        }
-    })
-
-    $("#BtnModal").click(function(){
-        $("#myModal").css("display","block" );
-    })
-
-    $(".close").click(function(){
-        $("#myModal").hide();
-    })
-
-    $("#input_password_confirm").change(function(){
-        var confirme_pass = $(this).val();
-        var new_pass = $("#input_password_modif").val();
-        if(confirme_pass == new_pass)
-        {
-            $("#modifier_mdp").prop("disabled",false);
-        }
-    })
-    
-</script> *}
 
 </body>
 
