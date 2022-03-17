@@ -48,6 +48,7 @@ class Router
     {
         if ($this->middleware())
         {
+
             # Parcours la variable dont la méthode de requête est celle spécifiée
             foreach($this->routes[$_SERVER['REQUEST_METHOD']] as $route)
             {
@@ -55,8 +56,15 @@ class Router
                 if ($route->matches($this->url) == true)
                 {
                     $route->execute(); # l'exécute
+                    return true;
                 }
             }
+
+            // redirection vers la home page 
+            $this->routes["default"]->execute();
+            echo "<script> 
+                    alert('La route que avez indiqué n\'existe pas. Vous avez été rediriré');  
+                </script>";
         }
         else
         {
