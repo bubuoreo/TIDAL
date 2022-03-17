@@ -51,7 +51,14 @@ class Login extends Controller
                 $flag=false;
                 
                 $this->startSession();
-                $_SESSION["status"] = 1;  
+                if ($username = "root")
+                {
+                    $_SESSION["status"] = 2;  
+                }
+                else
+                {
+                    $_SESSION["status"] = 1;
+                }
                 $_SESSION["user"]  = $username; 
                 
                 $_SERVER['REQUEST_METHOD'] = "GET";
@@ -154,6 +161,20 @@ class Login extends Controller
         $router = new Router("/");
         $router->newRouteGet("/", "Page@displayHome");
         $router->run();
+    }
+
+    function userList()
+    {
+        require('model/clientModel.php');
+        $client = new ClientModel();
+
+        $data = $client->getAll();
+
+        echo "<h2>Voici la liste des utilisateurs </h2>
+            <pre>";
+                var_dump($data);
+        echo "</pre>";
+
     }
 }
     

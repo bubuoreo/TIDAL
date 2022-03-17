@@ -1,5 +1,6 @@
 <?php
 
+use function PHPSTORM_META\elementType;
 
 require("route.php");
 
@@ -19,7 +20,7 @@ class Router
     public function __construct($url)
     {
         $this->url = trim($url, '/');
-        $this->routes["default"] = new Route("/","Controller\Login@display" );
+        $this->routes["default"] = new Route("/","Page@displayHome" );
     }
 
     /**
@@ -45,30 +46,48 @@ class Router
      */
     public function run()
     {
-        # Parcours la variable dont la méthode de requête est celle spécifiée
-        foreach($this->routes[$_SERVER['REQUEST_METHOD']] as $route)
+        if ($this->middleware())
         {
-            # test si la route est bien une route pouvant être réalisée
-            if ($route->matches($this->url) == true)
+            # Parcours la variable dont la méthode de requête est celle spécifiée
+            foreach($this->routes[$_SERVER['REQUEST_METHOD']] as $route)
             {
-                $route->execute(); # l'exécute
+                # test si la route est bien une route pouvant être réalisée
+                if ($route->matches($this->url) == true)
+                {
+                    $route->execute(); # l'exécute
+                }
             }
         }
-        // return  header("HTTP/1.0 404 Not Found");
-        // echo "URL invalide, redirection";
-        // sleep(2);
-        // $this->routes["default"]->execute();
+        else
+        {
+            
+            $this->routes["default"]->execute();
+            echo "<script> 
+                    alert('Vous n\'avez pas les droit d\'accès. Vous avez été rediriré');  
+                </script>";
+        }
+            
+    }
 
+    private function middleware()
+    {
+        if($this->url == "userList")
+        {
+            if ($_SESSION["status"] == 2)
+            {
+                return true;
+            }
+            else   
+            {
+                return false;
+            }
+            
+        }
+
+        return true;
     }
 
 
-    // public function reroute($methode, $path)
-    // {
-    //     foreach($this->routes[$methode] as $route);
-    //     if ($route->matches($this->$path) == true)
-    //         {
-    //             $route->execute();
-    //         }
-    // }
+   
 }
 

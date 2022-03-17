@@ -66,7 +66,7 @@ class Controller
     {
         if ($this->checkSession())
         {
-            if ($_SESSION["status"] == 1)
+            if ($_SESSION["status"] >= 1)
             {
                 return true;
             }

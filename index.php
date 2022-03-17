@@ -33,6 +33,7 @@ $router->newRouteGet("/sources", "Page@displaySources");
 $router->newRouteGet("/create", "Login@displayNewAcc");
 $router->newRouteGet("/login", "Login@displayLogin");
 $router->newRouteGet("/logout", "Login@logout");
+$router->newRouteGet("/userList", "Login@userList");
 
 
 $router->newRouteGet("/listeSympthome", "Pathos@searchAll");
