@@ -91,20 +91,27 @@
 
 {literal}
     
-<style>
+    <style>
         /* The Modal (background) */
     .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    #BtnModal{
+        color: #000;
+        align-items: center;
+        margin-left: 8.5vw;
+        margin-bottom: 2vh;
     }
 
     /* Modal Content */
@@ -114,6 +121,7 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    height: 60%;
     }
 
     /* The Close Button */
@@ -123,6 +131,13 @@
     font-size: 28px;
     font-weight: bold;
     }
+    #modiMdp_form{
+        transform: translate(5vw, -40vh);
+    }
+
+    #modifier_mdp{
+        margin-left: 30vw;
+    }
 
     .close:hover,
     .close:focus {
@@ -130,7 +145,7 @@
     text-decoration: none;
     cursor: pointer;
     }
-</style>
+    </style>
 
 <script>
     $(document).ready(function(){
