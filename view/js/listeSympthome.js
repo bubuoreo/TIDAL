@@ -51,7 +51,6 @@ $("#listePathos button").click(function () {
 // fonction gerant la visibilité de l'element qu'on lui donne en fonction du filtre donne
 function hideShowElement($element, filtre, indice)
 {
-    console.log(filtre)
     if( filtre == "all")
     {
         $element.show()
@@ -99,19 +98,22 @@ function gestionPathos(select, filtre)
         break;
 
     }
-    gestionLi();
+    
+    // gestion affichage mot d'erreur, aucune pathologie ne correspond
     var listeLiVisibles = $("#listePathos  li:visible ")
     if (listeLiVisibles.length < 1)
     {
-        // $("#listePathos").children().hide();
+
         $("#listePathos ").children(".rechercheNull").show()
     }
     else if( $("#listePathos ").children(".rechercheNull:visible").length > 0)
     {
-        // $("#listePathos").children().show();
+        
         $("#listePathos ").children(".rechercheNull:visible").hide()
     }
 
+  
+      
 }
 
 
