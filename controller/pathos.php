@@ -129,12 +129,13 @@ class Pathos extends Controller
             {
                 $comparator = $meridien["code"];
                 $categorieMeridiens[$meridien["nom"]] = array_filter($datas[$categorie], function($value) use($comparator){return $value["mer"] == $comparator;});
+                $categorieMeridiens = array_map('array_values', $categorieMeridiens);
                 
             }
             $datas[$categorie] = array_filter($categorieMeridiens);
     
         }
-        
+      
         $this->renderTpl("view/template/listeSympthome.tpl", [
             "isconnect" => $connecter,
             "listeMeridien" => $meridiens, 
