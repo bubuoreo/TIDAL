@@ -191,7 +191,8 @@
         }
     })
     
-</script> *}
+</script>
+{/literal}
 
 </body>
 
