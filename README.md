@@ -7,11 +7,11 @@ Afin de mettre en pratique les connaissances, nous proposons la réalisation d'u
 
 ## Equipe
 L'équipe responsable de ce projet est l'équipe numéro 10 constitué de :  
-- Alexandre BURLOT
-- Maxime CURRAL
-- Romain GALMIER
-- Romain GAUD
-- Fares ZAGHOUANE
+- * **Alexandre BURLOT** _alias_ [@bubuoreo](https://github.com/bubuoreo) 
+- * **Maxime CURRAL** _alias_ [@MaximeCurralCPE](https://github.com/MaximeCurralCPE) 
+- * **Romain GALMIER** _alias_ [@romaingalmier](https://github.com/romaingalmier) 
+- * **Romain GAUD** _alias_ [@Rom9281](https://github.com/Rom9281) 
+- * **Fares ZAGHOUANE** _alias_ [@faresZzz](https://github.com/faresZzz) 
 
 ## Permission pour le htaccess
 Nous avons mis en place un systeme de routage sur notre site, celui-ci passe pas un systeme de réécriture d'url 
